@@ -1,0 +1,25 @@
+{
+  "generated_at_utc": "2026-10-19T15:36:21.892396+00:00",
+  "input_results_sha256": "31bcb27f21b80d9b538fd14c6c2716e6a89687ae8fba2e3799c88e2d694d55da",
+  "ct_sha256": "da99b9b2175a5126f5d12e3c05633f677ce32ac85d7e068a53e62b1b420419e7",
+  "font_family": "Geist",
+  "image_error": {
+    "max_abs": 3.778267810905511e-05,
+    "rmse": 7.854390196470229e-07,
+    "relative_l2": 6.89550538493361e-07
+  },
+  "latency_error_points": [],
+  "sensitivity_source": null,
+  "sweep_source": null,
+  "files": [
+    "acquisition_geometry.pdf",
+    "acquisition_geometry.png",
+    "acquisition_geometry.svg",
+    "ct_projections.pdf",
+    "ct_projections.png",
+    "ct_projections.svg",
+    "fp32_fp64_error.pdf",
+    "fp32_fp64_error.png",
+    "fp32_fp64_error.svg"
+  ]
+}

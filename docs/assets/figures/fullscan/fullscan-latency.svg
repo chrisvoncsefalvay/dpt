@@ -1,0 +1,1247 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="803.27952pt" height="299.27952pt" viewBox="0 0 803.27952 299.27952" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-23T14:25:30.544486</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 299.27952 
+L 803.27952 299.27952 
+L 803.27952 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 41.973281 255.30197 
+L 395.475463 255.30197 
+L 395.475463 25.695 
+L 41.973281 25.695 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 58.041562 255.30197 
+L 115.271056 255.30197 
+L 115.271056 191.515373 
+L 58.041562 191.515373 
+z
+" clip-path="url(#p18f82a0eaf)" style="fill: #0072b2"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 146.086938 255.30197 
+L 203.316432 255.30197 
+L 203.316432 199.563657 
+L 146.086938 199.563657 
+z
+" clip-path="url(#p18f82a0eaf)" style="fill: #0072b2"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 234.132313 255.30197 
+L 291.361807 255.30197 
+L 291.361807 132.237366 
+L 234.132313 132.237366 
+z
+" clip-path="url(#p18f82a0eaf)" style="fill: #0072b2"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 322.177688 255.30197 
+L 379.407182 255.30197 
+L 379.407182 36.628665 
+L 322.177688 36.628665 
+z
+" clip-path="url(#p18f82a0eaf)" style="fill: #0072b2"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="me1d00f3eec" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#me1d00f3eec" x="86.656309" y="255.30197" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <!-- Forward -->
+      <g transform="translate(71.870608 282.36006) rotate(-20) scale(0.09 -0.09)">
+       <defs>
+        <path id="Geist-Regular-36" d="M 589 0 
+L 1139 0 
+L 1139 1958 
+L 3328 1958 
+L 3328 2483 
+L 1139 2483 
+L 1139 4006 
+L 3443 4006 
+L 3443 4544 
+L 589 4544 
+L 589 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="Geist-Regular-144" d="M 1837 -77 
+C 2771 -77 3386 614 3386 1696 
+C 3386 2778 2771 3469 1837 3469 
+C 896 3469 282 2778 282 1696 
+C 282 614 896 -77 1837 -77 
+z
+M 1837 435 
+C 1210 435 845 909 845 1696 
+C 845 2483 1210 2957 1837 2957 
+C 2458 2957 2822 2483 2822 1696 
+C 2822 909 2458 435 1837 435 
+z
+" transform="scale(0.015625)"/>
+        <path id="Geist-Regular-15e" d="M 512 0 
+L 1050 0 
+L 1050 2048 
+C 1050 2605 1306 2880 1818 2880 
+L 2144 2880 
+L 2144 3392 
+L 1811 3392 
+C 1395 3392 1126 3194 1005 2765 
+L 986 3392 
+L 512 3392 
+L 512 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="Geist-Regular-182" d="M 1190 0 
+L 1862 0 
+L 2618 2579 
+L 3373 0 
+L 4051 0 
+L 5101 3392 
+L 4512 3392 
+L 3712 563 
+L 2906 3392 
+L 2330 3392 
+L 1523 563 
+L 730 3392 
+L 141 3392 
+L 1190 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="Geist-Regular-e3" d="M 1427 -77 
+C 1926 -77 2394 173 2560 525 
+L 2566 493 
+C 2611 134 2803 -13 3200 -13 
+C 3283 -13 3366 -6 3405 0 
+L 3405 474 
+L 3270 474 
+C 3142 474 3091 531 3091 685 
+L 3091 2086 
+C 3091 2944 2618 3469 1747 3469 
+C 979 3469 467 3034 339 2394 
+L 909 2349 
+C 1011 2739 1274 2957 1747 2957 
+C 2285 2957 2554 2675 2554 2106 
+L 1350 1882 
+C 608 1741 282 1421 282 845 
+C 282 262 723 -77 1427 -77 
+z
+M 1478 397 
+C 1082 397 845 576 845 896 
+C 845 1178 992 1350 1453 1434 
+L 2554 1638 
+L 2554 1395 
+C 2554 832 2157 397 1478 397 
+z
+" transform="scale(0.015625)"/>
+        <path id="Geist-Regular-102" d="M 1715 -77 
+C 2189 -77 2598 141 2790 512 
+L 2810 0 
+L 3296 0 
+L 3296 4544 
+L 2758 4544 
+L 2758 2918 
+C 2573 3264 2170 3469 1715 3469 
+C 832 3469 282 2784 282 1696 
+C 282 608 832 -77 1715 -77 
+z
+M 1824 435 
+C 1229 435 845 922 845 1696 
+C 845 2483 1229 2957 1824 2957 
+C 2426 2957 2758 2483 2758 1696 
+C 2758 922 2426 435 1824 435 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Geist-Regular-36"/>
+       <use xlink:href="#Geist-Regular-144" transform="translate(56 0)"/>
+       <use xlink:href="#Geist-Regular-15e" transform="translate(112.296875 0)"/>
+       <use xlink:href="#Geist-Regular-182" transform="translate(147.703125 0)"/>
+       <use xlink:href="#Geist-Regular-e3" transform="translate(227.40625 0)"/>
+       <use xlink:href="#Geist-Regular-15e" transform="translate(282.09375 0)"/>
+       <use xlink:href="#Geist-Regular-102" transform="translate(316 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#me1d00f3eec" x="174.701685" y="255.30197" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <!-- Volume VJP -->
+      <g transform="translate(152.317026 287.891648) rotate(-20) scale(0.09 -0.09)">
+       <defs>
+        <path id="Geist-Regular-9d" d="M 1773 0 
+L 2496 0 
+L 4141 4544 
+L 3539 4544 
+L 2138 602 
+L 730 4544 
+L 128 4544 
+L 1773 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="Geist-Regular-138" d="M 1178 0 
+L 1555 0 
+L 1555 474 
+L 1261 474 
+C 1120 474 1050 544 1050 685 
+L 1050 4544 
+L 512 4544 
+L 512 640 
+C 512 192 781 0 1178 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="Geist-Regular-16e" d="M 1626 -77 
+C 2112 -77 2470 147 2656 550 
+L 2656 0 
+L 3168 0 
+L 3168 3392 
+L 2630 3392 
+L 2630 1370 
+C 2630 762 2304 397 1766 397 
+C 1280 397 1050 698 1050 1357 
+L 1050 3392 
+L 512 3392 
+L 512 1210 
+C 512 403 947 -77 1626 -77 
+z
+" transform="scale(0.015625)"/>
+        <path id="Geist-Regular-13d" d="M 512 0 
+L 1050 0 
+L 1050 2029 
+C 1050 2630 1363 2995 1837 2995 
+C 2336 2995 2534 2630 2534 2029 
+L 2534 0 
+L 3072 0 
+L 3072 2029 
+C 3072 2637 3379 2995 3853 2995 
+C 4320 2995 4563 2682 4563 2067 
+L 4563 0 
+L 5101 0 
+L 5101 2182 
+C 5101 3002 4704 3469 3981 3469 
+C 3482 3469 3136 3213 2989 2758 
+C 2842 3213 2483 3469 1971 3469 
+C 1536 3469 1184 3213 1018 2797 
+L 1005 3392 
+L 512 3392 
+L 512 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="Geist-Regular-106" d="M 1837 -77 
+C 2554 -77 3078 352 3258 960 
+L 2682 1005 
+C 2566 659 2278 435 1837 435 
+C 1248 435 883 800 845 1530 
+L 3309 1530 
+L 3309 1690 
+C 3309 2829 2694 3469 1811 3469 
+C 877 3469 282 2771 282 1696 
+C 282 621 877 -77 1837 -77 
+z
+M 845 2003 
+C 934 2630 1286 2957 1811 2957 
+C 2310 2957 2669 2656 2720 2003 
+L 845 2003 
+z
+" transform="scale(0.015625)"/>
+        <path id="Geist-Regular-2e1" transform="scale(0.015625)"/>
+        <path id="Geist-Regular-4e" d="M 1875 -102 
+C 2765 -102 3328 550 3328 1587 
+L 3328 4544 
+L 2778 4544 
+L 2778 1587 
+C 2778 851 2451 435 1875 435 
+C 1318 435 998 826 992 1523 
+L 429 1485 
+C 435 550 1030 -102 1875 -102 
+z
+" transform="scale(0.015625)"/>
+        <path id="Geist-Regular-77" d="M 589 0 
+L 1139 0 
+L 1139 1766 
+L 2221 1766 
+C 3232 1766 3827 2291 3827 3168 
+C 3827 4032 3232 4544 2221 4544 
+L 589 4544 
+L 589 0 
+z
+M 1139 2304 
+L 1139 4006 
+L 2221 4006 
+C 2906 4006 3251 3725 3251 3168 
+C 3251 2598 2906 2304 2221 2304 
+L 1139 2304 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Geist-Regular-9d"/>
+       <use xlink:href="#Geist-Regular-144" transform="translate(62.703125 0)"/>
+       <use xlink:href="#Geist-Regular-138" transform="translate(119.5 0)"/>
+       <use xlink:href="#Geist-Regular-16e" transform="translate(145.203125 0)"/>
+       <use xlink:href="#Geist-Regular-13d" transform="translate(202.703125 0)"/>
+       <use xlink:href="#Geist-Regular-106" transform="translate(289.203125 0)"/>
+       <use xlink:href="#Geist-Regular-2e1" transform="translate(345.296875 0)"/>
+       <use xlink:href="#Geist-Regular-9d" transform="translate(370.296875 0)"/>
+       <use xlink:href="#Geist-Regular-4e" transform="translate(429 0)"/>
+       <use xlink:href="#Geist-Regular-77" transform="translate(490.203125 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#me1d00f3eec" x="262.74706" y="255.30197" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <!-- Pose VJP -->
+      <g transform="translate(245.424188 284.206969) rotate(-20) scale(0.09 -0.09)">
+       <defs>
+        <path id="Geist-Regular-162" d="M 1747 -77 
+C 2496 -77 3034 282 3034 909 
+C 3034 1446 2746 1722 1747 1894 
+C 1152 1997 979 2125 979 2458 
+C 979 2746 1203 2957 1690 2957 
+C 2246 2957 2451 2662 2483 2342 
+L 3046 2381 
+C 2976 2931 2598 3469 1702 3469 
+C 883 3469 416 3034 416 2432 
+C 416 1894 698 1600 1645 1421 
+C 2336 1293 2470 1178 2470 909 
+C 2470 576 2208 435 1747 435 
+C 1146 435 909 698 845 1107 
+L 282 1069 
+C 333 403 813 -77 1747 -77 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Geist-Regular-77"/>
+       <use xlink:href="#Geist-Regular-144" transform="translate(62.203125 0)"/>
+       <use xlink:href="#Geist-Regular-162" transform="translate(118.5 0)"/>
+       <use xlink:href="#Geist-Regular-106" transform="translate(169.5 0)"/>
+       <use xlink:href="#Geist-Regular-2e1" transform="translate(225.59375 0)"/>
+       <use xlink:href="#Geist-Regular-9d" transform="translate(250.59375 0)"/>
+       <use xlink:href="#Geist-Regular-4e" transform="translate(309.296875 0)"/>
+       <use xlink:href="#Geist-Regular-77" transform="translate(370.5 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#me1d00f3eec" x="350.792435" y="255.30197" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <!-- Full iteration -->
+      <g transform="translate(328.060237 288.144636) rotate(-20) scale(0.09 -0.09)">
+       <defs>
+        <path id="Geist-Regular-124" d="M 499 3923 
+L 1062 3923 
+L 1062 4550 
+L 499 4550 
+L 499 3923 
+z
+M 512 0 
+L 1050 0 
+L 1050 3392 
+L 512 3392 
+L 512 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="Geist-Regular-169" d="M 1754 0 
+L 2291 0 
+L 2291 474 
+L 1805 474 
+C 1523 474 1389 576 1389 883 
+L 1389 2918 
+L 2291 2918 
+L 2291 3392 
+L 1389 3392 
+L 1389 4186 
+L 851 4186 
+L 851 3392 
+L 352 3392 
+L 352 2918 
+L 851 2918 
+L 851 870 
+C 851 269 1139 0 1754 0 
+z
+" transform="scale(0.015625)"/>
+        <path id="Geist-Regular-13e" d="M 512 0 
+L 1050 0 
+L 1050 2029 
+C 1050 2656 1421 2995 1946 2995 
+C 2458 2995 2669 2656 2669 2029 
+L 2669 0 
+L 3206 0 
+L 3206 2182 
+C 3206 2899 2835 3469 2061 3469 
+C 1594 3469 1197 3251 1018 2784 
+L 1005 3392 
+L 512 3392 
+L 512 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Geist-Regular-36"/>
+       <use xlink:href="#Geist-Regular-16e" transform="translate(56 0)"/>
+       <use xlink:href="#Geist-Regular-138" transform="translate(113.5 0)"/>
+       <use xlink:href="#Geist-Regular-138" transform="translate(139.203125 0)"/>
+       <use xlink:href="#Geist-Regular-2e1" transform="translate(165.90625 0)"/>
+       <use xlink:href="#Geist-Regular-124" transform="translate(190.90625 0)"/>
+       <use xlink:href="#Geist-Regular-169" transform="translate(211.3125 0)"/>
+       <use xlink:href="#Geist-Regular-106" transform="translate(248.921875 0)"/>
+       <use xlink:href="#Geist-Regular-15e" transform="translate(304.015625 0)"/>
+       <use xlink:href="#Geist-Regular-e3" transform="translate(337.921875 0)"/>
+       <use xlink:href="#Geist-Regular-169" transform="translate(388.015625 0)"/>
+       <use xlink:href="#Geist-Regular-124" transform="translate(425.625 0)"/>
+       <use xlink:href="#Geist-Regular-144" transform="translate(449.03125 0)"/>
+       <use xlink:href="#Geist-Regular-13e" transform="translate(505.328125 0)"/>
+      </g>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_5">
+      <defs>
+       <path id="m60000f9a4c" d="M 0 0 
+L -3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m60000f9a4c" x="41.973281" y="255.30197" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <!-- 0 -->
+      <g transform="translate(29.006563 259.82447) scale(0.09 -0.09)">
+       <defs>
+        <path id="Geist-Regular-284" d="M 2118 -102 
+C 3226 -102 3923 813 3923 2266 
+C 3923 3731 3226 4646 2118 4646 
+C 1018 4646 320 3725 320 2266 
+C 320 813 1018 -102 2118 -102 
+z
+M 2118 435 
+C 1338 435 896 1094 896 2266 
+C 896 3443 1338 4109 2118 4109 
+C 2906 4109 3347 3443 3347 2266 
+C 3347 1094 2906 435 2118 435 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Geist-Regular-284"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m60000f9a4c" x="41.973281" y="229.34406" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <!-- 2 -->
+      <g transform="translate(29.401719 233.86656) scale(0.09 -0.09)">
+       <defs>
+        <path id="Geist-Regular-286" d="M 384 0 
+L 3578 0 
+L 3578 538 
+L 1062 538 
+C 1088 883 1510 1357 2330 1792 
+C 3270 2291 3578 2637 3578 3328 
+C 3578 4109 3027 4646 2093 4646 
+C 1107 4646 512 4077 410 3187 
+L 986 3149 
+C 1082 3763 1453 4109 2093 4109 
+C 2694 4109 3002 3782 3002 3315 
+C 3002 2854 2752 2650 2125 2317 
+C 762 1594 384 960 384 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Geist-Regular-286"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#m60000f9a4c" x="41.973281" y="203.38615" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <!-- 4 -->
+      <g transform="translate(29.438281 207.90865) scale(0.09 -0.09)">
+       <defs>
+        <path id="Geist-Regular-288" d="M 2502 0 
+L 3053 0 
+L 3053 986 
+L 3616 986 
+L 3616 1523 
+L 3053 1523 
+L 3053 4544 
+L 2464 4544 
+L 192 1485 
+L 192 986 
+L 2502 986 
+L 2502 0 
+z
+M 858 1523 
+L 2502 3699 
+L 2502 1523 
+L 858 1523 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Geist-Regular-288"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m60000f9a4c" x="41.973281" y="177.428241" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <!-- 6 -->
+      <g transform="translate(29.636563 181.950741) scale(0.09 -0.09)">
+       <defs>
+        <path id="Geist-Regular-28a" d="M 1933 -102 
+C 2874 -102 3539 512 3539 1510 
+C 3539 2445 2931 3059 2035 3059 
+C 1517 3059 1114 2810 896 2477 
+L 902 2522 
+C 992 3584 1427 4109 2112 4109 
+C 2611 4109 2842 3878 2944 3520 
+L 3520 3571 
+C 3341 4211 2918 4646 2112 4646 
+C 768 4646 320 3418 320 1920 
+C 320 621 909 -102 1933 -102 
+z
+M 1946 435 
+C 1318 435 922 883 922 1510 
+C 922 2138 1382 2534 1997 2534 
+C 2566 2534 2963 2138 2963 1510 
+C 2963 832 2541 435 1946 435 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Geist-Regular-28a"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m60000f9a4c" x="41.973281" y="151.470331" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <!-- 8 -->
+      <g transform="translate(29.536719 155.992831) scale(0.09 -0.09)">
+       <defs>
+        <path id="Geist-Regular-28c" d="M 1933 -102 
+C 2912 -102 3610 365 3610 1248 
+C 3610 1837 3270 2253 2733 2445 
+C 3136 2611 3392 2912 3392 3398 
+C 3392 4115 2816 4646 1933 4646 
+C 1050 4646 474 4115 474 3398 
+C 474 2912 730 2611 1133 2445 
+C 595 2253 256 1837 256 1248 
+C 256 365 954 -102 1933 -102 
+z
+M 1933 2669 
+C 1370 2669 1050 2912 1050 3398 
+C 1050 3834 1357 4109 1933 4109 
+C 2509 4109 2816 3834 2816 3398 
+C 2816 2912 2496 2669 1933 2669 
+z
+M 1933 435 
+C 1261 435 832 704 832 1280 
+C 832 1811 1178 2157 1933 2157 
+C 2688 2157 3034 1811 3034 1280 
+C 3034 704 2605 435 1933 435 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Geist-Regular-28c"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m60000f9a4c" x="41.973281" y="125.512421" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <!-- 10 -->
+      <g transform="translate(25.64 130.034921) scale(0.09 -0.09)">
+       <defs>
+        <path id="Geist-Regular-285" d="M 1203 0 
+L 1754 0 
+L 1754 4544 
+L 1318 4544 
+C 1318 4006 1139 3840 640 3840 
+L 256 3840 
+L 256 3366 
+L 1203 3366 
+L 1203 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Geist-Regular-285"/>
+       <use xlink:href="#Geist-Regular-284" transform="translate(37.40625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m60000f9a4c" x="41.973281" y="99.554512" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <!-- 12 -->
+      <g transform="translate(26.035156 104.077012) scale(0.09 -0.09)">
+       <use xlink:href="#Geist-Regular-285"/>
+       <use xlink:href="#Geist-Regular-286" transform="translate(37.40625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m60000f9a4c" x="41.973281" y="73.596602" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <!-- 14 -->
+      <g transform="translate(26.161719 78.119102) scale(0.09 -0.09)">
+       <use xlink:href="#Geist-Regular-285"/>
+       <use xlink:href="#Geist-Regular-288" transform="translate(36.40625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#m60000f9a4c" x="41.973281" y="47.638692" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <!-- 16 -->
+      <g transform="translate(26.27 52.161192) scale(0.09 -0.09)">
+       <use xlink:href="#Geist-Regular-285"/>
+       <use xlink:href="#Geist-Regular-28a" transform="translate(37.40625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_14">
+     <!-- Completed wall time (s) -->
+     <g transform="translate(18.69 194.254735) rotate(-90) scale(0.1 -0.1)">
+      <defs>
+       <path id="Geist-Regular-1a" d="M 2330 -102 
+C 3418 -102 4077 563 4243 1549 
+L 3661 1587 
+C 3546 877 3123 435 2330 435 
+C 1459 435 864 1114 864 2266 
+C 864 3418 1459 4109 2330 4109 
+C 3085 4109 3494 3706 3622 3059 
+L 4205 3098 
+C 4013 4051 3430 4646 2330 4646 
+C 1114 4646 288 3738 288 2266 
+C 288 794 1114 -102 2330 -102 
+z
+" transform="scale(0.015625)"/>
+       <path id="Geist-Regular-15b" d="M 512 -960 
+L 1050 -960 
+L 1050 448 
+C 1229 122 1619 -77 2061 -77 
+C 3072 -77 3526 762 3526 1696 
+C 3526 2630 3072 3469 2061 3469 
+C 1600 3469 1222 3264 1018 2874 
+L 1011 3392 
+L 512 3392 
+L 512 -960 
+z
+M 2010 435 
+C 1414 435 1050 864 1050 1696 
+C 1050 2528 1421 2957 2010 2957 
+C 2598 2957 2963 2490 2963 1696 
+C 2963 902 2598 435 2010 435 
+z
+" transform="scale(0.015625)"/>
+       <path id="Geist-Regular-30a" d="M 1178 -704 
+L 1658 -704 
+C 1120 218 845 1133 845 2048 
+C 845 2963 1120 3885 1658 4800 
+L 1178 4800 
+C 589 3917 288 2982 288 2048 
+C 288 1114 589 179 1178 -704 
+z
+" transform="scale(0.015625)"/>
+       <path id="Geist-Regular-30b" d="M 576 -704 
+C 1165 179 1466 1114 1466 2048 
+C 1466 2982 1165 3917 576 4800 
+L 96 4800 
+C 634 3885 909 2963 909 2048 
+C 909 1133 634 218 96 -704 
+L 576 -704 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#Geist-Regular-1a"/>
+      <use xlink:href="#Geist-Regular-144" transform="translate(69.5 0)"/>
+      <use xlink:href="#Geist-Regular-13d" transform="translate(125.796875 0)"/>
+      <use xlink:href="#Geist-Regular-15b" transform="translate(211.5 0)"/>
+      <use xlink:href="#Geist-Regular-138" transform="translate(270.5 0)"/>
+      <use xlink:href="#Geist-Regular-106" transform="translate(296.609375 0)"/>
+      <use xlink:href="#Geist-Regular-169" transform="translate(349.703125 0)"/>
+      <use xlink:href="#Geist-Regular-106" transform="translate(387.3125 0)"/>
+      <use xlink:href="#Geist-Regular-102" transform="translate(442.40625 0)"/>
+      <use xlink:href="#Geist-Regular-2e1" transform="translate(501.90625 0)"/>
+      <use xlink:href="#Geist-Regular-182" transform="translate(526.90625 0)"/>
+      <use xlink:href="#Geist-Regular-e3" transform="translate(606.609375 0)"/>
+      <use xlink:href="#Geist-Regular-138" transform="translate(660.703125 0)"/>
+      <use xlink:href="#Geist-Regular-138" transform="translate(686.40625 0)"/>
+      <use xlink:href="#Geist-Regular-2e1" transform="translate(713.109375 0)"/>
+      <use xlink:href="#Geist-Regular-169" transform="translate(738.109375 0)"/>
+      <use xlink:href="#Geist-Regular-124" transform="translate(775.71875 0)"/>
+      <use xlink:href="#Geist-Regular-13d" transform="translate(800.71875 0)"/>
+      <use xlink:href="#Geist-Regular-106" transform="translate(887.21875 0)"/>
+      <use xlink:href="#Geist-Regular-2e1" transform="translate(943.3125 0)"/>
+      <use xlink:href="#Geist-Regular-30a" transform="translate(968.3125 0)"/>
+      <use xlink:href="#Geist-Regular-162" transform="translate(995.71875 0)"/>
+      <use xlink:href="#Geist-Regular-30b" transform="translate(1047.71875 0)"/>
+     </g>
+    </g>
+   </g>
+   <g id="patch_7">
+    <path d="M 41.973281 255.30197 
+L 41.973281 25.695 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 41.973281 255.30197 
+L 395.475463 255.30197 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_15">
+    <!-- FP64 -->
+    <g transform="translate(204.726872 19.695) scale(0.11 -0.11)">
+     <defs>
+      <path id="Geist-Bold-36" d="M 474 0 
+L 474 4544 
+L 3610 4544 
+L 3610 3725 
+L 1446 3725 
+L 1446 2624 
+L 3494 2624 
+L 3494 1818 
+L 1446 1818 
+L 1446 0 
+L 474 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="Geist-Bold-77" d="M 474 0 
+L 474 4544 
+L 2291 4544 
+Q 3110 4544 3574 4147 
+Q 4038 3750 4038 3059 
+Q 4038 2368 3574 1968 
+Q 3110 1568 2291 1568 
+L 1446 1568 
+L 1446 0 
+L 474 0 
+z
+M 1446 2387 
+L 2234 2387 
+Q 2618 2387 2829 2556 
+Q 3040 2726 3040 3059 
+Q 3040 3392 2829 3558 
+Q 2618 3725 2234 3725 
+L 1446 3725 
+L 1446 2387 
+z
+" transform="scale(0.015625)"/>
+      <path id="Geist-Bold-28a" d="M 2054 -102 
+Q 1171 -102 726 451 
+Q 282 1005 282 2003 
+Q 282 2758 486 3356 
+Q 691 3955 1116 4300 
+Q 1542 4646 2202 4646 
+Q 2861 4646 3251 4326 
+Q 3642 4006 3770 3456 
+L 2874 3392 
+Q 2797 3603 2646 3724 
+Q 2496 3846 2202 3846 
+Q 1792 3846 1542 3529 
+Q 1293 3213 1229 2547 
+Q 1382 2733 1638 2857 
+Q 1894 2982 2253 2982 
+Q 2720 2982 3065 2796 
+Q 3411 2611 3603 2278 
+Q 3795 1946 3795 1498 
+Q 3795 986 3574 630 
+Q 3354 275 2960 86 
+Q 2566 -102 2054 -102 
+z
+M 2048 672 
+Q 2394 672 2608 893 
+Q 2822 1114 2822 1485 
+Q 2822 1843 2614 2067 
+Q 2406 2291 2074 2291 
+Q 1715 2291 1488 2070 
+Q 1261 1850 1261 1485 
+Q 1261 1126 1475 899 
+Q 1690 672 2048 672 
+z
+" transform="scale(0.015625)"/>
+      <path id="Geist-Bold-288" d="M 2413 0 
+L 2413 864 
+L 154 864 
+L 154 1638 
+L 2227 4544 
+L 3386 4544 
+L 3386 1683 
+L 3917 1683 
+L 3917 864 
+L 3386 864 
+L 3386 0 
+L 2413 0 
+z
+M 1184 1683 
+L 2413 1683 
+L 2413 3347 
+L 1184 1683 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Geist-Bold-36"/>
+     <use xlink:href="#Geist-Bold-77" transform="translate(59 0)"/>
+     <use xlink:href="#Geist-Bold-28a" transform="translate(126.203125 0)"/>
+     <use xlink:href="#Geist-Bold-288" transform="translate(188.90625 0)"/>
+    </g>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_9">
+    <path d="M 441.137338 255.30197 
+L 794.63952 255.30197 
+L 794.63952 25.695 
+L 441.137338 25.695 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 457.205619 255.30197 
+L 514.435113 255.30197 
+L 514.435113 179.335432 
+L 457.205619 179.335432 
+z
+" clip-path="url(#p5dd0dd8d3c)" style="fill: #0072b2"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 545.250994 255.30197 
+L 602.480488 255.30197 
+L 602.480488 174.415667 
+L 545.250994 174.415667 
+z
+" clip-path="url(#p5dd0dd8d3c)" style="fill: #0072b2"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 633.29637 255.30197 
+L 690.525864 255.30197 
+L 690.525864 173.953904 
+L 633.29637 173.953904 
+z
+" clip-path="url(#p5dd0dd8d3c)" style="fill: #0072b2"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 721.341745 255.30197 
+L 778.571239 255.30197 
+L 778.571239 36.628665 
+L 721.341745 36.628665 
+z
+" clip-path="url(#p5dd0dd8d3c)" style="fill: #0072b2"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_5">
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#me1d00f3eec" x="485.820366" y="255.30197" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_16">
+      <!-- Forward -->
+      <g transform="translate(471.034664 282.36006) rotate(-20) scale(0.09 -0.09)">
+       <use xlink:href="#Geist-Regular-36"/>
+       <use xlink:href="#Geist-Regular-144" transform="translate(56 0)"/>
+       <use xlink:href="#Geist-Regular-15e" transform="translate(112.296875 0)"/>
+       <use xlink:href="#Geist-Regular-182" transform="translate(147.703125 0)"/>
+       <use xlink:href="#Geist-Regular-e3" transform="translate(227.40625 0)"/>
+       <use xlink:href="#Geist-Regular-15e" transform="translate(282.09375 0)"/>
+       <use xlink:href="#Geist-Regular-102" transform="translate(316 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#me1d00f3eec" x="573.865741" y="255.30197" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_17">
+      <!-- Volume VJP -->
+      <g transform="translate(551.481083 287.891648) rotate(-20) scale(0.09 -0.09)">
+       <use xlink:href="#Geist-Regular-9d"/>
+       <use xlink:href="#Geist-Regular-144" transform="translate(62.703125 0)"/>
+       <use xlink:href="#Geist-Regular-138" transform="translate(119.5 0)"/>
+       <use xlink:href="#Geist-Regular-16e" transform="translate(145.203125 0)"/>
+       <use xlink:href="#Geist-Regular-13d" transform="translate(202.703125 0)"/>
+       <use xlink:href="#Geist-Regular-106" transform="translate(289.203125 0)"/>
+       <use xlink:href="#Geist-Regular-2e1" transform="translate(345.296875 0)"/>
+       <use xlink:href="#Geist-Regular-9d" transform="translate(370.296875 0)"/>
+       <use xlink:href="#Geist-Regular-4e" transform="translate(429 0)"/>
+       <use xlink:href="#Geist-Regular-77" transform="translate(490.203125 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#me1d00f3eec" x="661.911117" y="255.30197" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_18">
+      <!-- Pose VJP -->
+      <g transform="translate(644.588245 284.206969) rotate(-20) scale(0.09 -0.09)">
+       <use xlink:href="#Geist-Regular-77"/>
+       <use xlink:href="#Geist-Regular-144" transform="translate(62.203125 0)"/>
+       <use xlink:href="#Geist-Regular-162" transform="translate(118.5 0)"/>
+       <use xlink:href="#Geist-Regular-106" transform="translate(169.5 0)"/>
+       <use xlink:href="#Geist-Regular-2e1" transform="translate(225.59375 0)"/>
+       <use xlink:href="#Geist-Regular-9d" transform="translate(250.59375 0)"/>
+       <use xlink:href="#Geist-Regular-4e" transform="translate(309.296875 0)"/>
+       <use xlink:href="#Geist-Regular-77" transform="translate(370.5 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_17">
+      <g>
+       <use xlink:href="#me1d00f3eec" x="749.956492" y="255.30197" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_19">
+      <!-- Full iteration -->
+      <g transform="translate(727.224294 288.144636) rotate(-20) scale(0.09 -0.09)">
+       <use xlink:href="#Geist-Regular-36"/>
+       <use xlink:href="#Geist-Regular-16e" transform="translate(56 0)"/>
+       <use xlink:href="#Geist-Regular-138" transform="translate(113.5 0)"/>
+       <use xlink:href="#Geist-Regular-138" transform="translate(139.203125 0)"/>
+       <use xlink:href="#Geist-Regular-2e1" transform="translate(165.90625 0)"/>
+       <use xlink:href="#Geist-Regular-124" transform="translate(190.90625 0)"/>
+       <use xlink:href="#Geist-Regular-169" transform="translate(211.3125 0)"/>
+       <use xlink:href="#Geist-Regular-106" transform="translate(248.921875 0)"/>
+       <use xlink:href="#Geist-Regular-15e" transform="translate(304.015625 0)"/>
+       <use xlink:href="#Geist-Regular-e3" transform="translate(337.921875 0)"/>
+       <use xlink:href="#Geist-Regular-169" transform="translate(388.015625 0)"/>
+       <use xlink:href="#Geist-Regular-124" transform="translate(425.625 0)"/>
+       <use xlink:href="#Geist-Regular-144" transform="translate(449.03125 0)"/>
+       <use xlink:href="#Geist-Regular-13e" transform="translate(505.328125 0)"/>
+      </g>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_10">
+     <g id="line2d_18">
+      <g>
+       <use xlink:href="#m60000f9a4c" x="441.137338" y="255.30197" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_20">
+      <!-- 0.0 -->
+      <g transform="translate(420.395463 259.82447) scale(0.09 -0.09)">
+       <defs>
+        <path id="Geist-Regular-2e8" d="M 282 0 
+L 1005 0 
+L 1005 723 
+L 282 723 
+L 282 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#Geist-Regular-284"/>
+       <use xlink:href="#Geist-Regular-2e8" transform="translate(66.296875 0)"/>
+       <use xlink:href="#Geist-Regular-284" transform="translate(86.390625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_19">
+      <g>
+       <use xlink:href="#m60000f9a4c" x="441.137338" y="225.662125" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_21">
+      <!-- 0.2 -->
+      <g transform="translate(420.790619 230.184625) scale(0.09 -0.09)">
+       <use xlink:href="#Geist-Regular-284"/>
+       <use xlink:href="#Geist-Regular-2e8" transform="translate(66.296875 0)"/>
+       <use xlink:href="#Geist-Regular-286" transform="translate(86.390625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_20">
+      <g>
+       <use xlink:href="#m60000f9a4c" x="441.137338" y="196.022281" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_22">
+      <!-- 0.4 -->
+      <g transform="translate(420.827182 200.544781) scale(0.09 -0.09)">
+       <use xlink:href="#Geist-Regular-284"/>
+       <use xlink:href="#Geist-Regular-2e8" transform="translate(66.296875 0)"/>
+       <use xlink:href="#Geist-Regular-288" transform="translate(86.390625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_13">
+     <g id="line2d_21">
+      <g>
+       <use xlink:href="#m60000f9a4c" x="441.137338" y="166.382437" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_23">
+      <!-- 0.6 -->
+      <g transform="translate(421.025463 170.904937) scale(0.09 -0.09)">
+       <use xlink:href="#Geist-Regular-284"/>
+       <use xlink:href="#Geist-Regular-2e8" transform="translate(66.296875 0)"/>
+       <use xlink:href="#Geist-Regular-28a" transform="translate(86.390625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_14">
+     <g id="line2d_22">
+      <g>
+       <use xlink:href="#m60000f9a4c" x="441.137338" y="136.742592" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_24">
+      <!-- 0.8 -->
+      <g transform="translate(420.925619 141.265092) scale(0.09 -0.09)">
+       <use xlink:href="#Geist-Regular-284"/>
+       <use xlink:href="#Geist-Regular-2e8" transform="translate(66.296875 0)"/>
+       <use xlink:href="#Geist-Regular-28c" transform="translate(86.390625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_15">
+     <g id="line2d_23">
+      <g>
+       <use xlink:href="#m60000f9a4c" x="441.137338" y="107.102748" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_25">
+      <!-- 1.0 -->
+      <g transform="translate(422.905619 111.625248) scale(0.09 -0.09)">
+       <use xlink:href="#Geist-Regular-285"/>
+       <use xlink:href="#Geist-Regular-2e8" transform="translate(38.40625 0)"/>
+       <use xlink:href="#Geist-Regular-284" transform="translate(58.5 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_16">
+     <g id="line2d_24">
+      <g>
+       <use xlink:href="#m60000f9a4c" x="441.137338" y="77.462904" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_26">
+      <!-- 1.2 -->
+      <g transform="translate(423.300776 81.985404) scale(0.09 -0.09)">
+       <use xlink:href="#Geist-Regular-285"/>
+       <use xlink:href="#Geist-Regular-2e8" transform="translate(38.40625 0)"/>
+       <use xlink:href="#Geist-Regular-286" transform="translate(58.5 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="ytick_17">
+     <g id="line2d_25">
+      <g>
+       <use xlink:href="#m60000f9a4c" x="441.137338" y="47.823059" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_27">
+      <!-- 1.4 -->
+      <g transform="translate(423.337338 52.345559) scale(0.09 -0.09)">
+       <use xlink:href="#Geist-Regular-285"/>
+       <use xlink:href="#Geist-Regular-2e8" transform="translate(38.40625 0)"/>
+       <use xlink:href="#Geist-Regular-288" transform="translate(58.5 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="text_28">
+     <!-- Completed wall time (s) -->
+     <g transform="translate(413.445463 194.254735) rotate(-90) scale(0.1 -0.1)">
+      <use xlink:href="#Geist-Regular-1a"/>
+      <use xlink:href="#Geist-Regular-144" transform="translate(69.5 0)"/>
+      <use xlink:href="#Geist-Regular-13d" transform="translate(125.796875 0)"/>
+      <use xlink:href="#Geist-Regular-15b" transform="translate(211.5 0)"/>
+      <use xlink:href="#Geist-Regular-138" transform="translate(270.5 0)"/>
+      <use xlink:href="#Geist-Regular-106" transform="translate(296.609375 0)"/>
+      <use xlink:href="#Geist-Regular-169" transform="translate(349.703125 0)"/>
+      <use xlink:href="#Geist-Regular-106" transform="translate(387.3125 0)"/>
+      <use xlink:href="#Geist-Regular-102" transform="translate(442.40625 0)"/>
+      <use xlink:href="#Geist-Regular-2e1" transform="translate(501.90625 0)"/>
+      <use xlink:href="#Geist-Regular-182" transform="translate(526.90625 0)"/>
+      <use xlink:href="#Geist-Regular-e3" transform="translate(606.609375 0)"/>
+      <use xlink:href="#Geist-Regular-138" transform="translate(660.703125 0)"/>
+      <use xlink:href="#Geist-Regular-138" transform="translate(686.40625 0)"/>
+      <use xlink:href="#Geist-Regular-2e1" transform="translate(713.109375 0)"/>
+      <use xlink:href="#Geist-Regular-169" transform="translate(738.109375 0)"/>
+      <use xlink:href="#Geist-Regular-124" transform="translate(775.71875 0)"/>
+      <use xlink:href="#Geist-Regular-13d" transform="translate(800.71875 0)"/>
+      <use xlink:href="#Geist-Regular-106" transform="translate(887.21875 0)"/>
+      <use xlink:href="#Geist-Regular-2e1" transform="translate(943.3125 0)"/>
+      <use xlink:href="#Geist-Regular-30a" transform="translate(968.3125 0)"/>
+      <use xlink:href="#Geist-Regular-162" transform="translate(995.71875 0)"/>
+      <use xlink:href="#Geist-Regular-30b" transform="translate(1047.71875 0)"/>
+     </g>
+    </g>
+   </g>
+   <g id="patch_14">
+    <path d="M 441.137338 255.30197 
+L 441.137338 25.695 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 441.137338 255.30197 
+L 794.63952 255.30197 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_29">
+    <!-- FP32 -->
+    <g transform="translate(603.780929 19.695) scale(0.11 -0.11)">
+     <defs>
+      <path id="Geist-Bold-287" d="M 2074 -102 
+Q 1229 -102 771 285 
+Q 314 672 282 1331 
+L 1274 1370 
+Q 1306 1030 1517 873 
+Q 1728 717 2074 717 
+Q 2413 717 2643 873 
+Q 2874 1030 2874 1344 
+Q 2874 1670 2650 1833 
+Q 2426 1997 2042 1997 
+L 1638 1997 
+L 1638 2720 
+L 2042 2720 
+Q 2336 2720 2531 2845 
+Q 2726 2970 2726 3270 
+Q 2726 3526 2566 3676 
+Q 2406 3827 2061 3827 
+Q 1715 3827 1542 3686 
+Q 1370 3546 1331 3322 
+L 352 3373 
+Q 416 3949 861 4297 
+Q 1306 4646 2061 4646 
+Q 2867 4646 3296 4304 
+Q 3725 3962 3725 3373 
+Q 3725 3021 3523 2774 
+Q 3322 2528 2938 2406 
+Q 3386 2285 3632 1993 
+Q 3878 1702 3878 1274 
+Q 3878 845 3654 534 
+Q 3430 224 3027 61 
+Q 2624 -102 2074 -102 
+z
+" transform="scale(0.015625)"/>
+      <path id="Geist-Bold-286" d="M 371 0 
+Q 371 582 528 1011 
+Q 685 1440 1040 1776 
+Q 1395 2112 1984 2426 
+Q 2298 2586 2480 2710 
+Q 2662 2835 2739 2963 
+Q 2816 3091 2816 3264 
+Q 2816 3514 2653 3670 
+Q 2490 3827 2176 3827 
+Q 1824 3827 1622 3622 
+Q 1421 3418 1376 3040 
+L 378 3098 
+Q 442 3821 906 4233 
+Q 1370 4646 2163 4646 
+Q 2950 4646 3382 4268 
+Q 3814 3891 3814 3277 
+Q 3814 2918 3696 2675 
+Q 3578 2432 3315 2227 
+Q 3053 2022 2624 1792 
+Q 2074 1498 1811 1251 
+Q 1549 1005 1530 819 
+L 3814 819 
+L 3814 0 
+L 371 0 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#Geist-Bold-36"/>
+     <use xlink:href="#Geist-Bold-77" transform="translate(59 0)"/>
+     <use xlink:href="#Geist-Bold-287" transform="translate(126.203125 0)"/>
+     <use xlink:href="#Geist-Bold-286" transform="translate(191.203125 0)"/>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p18f82a0eaf">
+   <rect x="41.973281" y="25.695" width="353.502182" height="229.60697"/>
+  </clipPath>
+  <clipPath id="p5dd0dd8d3c">
+   <rect x="441.137338" y="25.695" width="353.502182" height="229.60697"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,5 @@
+Time (%),Total Time (ns),Instances,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+98.5,17945735,3,5981911.7,6027085.0,5802286,6116364,161838.6,get_forward__locals__forward_6b044342_cuda_kernel_forward
+1.4,261501,3,87167.0,87295.0,70879,103327,16224.4,validate_nonnegative_d6112292_cuda_kernel_forward
+0.0,5280,3,1760.0,1760.0,1664,1856,96.0,validate_pose_c18de688_cuda_kernel_forward
+0.0,4416,1,4416.0,4416.0,4416,4416,0.0,"void at::native::<unnamed>::CatArrayBatchedCopy_vectorized<at::native::<unnamed>::OpaqueType<(unsigned int)8>, unsigned int, (int)1, (int)128, (int)1, (int)16, (int)2>(char *, at::native::<unnamed>::CatArrInputTensorMetadata<T1, T2, T4, T5>, at::native::<unnamed>::TensorSizeStride<T2, (unsigned int)4>, int, T2)"

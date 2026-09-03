@@ -1,0 +1,732 @@
+{
+  "schema_version": 2,
+  "baseline_revision": "20dadba63ba5d56f22419893154166c1e5b330b7",
+  "geometry": {
+    "chest-ap": {
+      "anatomy": "chest",
+      "grid": {
+        "shape": [
+          139,
+          512,
+          512
+        ],
+        "spacing_mm": [
+          0.7617189884185791,
+          0.7617189884185791,
+          2.5
+        ],
+        "origin_mm": [
+          195.0,
+          171.6999969482422,
+          -347.75
+        ],
+        "orientation": [
+          -1.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "panel": {
+        "source_mm": [
+          0.3807984590531992,
+          1280.854457404986,
+          -175.25
+        ],
+        "origin_mm": [
+          683.5250937177063,
+          -674.8060355915503,
+          -858.3942952586534
+        ],
+        "u": [
+          -1.0,
+          1.2246467991473532e-16,
+          0.0
+        ],
+        "v": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "spacing_mm": [
+          2.673754580268702,
+          2.673754580268702
+        ],
+        "shape": [
+          512,
+          512
+        ]
+      },
+      "image_sha256": "f1ec515605619d4dc0e5085ee34e9188c8e76f11bac4e5cdba33e4aa905d1a37"
+    },
+    "chest-oblique": {
+      "anatomy": "chest",
+      "grid": {
+        "shape": [
+          139,
+          512,
+          512
+        ],
+        "spacing_mm": [
+          0.7617189884185791,
+          0.7617189884185791,
+          2.5
+        ],
+        "origin_mm": [
+          195.0,
+          171.6999969482422,
+          -347.75
+        ],
+        "orientation": [
+          -1.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "panel": {
+        "source_mm": [
+          922.2879959900381,
+          898.9879929382801,
+          -175.25
+        ],
+        "origin_mm": [
+          22.483163399859336,
+          -966.928767064496,
+          -858.3942952586534
+        ],
+        "u": [
+          -0.7071067811865475,
+          0.7071067811865476,
+          0.0
+        ],
+        "v": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "spacing_mm": [
+          2.673754580268702,
+          2.673754580268702
+        ],
+        "shape": [
+          512,
+          512
+        ]
+      },
+      "image_sha256": "f1ec515605619d4dc0e5085ee34e9188c8e76f11bac4e5cdba33e4aa905d1a37"
+    },
+    "brain-oblique": {
+      "anatomy": "brain",
+      "grid": {
+        "shape": [
+          76,
+          507,
+          512
+        ],
+        "spacing_mm": [
+          0.4296880495716891,
+          0.42968802429962727,
+          2.52800002286601
+        ],
+        "origin_mm": [
+          -104.9952621459961,
+          -73.98130798339844,
+          -87.83399963378906
+        ],
+        "orientation": [
+          0.9994656350345954,
+          0.030099336557598257,
+          0.012746541636301463,
+          -0.027822005017019043,
+          0.9880490125631176,
+          -0.15160832698068524,
+          -0.017157517936068362,
+          0.15117267845692833,
+          0.9883584576794151
+        ]
+      },
+      "panel": {
+        "source_mm": [
+          716.3186535358301,
+          723.1104221149745,
+          20.41288345721928
+        ],
+        "origin_mm": [
+          -96.55800019766633,
+          -585.3332677111715,
+          -329.77555878648343
+        ],
+        "u": [
+          -0.7071067811865475,
+          0.7071067811865476,
+          0.0
+        ],
+        "v": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "spacing_mm": [
+          0.9125489889417481,
+          1.3732880087988342
+        ],
+        "shape": [
+          511,
+          769
+        ]
+      },
+      "image_sha256": "da99b9b2175a5126f5d12e3c05633f677ce32ac85d7e068a53e62b1b420419e7"
+    }
+  },
+  "sampling": {
+    "samples_per_ray": 1024,
+    "rule": "clipped midpoint",
+    "resampled": false,
+    "field_storage": "float32",
+    "precision": "fp32 or fp64 sample arithmetic/output; pose and host affine float64"
+  },
+  "scalar_attenuation": {
+    "formula": "float32(max(1 + float64(HU)/1000, 0) * 0.02059)",
+    "units": "mm^-1",
+    "energy_kev": 60
+  },
+  "material_basis": {
+    "density": "rho=max(1 + float64(HU)/1000, 0)",
+    "coordinates": "x=linspace(-pi,pi,nx,float64), y=linspace(-pi,pi,ny,float64)",
+    "1": [
+      "rho"
+    ],
+    "2": [
+      "rho*(0.35+0.1*sin(x)*cos(y))",
+      "rho*(1-(0.35+0.1*sin(x)*cos(y)))"
+    ],
+    "3": [
+      "rho*(0.2+0.1*sin(x))",
+      "rho*(0.3+0.1*cos(y))",
+      "rho*(1-(0.2+0.1*sin(x))-(0.3+0.1*cos(y)))"
+    ],
+    "storage": "Each channel is cast once to float32 after the declared float64 calculation",
+    "meaning": "Declared deterministic nonnegative algebraic fields on actual CT; not segmentation, tissue labels or inferred acquisition calibration"
+  },
+  "spectra": {
+    "1": {
+      "energies_kev": [
+        60
+      ],
+      "coefficients_mm_inverse": [
+        [
+          0.02059
+        ]
+      ],
+      "incident_photons_per_pixel": [
+        10000
+      ],
+      "response": [
+        1
+      ]
+    },
+    "2": {
+      "energies_kev": [
+        40,
+        60
+      ],
+      "coefficients_mm_inverse": [
+        [
+          0.026,
+          0.02059
+        ],
+        [
+          0.04,
+          0.025
+        ]
+      ],
+      "incident_photons_per_pixel": [
+        4000,
+        6000
+      ],
+      "response": [
+        1,
+        1
+      ]
+    },
+    "3": {
+      "energies_kev": [
+        40,
+        60,
+        90
+      ],
+      "coefficients_mm_inverse": [
+        [
+          0.026,
+          0.02059,
+          0.017
+        ],
+        [
+          0.04,
+          0.025,
+          0.019
+        ],
+        [
+          0.05,
+          0.031,
+          0.021
+        ]
+      ],
+      "incident_photons_per_pixel": [
+        2000,
+        5000,
+        3000
+      ],
+      "response": [
+        1,
+        1,
+        1
+      ]
+    },
+    "interpretation": "Declared test coefficients, not patient-specific material calibration; coefficients/weights/response cast float32 once"
+  },
+  "cotangents": {
+    "central": "ones on rows[5R//16:11R//16],columns[5C//16:11C//16], zero elsewhere; divide by L1 norm",
+    "dense": "ones over detector; divide by number of pixels",
+    "signed": "sin(2*pi*u + phase0)*cos(3*pi*v + phase1), u/v linspace(-1,1), phases from numpy.random.default_rng(case.seed).uniform(-pi,pi,2); divide by L1 norm",
+    "zero": "exact zeros",
+    "storage": "Chosen output precision, then reused identically in objective and VJP"
+  },
+  "volume_fd_direction": "field * (0.25 + 0.75*sin(linspace(-pi,pi,nx,float64))); realised FP32 plus/minus perturbation",
+  "pose": "Fixed nonidentity anchor and right-tangent direction in material_gradients.json",
+  "timing": {
+    "dev_rounds": 3,
+    "dev_repeats": 20,
+    "final_rounds": 3,
+    "final_repeats": 100,
+    "long_repeats": 10,
+    "long_pilot_seconds": 0.2,
+    "round_order": [
+      "baseline,candidate",
+      "candidate,baseline",
+      "baseline,candidate"
+    ],
+    "event_stream": "Current Torch CUDA stream shared by Warp workspaces",
+    "boundary": "Resident native operations with destination resets; complete Torch iteration includes validation/allocation; no output writes inside timed region",
+    "correctness_order": "All baseline and candidate cases gate before any timing; failed baseline FD is unresolved, never an accepted candidate"
+  },
+  "selection": {
+    "minimum_primary_gain": 0.03,
+    "maximum_unexplained_holdout_regression": 0.03,
+    "no_quality_change": true
+  },
+  "cases": [
+    {
+      "id": "dev-scalar-chest-ap-central-fp64",
+      "suite": "dev",
+      "kind": "scalar",
+      "geometry": "chest-ap",
+      "cotangent": "central",
+      "precision": "fp64",
+      "materials": 1,
+      "seed": 104729,
+      "operations": [
+        "volume_vjp",
+        "pose_vjp",
+        "torch_complete_iteration"
+      ]
+    },
+    {
+      "id": "dev-scalar-chest-oblique-signed-fp64",
+      "suite": "dev",
+      "kind": "scalar",
+      "geometry": "chest-oblique",
+      "cotangent": "signed",
+      "precision": "fp64",
+      "materials": 1,
+      "seed": 104729,
+      "operations": [
+        "volume_vjp",
+        "pose_vjp",
+        "torch_complete_iteration"
+      ]
+    },
+    {
+      "id": "dev-scalar-chest-ap-zero-fp64",
+      "suite": "dev",
+      "kind": "scalar",
+      "geometry": "chest-ap",
+      "cotangent": "zero",
+      "precision": "fp64",
+      "materials": 1,
+      "seed": 104729,
+      "operations": [
+        "volume_vjp",
+        "pose_vjp",
+        "torch_complete_iteration"
+      ]
+    },
+    {
+      "id": "dev-scalar-chest-ap-central-fp32",
+      "suite": "dev",
+      "kind": "scalar",
+      "geometry": "chest-ap",
+      "cotangent": "central",
+      "precision": "fp32",
+      "materials": 1,
+      "seed": 104729,
+      "operations": [
+        "volume_vjp",
+        "pose_vjp",
+        "torch_complete_iteration"
+      ]
+    },
+    {
+      "id": "dev-material1-chest-ap-central-fp64",
+      "suite": "dev",
+      "kind": "material",
+      "geometry": "chest-ap",
+      "cotangent": "central",
+      "precision": "fp64",
+      "materials": 1,
+      "seed": 104729,
+      "operations": [
+        "material_vjp",
+        "spectral_complete_iteration"
+      ]
+    },
+    {
+      "id": "dev-material1-chest-ap-dense-fp64",
+      "suite": "dev",
+      "kind": "material",
+      "geometry": "chest-ap",
+      "cotangent": "dense",
+      "precision": "fp64",
+      "materials": 1,
+      "seed": 104729,
+      "operations": [
+        "material_vjp",
+        "spectral_complete_iteration"
+      ]
+    },
+    {
+      "id": "dev-material1-chest-ap-signed-fp64",
+      "suite": "dev",
+      "kind": "material",
+      "geometry": "chest-ap",
+      "cotangent": "signed",
+      "precision": "fp64",
+      "materials": 1,
+      "seed": 104729,
+      "operations": [
+        "material_vjp",
+        "spectral_complete_iteration"
+      ]
+    },
+    {
+      "id": "dev-material1-chest-ap-zero-fp64",
+      "suite": "dev",
+      "kind": "material",
+      "geometry": "chest-ap",
+      "cotangent": "zero",
+      "precision": "fp64",
+      "materials": 1,
+      "seed": 104729,
+      "operations": [
+        "material_vjp",
+        "spectral_complete_iteration"
+      ]
+    },
+    {
+      "id": "dev-material3-chest-oblique-central-fp64",
+      "suite": "dev",
+      "kind": "material",
+      "geometry": "chest-oblique",
+      "cotangent": "central",
+      "precision": "fp64",
+      "materials": 3,
+      "seed": 104729,
+      "operations": [
+        "material_vjp",
+        "spectral_complete_iteration"
+      ]
+    },
+    {
+      "id": "dev-material3-chest-oblique-dense-fp64",
+      "suite": "dev",
+      "kind": "material",
+      "geometry": "chest-oblique",
+      "cotangent": "dense",
+      "precision": "fp64",
+      "materials": 3,
+      "seed": 104729,
+      "operations": [
+        "material_vjp",
+        "spectral_complete_iteration"
+      ]
+    },
+    {
+      "id": "dev-material3-chest-oblique-signed-fp64",
+      "suite": "dev",
+      "kind": "material",
+      "geometry": "chest-oblique",
+      "cotangent": "signed",
+      "precision": "fp64",
+      "materials": 3,
+      "seed": 104729,
+      "operations": [
+        "material_vjp",
+        "spectral_complete_iteration"
+      ]
+    },
+    {
+      "id": "dev-material3-chest-oblique-zero-fp64",
+      "suite": "dev",
+      "kind": "material",
+      "geometry": "chest-oblique",
+      "cotangent": "zero",
+      "precision": "fp64",
+      "materials": 3,
+      "seed": 104729,
+      "operations": [
+        "material_vjp",
+        "spectral_complete_iteration"
+      ]
+    },
+    {
+      "id": "dev-material1-chest-ap-central-fp32",
+      "suite": "dev",
+      "kind": "material",
+      "geometry": "chest-ap",
+      "cotangent": "central",
+      "precision": "fp32",
+      "materials": 1,
+      "seed": 104729,
+      "operations": [
+        "material_vjp",
+        "spectral_complete_iteration"
+      ]
+    },
+    {
+      "id": "dev-material3-chest-oblique-dense-fp32",
+      "suite": "dev",
+      "kind": "material",
+      "geometry": "chest-oblique",
+      "cotangent": "dense",
+      "precision": "fp32",
+      "materials": 3,
+      "seed": 104729,
+      "operations": [
+        "material_vjp",
+        "spectral_complete_iteration"
+      ]
+    },
+    {
+      "id": "holdout-scalar-brain-oblique-central-fp64",
+      "suite": "holdout",
+      "kind": "scalar",
+      "geometry": "brain-oblique",
+      "cotangent": "central",
+      "precision": "fp64",
+      "materials": 1,
+      "seed": 130363,
+      "operations": [
+        "volume_vjp",
+        "pose_vjp",
+        "torch_complete_iteration"
+      ]
+    },
+    {
+      "id": "holdout-scalar-brain-oblique-signed-fp64",
+      "suite": "holdout",
+      "kind": "scalar",
+      "geometry": "brain-oblique",
+      "cotangent": "signed",
+      "precision": "fp64",
+      "materials": 1,
+      "seed": 130363,
+      "operations": [
+        "volume_vjp",
+        "pose_vjp",
+        "torch_complete_iteration"
+      ]
+    },
+    {
+      "id": "holdout-material2-brain-oblique-central-fp64",
+      "suite": "holdout",
+      "kind": "material",
+      "geometry": "brain-oblique",
+      "cotangent": "central",
+      "precision": "fp64",
+      "materials": 2,
+      "seed": 130363,
+      "operations": [
+        "material_vjp",
+        "spectral_complete_iteration"
+      ]
+    },
+    {
+      "id": "holdout-material2-brain-oblique-dense-fp64",
+      "suite": "holdout",
+      "kind": "material",
+      "geometry": "brain-oblique",
+      "cotangent": "dense",
+      "precision": "fp64",
+      "materials": 2,
+      "seed": 130363,
+      "operations": [
+        "material_vjp",
+        "spectral_complete_iteration"
+      ]
+    },
+    {
+      "id": "holdout-material2-brain-oblique-signed-fp64",
+      "suite": "holdout",
+      "kind": "material",
+      "geometry": "brain-oblique",
+      "cotangent": "signed",
+      "precision": "fp64",
+      "materials": 2,
+      "seed": 130363,
+      "operations": [
+        "material_vjp",
+        "spectral_complete_iteration"
+      ]
+    },
+    {
+      "id": "holdout-material2-brain-oblique-zero-fp64",
+      "suite": "holdout",
+      "kind": "material",
+      "geometry": "brain-oblique",
+      "cotangent": "zero",
+      "precision": "fp64",
+      "materials": 2,
+      "seed": 130363,
+      "operations": [
+        "material_vjp",
+        "spectral_complete_iteration"
+      ]
+    },
+    {
+      "id": "holdout-material2-chest-oblique-dense-fp64",
+      "suite": "holdout",
+      "kind": "material",
+      "geometry": "chest-oblique",
+      "cotangent": "dense",
+      "precision": "fp64",
+      "materials": 2,
+      "seed": 130363,
+      "operations": [
+        "material_vjp",
+        "spectral_complete_iteration"
+      ]
+    },
+    {
+      "id": "holdout-scalar-brain-oblique-central-fp32",
+      "suite": "holdout",
+      "kind": "scalar",
+      "geometry": "brain-oblique",
+      "cotangent": "central",
+      "precision": "fp32",
+      "materials": 1,
+      "seed": 130363,
+      "operations": [
+        "volume_vjp",
+        "pose_vjp",
+        "torch_complete_iteration"
+      ]
+    },
+    {
+      "id": "holdout-scalar-brain-oblique-signed-fp32",
+      "suite": "holdout",
+      "kind": "scalar",
+      "geometry": "brain-oblique",
+      "cotangent": "signed",
+      "precision": "fp32",
+      "materials": 1,
+      "seed": 130363,
+      "operations": [
+        "volume_vjp",
+        "pose_vjp",
+        "torch_complete_iteration"
+      ]
+    },
+    {
+      "id": "holdout-material2-brain-oblique-central-fp32",
+      "suite": "holdout",
+      "kind": "material",
+      "geometry": "brain-oblique",
+      "cotangent": "central",
+      "precision": "fp32",
+      "materials": 2,
+      "seed": 130363,
+      "operations": [
+        "material_vjp",
+        "spectral_complete_iteration"
+      ]
+    },
+    {
+      "id": "holdout-material2-brain-oblique-dense-fp32",
+      "suite": "holdout",
+      "kind": "material",
+      "geometry": "brain-oblique",
+      "cotangent": "dense",
+      "precision": "fp32",
+      "materials": 2,
+      "seed": 130363,
+      "operations": [
+        "material_vjp",
+        "spectral_complete_iteration"
+      ]
+    },
+    {
+      "id": "holdout-material2-brain-oblique-signed-fp32",
+      "suite": "holdout",
+      "kind": "material",
+      "geometry": "brain-oblique",
+      "cotangent": "signed",
+      "precision": "fp32",
+      "materials": 2,
+      "seed": 130363,
+      "operations": [
+        "material_vjp",
+        "spectral_complete_iteration"
+      ]
+    },
+    {
+      "id": "holdout-material2-brain-oblique-zero-fp32",
+      "suite": "holdout",
+      "kind": "material",
+      "geometry": "brain-oblique",
+      "cotangent": "zero",
+      "precision": "fp32",
+      "materials": 2,
+      "seed": 130363,
+      "operations": [
+        "material_vjp",
+        "spectral_complete_iteration"
+      ]
+    },
+    {
+      "id": "holdout-material2-chest-oblique-dense-fp32",
+      "suite": "holdout",
+      "kind": "material",
+      "geometry": "chest-oblique",
+      "cotangent": "dense",
+      "precision": "fp32",
+      "materials": 2,
+      "seed": 130363,
+      "operations": [
+        "material_vjp",
+        "spectral_complete_iteration"
+      ]
+    }
+  ],
+  "gradient_contract_sha256": "c9ac730be617d788c318208194d7cf32c0ef82328a987e4dab70d51a810abef2"
+}

@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "acquisition": {
+    "derived_volume_shape_zyx": [
+      256,
+      256,
+      256
+    ],
+    "source_native_shape_zyx": [
+      139,
+      512,
+      512
+    ],
+    "derivation": "full-volume FP64 linear HU resampling with edge clamping, identical voxel-face corners",
+    "views": 360,
+    "detector_shape_rows_columns": [
+      512,
+      512
+    ],
+    "source_object_distance_mm": 600.0,
+    "source_detector_distance_mm": 1200.0,
+    "pitch_column_row_mm": [
+      2.6375731636032262,
+      2.6375731636032262
+    ],
+    "angles": "2*pi*k/360, k=0..359, no duplicate endpoint",
+    "coordinate_frame": "RAS mm, world-Z circular acquisition, zero-view source centre-(0,600,0), rows +Z",
+    "pose": "identity for main comparison, no transforms inferred from filenames",
+    "pilot_views": "Full 360-view rotation for screening. No first-16-view inference."
+  },
+  "field": {
+    "storage_dtype": "float32",
+    "units": "mm^-1",
+    "model": "max(1+resampled_HU/1000,0)*0.02059 evaluated FP64 then one FP32 cast",
+    "file_sha256": "d2a18d1912465e27167ee31648319bf1addae05c327d20ccf2630ad58f663e72"
+  },
+  "sampling": {
+    "samples_per_ray": 1024,
+    "rule": "uniform midpoints on each ray clipped to voxel-face support",
+    "interpolation": "trilinear with constant boundary-sample extension inside support",
+    "output": "dimensionless optical depth",
+    "fp64": "FP32 stored field, FP64 interpolation and accumulation, FP64 output",
+    "fp32": "FP32 stored field, local sample arithmetic, interpolation and accumulation, FP32 output"
+  },
+  "cotangent": {
+    "shape": [
+      360,
+      512,
+      512
+    ],
+    "dtype": "float32",
+    "formula": "raw=1+0.20*sin(theta)+0.10*cos(2*theta)+0.15*r+0.10*c+0.05*sin(theta)*c, theta=2*pi*k/360, r=2*(row+0.5)/512-1, c=2*(column+0.5)/512-1",
+    "normalisation": "compute each raw value and global L1 sum in FP64, divide in FP64 then cast once FP32",
+    "purpose": "dense positive smooth asymmetric detector objective, all backends consume the same saved FP32 values",
+    "fp64_use": "cast the exact saved FP32 seed to FP64, do not recompute or renormalise",
+    "pilot_use": "Use all 360 views of the globally normalised saved seed without renormalising",
+    "binding": "record and verify both file and raw-value SHA256 in every result before any timing"
+  },
+  "operations": {
+    "forward": "ordinary Projector with resident FP32 field and fixed identity geometry, output allocation included",
+    "volume_vjp": "torch.autograd.grad on a retained fixed graph with only the field requiring gradients, output gradient allocation included",
+    "pose_vjp": "torch.autograd.grad on a retained fixed graph with only FP64 right-tangent pose requiring gradients, output gradient allocation included",
+    "iteration": "fresh ordinary Projector forward plus torch.autograd.grad for both field and FP64 pose, no accumulation in .grad",
+    "wall_boundary": "completed resident call, input upload, CPU checks and file writes excluded, actual internal validation/synchronisation included",
+    "event_boundary": "CUDA events on current Torch execution stream, Projector Warp stream bridges must include work before ending event",
+    "volume_iteration": "fresh ordinary Projector forward plus torch.autograd.grad for field alone, no accumulation"
+  },
+  "timing": {
+    "rounds": 3,
+    "repeats_per_round_long": 10,
+    "warmup": "first exact operation and one completed pilot before each timing series",
+    "raw_samples": "save every wall/event sample with per-round UTC timestamps",
+    "memory": "Torch allocator peaks plus sampled NVML process/device memory, NVML peaks are lower bounds",
+    "headline": "clean runs outside profiler, no overlapping timed GPU jobs"
+  },
+  "quality": {
+    "image_fp32_vs_fp64": {
+      "max_abs": 0.0005,
+      "rmse": 2e-05,
+      "relative_l2": 1e-05,
+      "units": "dimensionless optical depth"
+    },
+    "same_mode_image": {
+      "bitwise_equal": true,
+      "scope": "candidate versus unchanged-kernel baseline with identical input/views"
+    },
+    "field_vjp_vs_baseline": {
+      "relative_l2_max": 0.0002,
+      "storage_dtype": "float32"
+    },
+    "volume_adjoint": {
+      "relative_discrepancy_max": 2e-05,
+      "formula": "abs(dot(image,seed)-dot(field,field_vjp))/max(abs(lhs),abs(rhs),1e-300)",
+      "reduction_dtype": "float64"
+    },
+    "pose_fd": {
+      "status": "separate asymmetric nonidentity guard, not a claim from identity fullscan inner products",
+      "fp32": {
+        "relative_tolerance": 0.02,
+        "absolute_tolerance": 2e-05,
+        "selected_step": 0.02,
+        "diagnostic_steps": [
+          0.04,
+          0.01
+        ]
+      },
+      "fp64": {
+        "relative_tolerance": 0.005,
+        "absolute_tolerance": 1e-07,
+        "selected_step": 1e-06,
+        "diagnostic_steps": [
+          1e-05,
+          1e-07
+        ]
+      },
+      "acceptance": "absolute_error<=absolute_tolerance+relative_tolerance*abs(analytic_directional_derivative), selected step alone determines pass",
+      "guard_configuration": "See fullscan_guards.json for fixed views, pose direction and selected steps."
+    },
+    "failure_policy": "retain actual failure and stop candidate claims, do not loosen thresholds after observations"
+  }
+}

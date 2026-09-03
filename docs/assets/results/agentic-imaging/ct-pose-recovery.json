@@ -1,0 +1,1091 @@
+{
+  "evidence_kind": "real CT anatomy with matched-model simulated noiseless quantised radiographs",
+  "measured_on": "2026-10-23",
+  "device": {
+    "device": "cuda:0",
+    "device_class": "cuda",
+    "device_name": "NVIDIA GB10",
+    "warp_version": "1.17.0",
+    "cuda_arch": 121,
+    "cuda_driver_version": [
+      13,
+      0
+    ],
+    "cuda_toolkit_version": [
+      12,
+      9
+    ],
+    "warp_config": {
+      "mode": "release",
+      "verify_cuda": false,
+      "verify_fp": false,
+      "enable_backward": true
+    }
+  },
+  "input_configuration": {
+    "arrays": {
+      "attenuation": {
+        "path": "attenuation.npy",
+        "rights": "Donated for unrestricted use; Slicer SampleData.py revision 4e1fdba309173e088d8467432a14c9d84f0313f7, line 88",
+        "sha256": "68a78d61001cb1afd289ef5c5cc7d44f537ea80aa2e6a2164696627daa1f5a8c",
+        "source": "Slicer CTBrain; https://github.com/Slicer/SlicerTestingData/releases/download/SHA256/6a5b6caccb76576a863beb095e3bfb910c50ca78f4c9bf043aa42f976cfa53d1; 60 keV water-scaled HU conversion on the native CT grid",
+        "units": "mm^-1"
+      },
+      "counts0": {
+        "path": "counts0.npy",
+        "rights": "Donated for unrestricted use; Slicer SampleData.py revision 4e1fdba309173e088d8467432a14c9d84f0313f7, line 88",
+        "sha256": "cb295d02f4d19677b15f9fc581e0d27f24fae84df8a16cdfadb177cf735a35e1",
+        "source": "Simulated noiseless rounded expected primary counts; open beam 1000000; input: Slicer CTBrain; https://github.com/Slicer/SlicerTestingData/releases/download/SHA256/6a5b6caccb76576a863beb095e3bfb910c50ca78f4c9bf043aa42f976cfa53d1; 60 keV water-scaled HU conversion on the native CT grid",
+        "units": "counts"
+      },
+      "counts1": {
+        "path": "counts1.npy",
+        "rights": "Donated for unrestricted use; Slicer SampleData.py revision 4e1fdba309173e088d8467432a14c9d84f0313f7, line 88",
+        "sha256": "ce6d43f5a0543f5b5c0b8d38a4831f7abfb2a12e4bf8218556af279fce7eb74e",
+        "source": "Simulated noiseless rounded expected primary counts; open beam 1000000; input: Slicer CTBrain; https://github.com/Slicer/SlicerTestingData/releases/download/SHA256/6a5b6caccb76576a863beb095e3bfb910c50ca78f4c9bf043aa42f976cfa53d1; 60 keV water-scaled HU conversion on the native CT grid",
+        "units": "counts"
+      },
+      "mask0": {
+        "path": "mask0.npy",
+        "rights": "Donated for unrestricted use; Slicer SampleData.py revision 4e1fdba309173e088d8467432a14c9d84f0313f7, line 88",
+        "sha256": "cbdd4f6d5d504cf81ec08c88b8ac6d9d923f73345da90cb8cfbfce58670463c4",
+        "source": "All pixels included",
+        "units": "dimensionless"
+      },
+      "mask1": {
+        "path": "mask1.npy",
+        "rights": "Donated for unrestricted use; Slicer SampleData.py revision 4e1fdba309173e088d8467432a14c9d84f0313f7, line 88",
+        "sha256": "cbdd4f6d5d504cf81ec08c88b8ac6d9d923f73345da90cb8cfbfce58670463c4",
+        "source": "All pixels included",
+        "units": "dimensionless"
+      }
+    },
+    "ct_input": {
+      "attenuation_model": {
+        "energy_kev": 60.0,
+        "formula": "max(1 + HU/1000, 0) * 0.02059 mm^-1",
+        "mu_water_mm_inverse": 0.02059,
+        "name": "water-scaled monoenergetic HU"
+      },
+      "coordinate_frame": "RAS",
+      "filename": "CTBrain.nii.gz",
+      "input_metadata": {
+        "affine_error_mm": 9.277885038945152e-07,
+        "affine_source": "sform",
+        "coordinate_frame": "RAS",
+        "measurement_unit_code": null,
+        "reindexed_axes": [],
+        "rescale": [
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        "source_format": "nifti",
+        "source_sha256": [
+          "da99b9b2175a5126f5d12e3c05633f677ce32ac85d7e068a53e62b1b420419e7"
+        ],
+        "source_shape": [
+          512,
+          507,
+          76
+        ],
+        "spatial_units": "mm",
+        "value_mappings": [],
+        "value_units": "HU"
+      },
+      "input_units": "HU",
+      "physical_centre_mm": [
+        9.211872349282515,
+        16.003640928427103,
+        20.41288345721928
+      ],
+      "resampled": false,
+      "rights": "Donated for unrestricted use; Slicer SampleData.py revision 4e1fdba309173e088d8467432a14c9d84f0313f7, line 88",
+      "sha256": "da99b9b2175a5126f5d12e3c05633f677ce32ac85d7e068a53e62b1b420419e7",
+      "source": "Slicer CTBrain; https://github.com/Slicer/SlicerTestingData/releases/download/SHA256/6a5b6caccb76576a863beb095e3bfb910c50ca78f4c9bf043aa42f976cfa53d1"
+    },
+    "input_kind": "real CT attenuation with simulated noiseless rounded primary counts",
+    "registration": {
+      "attenuation": "attenuation",
+      "chart": {
+        "anchor": {
+          "rotation": [
+            0.9995050877863962,
+            -0.017903711075488108,
+            -0.025865742186024544,
+            0.01699002698883492,
+            0.9992385965944557,
+            -0.03512215908598632,
+            0.026474864910460003,
+            0.03466531704265973,
+            0.9990482457430696
+          ],
+          "translation_mm": [
+            3.8190780122520334,
+            -1.4273801929398449,
+            0.7207736860861651
+          ]
+        },
+        "rotation_radius_radians": 0.15,
+        "scales": [
+          1.0,
+          1.0,
+          1.0,
+          0.01,
+          0.01,
+          0.01
+        ]
+      },
+      "grid": {
+        "orientation": [
+          0.9994656350345953,
+          0.030099336557598166,
+          0.012746541636301484,
+          -0.027822005017018907,
+          0.9880490125631176,
+          -0.15160832698068524,
+          -0.01715751793606837,
+          0.1511726784569283,
+          0.9883584576794151
+        ],
+        "origin_mm": [
+          -104.9952621459961,
+          -73.98130798339844,
+          -87.83399963378906
+        ],
+        "shape": [
+          76,
+          507,
+          512
+        ],
+        "spacing_mm": [
+          0.4296880495716891,
+          0.4296880242996272,
+          2.52800002286601
+        ]
+      },
+      "policy": {
+        "gradient_tolerance": 0.0001
+      },
+      "precision": "float64",
+      "samples_per_ray": 768,
+      "views": [
+        {
+          "geometry": {
+            "origin_mm": [
+              358.716352791728,
+              -483.99635907157295,
+              -329.09159698522626
+            ],
+            "shape": [
+              256,
+              256
+            ],
+            "source_mm": [
+              9.211872349282638,
+              1016.0036409284271,
+              20.41288345721928
+            ],
+            "spacing_mm": [
+              2.741211611313298,
+              2.741211611313298
+            ],
+            "u": [
+              -1.0,
+              1.2246467991473532e-16,
+              0.0
+            ],
+            "v": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "id": "view0",
+          "mask": "mask0",
+          "observation": "counts0",
+          "open_beam_counts": 1000000.0
+        },
+        {
+          "geometry": {
+            "origin_mm": [
+              -490.78812765071746,
+              -333.50083951401837,
+              -329.09159698522626
+            ],
+            "shape": [
+              256,
+              256
+            ],
+            "source_mm": [
+              1009.2118723492825,
+              16.003640928427043,
+              20.41288345721928
+            ],
+            "spacing_mm": [
+              2.741211611313298,
+              2.741211611313298
+            ],
+            "u": [
+              6.123233995736766e-17,
+              1.0,
+              0.0
+            ],
+            "v": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "id": "view1",
+          "mask": "mask1",
+          "observation": "counts1",
+          "open_beam_counts": 1000000.0
+        }
+      ]
+    },
+    "schema_version": 1,
+    "simulated_acquisition": {
+      "counts_model": "rounded expected primary counts from a noiseless primary-projection model",
+      "geometry_source": "standard_views example geometry",
+      "initial_axis_angle_degrees": [
+        2.0,
+        -1.5,
+        1.0
+      ],
+      "initial_displacement_mm": [
+        3.0,
+        -2.0,
+        1.5
+      ],
+      "initial_pose_definition": "R(x-c)+c+d; rotation about the CT physical centre",
+      "open_beam_counts": 1000000.0,
+      "view_names": [
+        "ap",
+        "lateral"
+      ]
+    }
+  },
+  "input_conversion_verification": {
+    "nifti_sha256": "da99b9b2175a5126f5d12e3c05633f677ce32ac85d7e068a53e62b1b420419e7",
+    "nifti_bytes": 15668425,
+    "converted_at_utc": null,
+    "verified_at_utc": "2026-10-23T18:26:29+00:00",
+    "units": "HU",
+    "source_dimensions_xyz": [
+      512,
+      507,
+      76
+    ],
+    "array_dimensions_zyx": [
+      76,
+      507,
+      512
+    ],
+    "storage_dtype": "int32",
+    "value_min": -3024.0,
+    "value_max": 1996.0,
+    "spacing_xyz_mm": [
+      0.429688,
+      0.42968799999999996,
+      2.5279998779296893
+    ],
+    "origin_lps_mm": [
+      104.99526085155622,
+      73.98130928772783,
+      -87.83400008611339
+    ],
+    "direction_lps": [
+      [
+        -0.9994656349929412,
+        -0.03009933774863062,
+        -0.012746542089959807
+      ],
+      [
+        0.02782200602122989,
+        -0.9880490116100944,
+        0.15160833300735807
+      ],
+      [
+        -0.017157518734126593,
+        0.15117268444864362,
+        0.9883584567491083
+      ]
+    ],
+    "source_affine_lps_mm": [
+      [
+        -0.4294583897688469,
+        -0.012933324238533592,
+        -0.03222325684744404,
+        104.99526085155622
+      ],
+      [
+        0.011954782123250228,
+        -0.4245528037007182,
+        0.3832658473357249,
+        73.98130928772783
+      ],
+      [
+        -0.007372379909829388,
+        0.06495708843536878,
+        2.498570058012522,
+        -87.83400008611339
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "expected_affine_ras_mm": [
+      [
+        0.4294583897688469,
+        0.012933324238533592,
+        0.03222325684744404,
+        -104.99526085155622
+      ],
+      [
+        -0.011954782123250228,
+        0.4245528037007182,
+        -0.3832658473357249,
+        -73.98130928772783
+      ],
+      [
+        -0.007372379909829388,
+        0.06495708843536878,
+        2.498570058012522,
+        -87.83400008611339
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "nifti_affine_ras_mm": [
+      [
+        0.4294584393501282,
+        0.01293332502245903,
+        0.032223258167505264,
+        -104.9952621459961
+      ],
+      [
+        -0.011954782530665398,
+        0.4245528280735016,
+        -0.3832658529281616,
+        -73.98130798339844
+      ],
+      [
+        -0.00737238023430109,
+        0.06495708972215652,
+        2.498570203781128,
+        -87.83399963378906
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "nifti_spatial_units": "mm",
+    "nifti_sform_code": 1,
+    "nifti_qform_code": 1,
+    "nifti_scaling_slope": 1.0,
+    "nifti_scaling_intercept": 0.0,
+    "checks": {
+      "all_voxels_equal_after_simpleitk_roundtrip": true,
+      "all_voxels_equal_after_nibabel_scaling": true,
+      "storage_dtype_preserved": true,
+      "geometry_tolerance_mm": 0.0001,
+      "voxel_centre_corners": {
+        "index_xyz": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            75.0
+          ],
+          [
+            0.0,
+            506.0,
+            0.0
+          ],
+          [
+            0.0,
+            506.0,
+            75.0
+          ],
+          [
+            511.0,
+            0.0,
+            0.0
+          ],
+          [
+            511.0,
+            0.0,
+            75.0
+          ],
+          [
+            511.0,
+            506.0,
+            0.0
+          ],
+          [
+            511.0,
+            506.0,
+            75.0
+          ]
+        ],
+        "source_ras_mm": [
+          [
+            -104.99526085155622,
+            -73.98130928772783,
+            -87.83400008611339
+          ],
+          [
+            -102.57851658799792,
+            -102.7262478379072,
+            99.55875426482574
+          ],
+          [
+            -98.45099878685822,
+            140.84240938483555,
+            -54.96571333781679
+          ],
+          [
+            -96.03425452329992,
+            112.09747083465619,
+            132.42704101312233
+          ],
+          [
+            114.45797632032455,
+            -80.0902029527087,
+            -91.60128622003622
+          ],
+          [
+            116.87472058388286,
+            -108.83514150288806,
+            95.79146813090294
+          ],
+          [
+            121.00223838502254,
+            134.73351571985472,
+            -58.7329994717396
+          ],
+          [
+            123.41898264858085,
+            105.98857716967534,
+            128.6597548791995
+          ]
+        ],
+        "nifti_ras_mm": [
+          [
+            -104.9952621459961,
+            -73.98130798339844,
+            -87.83399963378906
+          ],
+          [
+            -102.5785177834332,
+            -102.72624695301056,
+            99.55876564979553
+          ],
+          [
+            -98.45099968463182,
+            140.84242302179337,
+            -54.96571223437786
+          ],
+          [
+            -96.03425532206893,
+            112.09748405218124,
+            132.42705304920673
+          ],
+          [
+            114.4580003619194,
+            -80.09020185656846,
+            -91.60128593351692
+          ],
+          [
+            116.8747447244823,
+            -108.83514082618058,
+            95.79147935006768
+          ],
+          [
+            121.00226282328367,
+            134.73352914862335,
+            -58.73299853410572
+          ],
+          [
+            123.41900718584657,
+            105.98859017901123,
+            128.65976674947888
+          ]
+        ],
+        "maximum_position_error_mm": 3.020304225210553e-05
+      },
+      "voxel_support_corners": {
+        "index_xyz": [
+          [
+            -0.5,
+            -0.5,
+            -0.5
+          ],
+          [
+            -0.5,
+            -0.5,
+            75.5
+          ],
+          [
+            -0.5,
+            506.5,
+            -0.5
+          ],
+          [
+            -0.5,
+            506.5,
+            75.5
+          ],
+          [
+            511.5,
+            -0.5,
+            -0.5
+          ],
+          [
+            511.5,
+            -0.5,
+            75.5
+          ],
+          [
+            511.5,
+            506.5,
+            -0.5
+          ],
+          [
+            511.5,
+            506.5,
+            75.5
+          ]
+        ],
+        "source_ras_mm": [
+          [
+            -105.23256833698363,
+            -73.9959753748487,
+            -89.11207746938243
+          ],
+          [
+            -102.78360081657789,
+            -103.12417977236379,
+            100.77924693956923
+          ],
+          [
+            -98.67537294804711,
+            141.25229610141542,
+            -56.17883363265045
+          ],
+          [
+            -96.22640542764135,
+            112.12409170390033,
+            133.7124907763012
+          ],
+          [
+            114.650127224666,
+            -80.1168238219528,
+            -92.88673598321508
+          ],
+          [
+            117.09909474507174,
+            -109.24502821946791,
+            97.0045884257366
+          ],
+          [
+            121.20732261360251,
+            135.13144765431133,
+            -59.9534921464831
+          ],
+          [
+            123.65629013400826,
+            106.00324325679621,
+            129.9378322624686
+          ]
+        ],
+        "nifti_ras_mm": [
+          [
+            -105.23256965726614,
+            -73.99597407970577,
+            -89.11207709042355
+          ],
+          [
+            -102.78360203653574,
+            -103.12417890224606,
+            100.77925839694217
+          ],
+          [
+            -98.67537387087941,
+            141.25230975355953,
+            -56.178832601290196
+          ],
+          [
+            -96.22640625014901,
+            112.12410493101925,
+            133.71250288607553
+          ],
+          [
+            114.65015128999949,
+            -80.11682273540646,
+            -92.88673577038571
+          ],
+          [
+            117.09911891072989,
+            -109.24502755794674,
+            97.00459971698001
+          ],
+          [
+            121.20734707638621,
+            135.13146109785885,
+            -59.953491281252354
+          ],
+          [
+            123.65631469711661,
+            106.00325627531856,
+            129.93784420611337
+          ]
+        ],
+        "maximum_position_error_mm": 3.0256881314528805e-05
+      }
+    },
+    "source_sha256": "6a5b6caccb76576a863beb095e3bfb910c50ca78f4c9bf043aa42f976cfa53d1"
+  },
+  "source_sha256": {
+    "examples/agentic_imaging.py": "e657bf33af4c4ea8149c6494598814a9122966c54e20dac8795ee68296a37477",
+    "python/dpt/registration.py": "c2067cc2eeaf1420245bf67f10475caff7af7cc611c1928b6850f40ddacf3ebe",
+    "python/dpt/recovery.py": "5d8f5401bb1694d460ca2b90a193745052c3b45ebc37f6f773dce585042982db",
+    "python/dpt/examples/registration.py": "4e431a26463dc129101c6721ba7427e5b394bae07633987d0284e585e8e63165",
+    "python/dpt/imaging_io.py": "d76425bd1cdfeade81937a9cd480562e15ad9fd43fc9406f7a204945462b4f59",
+    "python/dpt/imaging.py": "dea2923a5a6e8d948deeb9c01426ba97f586dc1964031bad8d6a3f875a0eec68",
+    "tools/plot_agentic_imaging.py": "939200aed93cabb1a7b1691beff8919436a7e792b17c13f35ff4b4d1dc0311ea"
+  },
+  "fit": {
+    "status": "stationary",
+    "termination": "gradient_tolerance",
+    "case_sha256": "1d056995fdd60fadf1950465538ac4bae50d867f6628bfc05c5b6f9edcc40477",
+    "initial_loss": 256371289.51397595,
+    "final_loss": 0.022349228711581348,
+    "gradient_infinity_norm": 7.231977747634843e-05,
+    "solver_evaluations": 21,
+    "additional_final_view_evaluations": 2,
+    "initial_pose_object_to_world": {
+      "rotation": [
+        0.9995050877863962,
+        -0.017903711075488108,
+        -0.025865742186024544,
+        0.01699002698883492,
+        0.9992385965944557,
+        -0.03512215908598632,
+        0.026474864910460003,
+        0.03466531704265973,
+        0.9990482457430696
+      ],
+      "translation_mm": [
+        3.8190780122520334,
+        -1.4273801929398449,
+        0.7207736860861651
+      ]
+    },
+    "pose_object_to_world": {
+      "rotation": [
+        1.0,
+        2.637529027214175e-09,
+        8.555805612597833e-10,
+        -2.6375290284067973e-09,
+        1.0,
+        -1.6828008337385451e-09,
+        -8.555805639702888e-10,
+        1.6828008329253935e-09,
+        1.0
+      ],
+      "translation_mm": [
+        -1.1653068199279915e-07,
+        -2.312710742913282e-07,
+        1.5678148557185523e-08
+      ]
+    },
+    "policy": {
+      "max_iterations": 120,
+      "max_evaluations": 800,
+      "memory": 10,
+      "line_search_evaluations": 32,
+      "gradient_tolerance": 0.0001,
+      "relative_loss_tolerance": 1e-12,
+      "step_tolerance": 1e-10,
+      "armijo": 0.0001,
+      "curvature": 0.9,
+      "maximum_step": 16.0,
+      "minimum_step": 1e-14,
+      "absolute_loss_resolution": 0.0
+    },
+    "chart": {
+      "anchor": {
+        "rotation": [
+          0.9995050877863962,
+          -0.017903711075488108,
+          -0.025865742186024544,
+          0.01699002698883492,
+          0.9992385965944557,
+          -0.03512215908598632,
+          0.026474864910460003,
+          0.03466531704265973,
+          0.9990482457430696
+        ],
+        "translation_mm": [
+          3.8190780122520334,
+          -1.4273801929398449,
+          0.7207736860861651
+        ]
+      },
+      "scales": [
+        1.0,
+        1.0,
+        1.0,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "rotation_radius_radians": 0.15
+    },
+    "views": [
+      {
+        "id": "view0",
+        "included_pixels": 65536,
+        "half_deviance": 0.01367409494966443,
+        "residual_rms_counts": 0.12234487633015384,
+        "residual_max_abs_counts": 0.534593248507008
+      },
+      {
+        "id": "view1",
+        "included_pixels": 65536,
+        "half_deviance": 0.008675133761916918,
+        "residual_rms_counts": 0.12060826546044727,
+        "residual_max_abs_counts": 0.5540815936401486
+      }
+    ],
+    "evaluation_reference_used_for_fit": false,
+    "interpretation": "Numerical stationarity of the fitted objective"
+  },
+  "optimisation": {
+    "parameters": [
+      -3.815887007987615,
+      1.4482649470160491,
+      -0.6958284315824071,
+      -3.4906583384482484,
+      2.617993957464041,
+      -1.74532951939615
+    ],
+    "evaluation": {
+      "loss": 0.022349228711581348,
+      "gradient": [
+        -2.862492245669923e-05,
+        2.255474242637834e-06,
+        1.290224360894765e-05,
+        -1.4643354077970017e-05,
+        7.231977747634843e-05,
+        5.394322742113822e-05
+      ]
+    },
+    "reason": "gradient_tolerance",
+    "evaluations": 21,
+    "history": [
+      {
+        "iteration": 0,
+        "loss": 256371289.51397595,
+        "gradient_infinity_norm": 63319793.240906045,
+        "step": 0.0,
+        "evaluations": 1,
+        "curvature_pairs": 0,
+        "line_search": "initial"
+      },
+      {
+        "iteration": 1,
+        "loss": 136885885.6030948,
+        "gradient_infinity_norm": 49848564.19986009,
+        "step": 1.0,
+        "evaluations": 2,
+        "curvature_pairs": 1,
+        "line_search": "wolfe"
+      },
+      {
+        "iteration": 2,
+        "loss": 40409128.3740935,
+        "gradient_infinity_norm": 25349258.22301594,
+        "step": 1.0,
+        "evaluations": 3,
+        "curvature_pairs": 2,
+        "line_search": "wolfe"
+      },
+      {
+        "iteration": 3,
+        "loss": 20528594.616456058,
+        "gradient_infinity_norm": 10277384.198894193,
+        "step": 1.0,
+        "evaluations": 4,
+        "curvature_pairs": 3,
+        "line_search": "wolfe"
+      },
+      {
+        "iteration": 4,
+        "loss": 9240196.393477945,
+        "gradient_infinity_norm": 6528309.537303407,
+        "step": 1.0,
+        "evaluations": 5,
+        "curvature_pairs": 4,
+        "line_search": "wolfe"
+      },
+      {
+        "iteration": 5,
+        "loss": 2911382.271072803,
+        "gradient_infinity_norm": 3427719.9197329846,
+        "step": 1.0,
+        "evaluations": 6,
+        "curvature_pairs": 5,
+        "line_search": "wolfe"
+      },
+      {
+        "iteration": 6,
+        "loss": 1459501.727774872,
+        "gradient_infinity_norm": 2693935.483416438,
+        "step": 1.0,
+        "evaluations": 7,
+        "curvature_pairs": 6,
+        "line_search": "wolfe"
+      },
+      {
+        "iteration": 7,
+        "loss": 403364.1370855961,
+        "gradient_infinity_norm": 1854646.1821345342,
+        "step": 1.0,
+        "evaluations": 8,
+        "curvature_pairs": 7,
+        "line_search": "wolfe"
+      },
+      {
+        "iteration": 8,
+        "loss": 52432.39381397477,
+        "gradient_infinity_norm": 779862.001537561,
+        "step": 1.0,
+        "evaluations": 9,
+        "curvature_pairs": 8,
+        "line_search": "wolfe"
+      },
+      {
+        "iteration": 9,
+        "loss": 14771.103234645687,
+        "gradient_infinity_norm": 720828.1012724461,
+        "step": 0.5,
+        "evaluations": 11,
+        "curvature_pairs": 9,
+        "line_search": "wolfe"
+      },
+      {
+        "iteration": 10,
+        "loss": 1150.4098564674764,
+        "gradient_infinity_norm": 112193.226931545,
+        "step": 1.0,
+        "evaluations": 12,
+        "curvature_pairs": 10,
+        "line_search": "wolfe"
+      },
+      {
+        "iteration": 11,
+        "loss": 30.776806487545638,
+        "gradient_infinity_norm": 33439.6603332026,
+        "step": 1.0,
+        "evaluations": 13,
+        "curvature_pairs": 10,
+        "line_search": "wolfe"
+      },
+      {
+        "iteration": 12,
+        "loss": 0.4271508551522628,
+        "gradient_infinity_norm": 3599.0217296857045,
+        "step": 1.0,
+        "evaluations": 14,
+        "curvature_pairs": 10,
+        "line_search": "wolfe"
+      },
+      {
+        "iteration": 13,
+        "loss": 0.02444651335513357,
+        "gradient_infinity_norm": 137.94837081868437,
+        "step": 1.0,
+        "evaluations": 15,
+        "curvature_pairs": 10,
+        "line_search": "wolfe"
+      },
+      {
+        "iteration": 14,
+        "loss": 0.022370745725873695,
+        "gradient_infinity_norm": 18.868352539946116,
+        "step": 1.0,
+        "evaluations": 16,
+        "curvature_pairs": 10,
+        "line_search": "wolfe"
+      },
+      {
+        "iteration": 15,
+        "loss": 0.022349654558227135,
+        "gradient_infinity_norm": 3.3369699984822425,
+        "step": 1.0,
+        "evaluations": 17,
+        "curvature_pairs": 10,
+        "line_search": "wolfe"
+      },
+      {
+        "iteration": 16,
+        "loss": 0.022349233139659055,
+        "gradient_infinity_norm": 0.22779933494752763,
+        "step": 1.0,
+        "evaluations": 18,
+        "curvature_pairs": 10,
+        "line_search": "wolfe"
+      },
+      {
+        "iteration": 17,
+        "loss": 0.022349228727937098,
+        "gradient_infinity_norm": 0.01930233447953386,
+        "step": 1.0,
+        "evaluations": 19,
+        "curvature_pairs": 10,
+        "line_search": "wolfe"
+      },
+      {
+        "iteration": 18,
+        "loss": 0.022349228713281794,
+        "gradient_infinity_norm": 0.004076011271692437,
+        "step": 1.0,
+        "evaluations": 20,
+        "curvature_pairs": 10,
+        "line_search": "wolfe"
+      },
+      {
+        "iteration": 19,
+        "loss": 0.022349228711581348,
+        "gradient_infinity_norm": 7.231977747634843e-05,
+        "step": 1.0,
+        "evaluations": 21,
+        "curvature_pairs": 10,
+        "line_search": "wolfe"
+      }
+    ],
+    "rejected_trials": [],
+    "resolution_limited_trials": 0,
+    "checkpoint": null
+  },
+  "evaluation_reference": {
+    "case_sha256": "1d056995fdd60fadf1950465538ac4bae50d867f6628bfc05c5b6f9edcc40477",
+    "source": "Known simulated acquisition pose; eight grid-derived geometric points",
+    "uncertainty": "Real CT anatomy with simulated projections and a known reference pose",
+    "landmark_kind": "geometric grid points",
+    "pose_object_to_world": {
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "landmarks_object_mm": [
+      [
+        -47.89169489835679,
+        -28.988833527485667,
+        -33.71055808828489
+      ],
+      [
+        61.83493635095516,
+        -32.04328060210997,
+        -35.59420128494094
+      ],
+      [
+        -44.61956381044132,
+        78.42303198673358,
+        -17.27641443612208
+      ],
+      [
+        65.10706743887062,
+        75.36858491210927,
+        -19.160057632778134
+      ],
+      [
+        -46.68332274030556,
+        -43.36130305525503,
+        59.98582454721671
+      ],
+      [
+        63.04330850900638,
+        -46.41575012987933,
+        58.10218135056064
+      ],
+      [
+        -43.411191652390094,
+        64.05056245896421,
+        76.4199681993795
+      ],
+      [
+        66.31543959692186,
+        60.9961153843399,
+        74.53632500272346
+      ]
+    ]
+  },
+  "geometric_evaluation": {
+    "source": "Known simulated acquisition pose; eight grid-derived geometric points",
+    "uncertainty": "Real CT anatomy with simulated projections and a known reference pose",
+    "point_kind": "geometric grid points",
+    "initial": {
+      "translation_mm": 4.14032435751333,
+      "rotation_radians": 0.046994428323511264,
+      "landmark_rms_mm": 5.208004204951855,
+      "landmark_max_mm": 5.8693329087274595,
+      "landmarks": 8
+    },
+    "final": {
+      "translation_mm": 2.59444626060655e-07,
+      "rotation_radians": 3.2435160114188366e-09,
+      "landmark_rms_mm": 3.858437100709087e-07,
+      "landmark_max_mm": 5.459775886465551e-07,
+      "landmarks": 8
+    }
+  },
+  "output_array_sha256": {
+    "initial-prediction-view0.npy": "8a61d67382982950da38a56779e8c7d215a3043a2e1688b25d767b63ae3a7c24",
+    "initial-prediction-view1.npy": "5bdc2a3c4a14e03d4ca51d087a6769eb1e898bed27bfb4087f92134c16b9ac1a",
+    "initial-residual-view0.npy": "ce7f2189e57de8cd049fd46b6fa5bced14eea2e221c6d8296e4922d4e1a3749c",
+    "initial-residual-view1.npy": "499422ce27a45a6c8ddb6821799c12f69bb8580605cd3cb059bede8bc61b26d0",
+    "prediction-view0.npy": "7ddc3c54027ebbb36898b790d50e392c85beaca55e96653d387a18b859a128a5",
+    "prediction-view1.npy": "a28c206ffc297c6a81612ae2130e63c83e2d541880bcdd0eca8aac237102d2f3",
+    "residual-view0.npy": "a24c5c223b167a5c3f98c1ad3d310b84d6304faa71a2a4bfaf103b9610c23103",
+    "residual-view1.npy": "28b63625247f576ad49ebb59bac9c2d010539c8925478f7d0aa6398e625a08da"
+  },
+  "source_data_terms": "https://github.com/Slicer/Slicer/blob/4e1fdba309173e088d8467432a14c9d84f0313f7/Modules/Scripted/SampleData/SampleData.py#L88",
+  "limits": [
+    "Same discretisation and HU model generate and fit the images.",
+    "Noiseless primary-projection model with fixed calibration and anatomy.",
+    "Eight geometric reference points.",
+    "Registration accuracy evaluated against the known simulated pose."
+  ]
+}

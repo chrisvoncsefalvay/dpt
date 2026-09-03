@@ -1,0 +1,57 @@
+case_id,role,precision,kind,cotangent,detector_shape,objective_units,adjoint_relative_error,volume_fd_relative_error,volume_fd_step,pose_fd_relative_error,pose_fd_step,image_max_abs_against_same_precision_baseline,volume_gradient_max_abs_against_baseline,pose_gradient_max_abs_against_baseline,all_checks_passed
+dev-scalar-chest-ap-central-fp64,baseline,fp64,scalar,central,512x512,optical depth,2.780909519606197e-16,3.708815513933035e-14,0.01,5.255115791447829e-06,1e-06,,,,True
+dev-scalar-chest-ap-central-fp64,candidate,fp64,scalar,central,512x512,optical depth,2.780909519606197e-16,3.7221087595026874e-14,0.01,5.255115791447829e-06,1e-06,0.0,2.0328790734103208e-20,0.0,True
+dev-scalar-chest-oblique-signed-fp64,baseline,fp64,scalar,signed,512x512,optical depth,9.48007511753658e-15,5.066127511276677e-13,0.01,7.05780502882379e-06,1e-06,,,,True
+dev-scalar-chest-oblique-signed-fp64,candidate,fp64,scalar,signed,512x512,optical depth,7.484269829634142e-15,5.066127511276677e-13,0.01,7.05780502882379e-06,1e-06,0.0,2.371692252312041e-20,0.0,True
+dev-scalar-chest-ap-zero-fp64,baseline,fp64,scalar,zero,512x512,optical depth,0.0,0.0,0.01,0.0,1e-06,,,,True
+dev-scalar-chest-ap-zero-fp64,candidate,fp64,scalar,zero,512x512,optical depth,0.0,0.0,0.01,0.0,1e-06,0.0,0.0,0.0,True
+dev-scalar-chest-ap-central-fp32,baseline,fp32,scalar,central,512x512,optical depth,2.0967299458572632e-09,1.2180188704077819e-06,0.01,0.005523849051856112,0.02,,,,True
+dev-scalar-chest-ap-central-fp32,candidate,fp32,scalar,central,512x512,optical depth,2.0875554474892814e-09,1.2180033105502876e-06,0.01,0.005523849051856112,0.02,0.0,1.4551915228366852e-11,0.0,True
+dev-material1-chest-ap-central-fp64,baseline,fp64,material,central,512x512,photons,2.8073712412238537e-16,1.1446359044767159e-06,0.001,2.8565869157415394e-05,1e-06,,,,True
+dev-material1-chest-ap-central-fp64,candidate,fp64,material,central,512x512,photons,1.403685620611927e-16,1.1446359044767159e-06,0.001,2.8565869157415394e-05,1e-06,0.0,3.469446951953614e-18,0.0,True
+dev-material1-chest-ap-dense-fp64,baseline,fp64,material,dense,512x512,photons,3.8825347392008183e-16,9.307703385368996e-07,0.001,2.1909877342179683e-05,1e-06,,,,True
+dev-material1-chest-ap-dense-fp64,candidate,fp64,material,dense,512x512,photons,3.8825347392008183e-16,9.307703385368996e-07,0.001,2.1909877342179683e-05,1e-06,0.0,8.023096076392733e-18,0.0,True
+dev-material1-chest-ap-signed-fp64,baseline,fp64,material,signed,512x512,photons,0.0,4.17638109710795e-07,0.001,0.00014864706554929845,1e-06,,,,True
+dev-material1-chest-ap-signed-fp64,candidate,fp64,material,signed,512x512,photons,0.0,4.17638109710795e-07,0.001,0.00014864706554929845,1e-06,0.0,8.239936510889834e-18,0.0,True
+dev-material1-chest-ap-zero-fp64,baseline,fp64,material,zero,512x512,photons,0.0,0.0,0.001,0.0,1e-06,,,,True
+dev-material1-chest-ap-zero-fp64,candidate,fp64,material,zero,512x512,photons,0.0,0.0,0.001,0.0,1e-06,0.0,0.0,0.0,True
+dev-material3-chest-oblique-central-fp64,baseline,fp64,material,central,512x512,photons,2.217232126201843e-16,1.0014066893862763e-06,0.001,1.4271435374797018e-06,1e-06,,,,True
+dev-material3-chest-oblique-central-fp64,candidate,fp64,material,central,512x512,photons,2.217232126201843e-16,1.0014066893862763e-06,0.001,1.4271435374797018e-06,1e-06,0.0,6.938893903907228e-18,0.0,True
+dev-material3-chest-oblique-dense-fp64,baseline,fp64,material,dense,512x512,photons,5.368311325442808e-16,1.7459985536700385e-06,0.001,3.0345246825899113e-06,1e-06,,,,True
+dev-material3-chest-oblique-dense-fp64,candidate,fp64,material,dense,512x512,photons,5.368311325442808e-16,1.7459985536700385e-06,0.001,3.0345246825899113e-06,1e-06,0.0,6.071532165918825e-18,0.0,True
+dev-material3-chest-oblique-signed-fp64,baseline,fp64,material,signed,512x512,photons,1.6043005151894214e-15,1.033382968567602e-06,0.001,3.4874213846739036e-06,1e-06,,,,True
+dev-material3-chest-oblique-signed-fp64,candidate,fp64,material,signed,512x512,photons,1.6043005151894214e-15,1.0333829683932117e-06,0.001,3.4874213846739036e-06,1e-06,0.0,8.239936510889834e-18,0.0,True
+dev-material3-chest-oblique-zero-fp64,baseline,fp64,material,zero,512x512,photons,0.0,0.0,0.001,0.0,1e-06,,,,True
+dev-material3-chest-oblique-zero-fp64,candidate,fp64,material,zero,512x512,photons,0.0,0.0,0.001,0.0,1e-06,0.0,0.0,0.0,True
+dev-material1-chest-ap-central-fp32,baseline,fp32,material,central,512x512,photons,1.5324703943578018e-09,6.839510822466418e-06,0.001,0.007544835379005058,0.02,,,,True
+dev-material1-chest-ap-central-fp32,candidate,fp32,material,central,512x512,photons,1.5043766095236018e-09,6.839427271518231e-06,0.001,0.007544835379005058,0.02,0.0,1.862645149230957e-09,0.0,True
+dev-material3-chest-oblique-dense-fp32,baseline,fp32,material,dense,512x512,photons,1.2033238640434799e-09,8.96557220433021e-06,0.001,0.0036991455368542087,0.02,,,,True
+dev-material3-chest-oblique-dense-fp32,candidate,fp32,material,dense,512x512,photons,1.1504505619198694e-09,8.965518347249939e-06,0.001,0.0036991455368542087,0.02,0.0,4.220055416226387e-09,0.0,True
+holdout-scalar-brain-oblique-central-fp64,baseline,fp64,scalar,central,511x769,optical depth,1.6706017572846797e-16,9.833851478769967e-15,0.01,1.7382807109371738e-05,1e-06,,,,True
+holdout-scalar-brain-oblique-central-fp64,candidate,fp64,scalar,central,511x769,optical depth,1.67060175728468e-16,9.833851478769967e-15,0.01,1.7382807109371738e-05,1e-06,0.0,2.710505431213761e-20,0.0,True
+holdout-scalar-brain-oblique-signed-fp64,baseline,fp64,scalar,signed,511x769,optical depth,1.1861244521040345e-16,5.509795141343449e-13,0.01,1.8902118771079456e-06,1e-06,,,,True
+holdout-scalar-brain-oblique-signed-fp64,candidate,fp64,scalar,signed,511x769,optical depth,1.4233493425248393e-15,5.509795141343449e-13,0.01,1.8902118771079456e-06,1e-06,0.0,2.879912020664621e-20,0.0,True
+holdout-material2-brain-oblique-central-fp64,baseline,fp64,material,central,511x769,photons,2.2752594901335565e-16,6.487671421032238e-07,0.001,2.3521402239231785e-06,1e-06,,,,True
+holdout-material2-brain-oblique-central-fp64,candidate,fp64,material,central,511x769,photons,4.550518980267113e-16,6.487671421032238e-07,0.001,2.3521402239231785e-06,1e-06,0.0,6.938893903907228e-18,0.0,True
+holdout-material2-brain-oblique-dense-fp64,baseline,fp64,material,dense,511x769,photons,4.477847221662799e-16,4.5269945164453357e-07,0.001,3.0876054929141013e-06,1e-06,,,,True
+holdout-material2-brain-oblique-dense-fp64,candidate,fp64,material,dense,511x769,photons,4.477847221662799e-16,4.526994518465581e-07,0.001,3.0876054929141013e-06,1e-06,0.0,2.3310346708438345e-17,0.0,True
+holdout-material2-brain-oblique-signed-fp64,baseline,fp64,material,signed,511x769,photons,1.6120186731367292e-15,8.543682068012931e-08,0.001,1.1545683494522775e-06,1e-06,,,,True
+holdout-material2-brain-oblique-signed-fp64,candidate,fp64,material,signed,511x769,photons,1.2896149385093838e-15,8.543682068012931e-08,0.001,1.1545683494522775e-06,1e-06,0.0,8.239936510889834e-18,0.0,True
+holdout-material2-brain-oblique-zero-fp64,baseline,fp64,material,zero,511x769,photons,0.0,0.0,0.001,0.0,1e-06,,,,True
+holdout-material2-brain-oblique-zero-fp64,candidate,fp64,material,zero,511x769,photons,0.0,0.0,0.001,0.0,1e-06,0.0,0.0,0.0,True
+holdout-material2-chest-oblique-dense-fp64,baseline,fp64,material,dense,512x512,photons,2.834445986492967e-16,2.176072199849698e-06,0.001,6.385652201852671e-06,1e-06,,,,True
+holdout-material2-chest-oblique-dense-fp64,candidate,fp64,material,dense,512x512,photons,2.834445986492967e-16,2.176072199992308e-06,0.001,6.385652201852671e-06,1e-06,0.0,5.421010862427522e-18,0.0,True
+holdout-scalar-brain-oblique-central-fp32,baseline,fp32,scalar,central,511x769,optical depth,1.0647950754381005e-09,2.1920435559153362e-08,0.01,0.01017689999405258,0.02,,,,True
+holdout-scalar-brain-oblique-central-fp32,candidate,fp32,scalar,central,511x769,optical depth,1.0297932970383696e-09,2.1949449110201178e-08,0.01,0.01017689999405258,0.02,0.0,1.4551915228366852e-11,0.0,True
+holdout-scalar-brain-oblique-signed-fp32,baseline,fp32,scalar,signed,511x769,optical depth,1.4881889413101817e-07,2.075526014034846e-05,0.01,0.0056645571854354385,0.02,,,,True
+holdout-scalar-brain-oblique-signed-fp32,candidate,fp32,scalar,signed,511x769,optical depth,1.4603891607591293e-07,2.0753096628676722e-05,0.01,0.0056645571854354385,0.02,0.0,3.2514435588382185e-11,0.0,True
+holdout-material2-brain-oblique-central-fp32,baseline,fp32,material,central,511x769,photons,3.515686850617199e-09,3.0901806551230496e-06,0.001,0.008779905503054922,0.02,,,,True
+holdout-material2-brain-oblique-central-fp32,candidate,fp32,material,central,511x769,photons,3.4146598616778487e-09,3.0900582943315405e-06,0.001,0.008779905503054922,0.02,0.0,4.190951585769653e-09,0.0,True
+holdout-material2-brain-oblique-dense-fp32,baseline,fp32,material,dense,511x769,photons,3.871270970310121e-09,1.2534037109909126e-06,0.001,0.013835960705718091,0.02,,,,True
+holdout-material2-brain-oblique-dense-fp32,candidate,fp32,material,dense,511x769,photons,4.004400644530681e-09,1.253566939815665e-06,0.001,0.013835960705718091,0.02,0.0,7.8580342233181e-09,0.0,True
+holdout-material2-brain-oblique-signed-fp32,baseline,fp32,material,signed,511x769,photons,7.384620115857981e-08,6.179408040911807e-06,0.001,0.00647601212229934,0.02,,,,True
+holdout-material2-brain-oblique-signed-fp32,candidate,fp32,material,signed,511x769,photons,7.379376716517789e-08,6.179747158804159e-06,0.001,0.00647601212229934,0.02,0.0,8.265487849712372e-09,0.0,True
+holdout-material2-brain-oblique-zero-fp32,baseline,fp32,material,zero,511x769,photons,0.0,0.0,0.001,0.0,0.02,,,,True
+holdout-material2-brain-oblique-zero-fp32,candidate,fp32,material,zero,511x769,photons,0.0,0.0,0.001,0.0,0.02,0.0,0.0,0.0,True
+holdout-material2-chest-oblique-dense-fp32,baseline,fp32,material,dense,512x512,photons,5.404734238843191e-10,2.5459465852581e-05,0.001,0.0037629108905041183,0.02,,,,True
+holdout-material2-chest-oblique-dense-fp32,candidate,fp32,material,dense,512x512,photons,6.158560800658428e-10,2.54595107093112e-05,0.001,0.0037629108905041183,0.02,0.0,6.6356733441352844e-09,0.0,True

@@ -1,0 +1,73 @@
+{
+  "anchor_tangent": [
+    0.137,
+    -0.219,
+    0.083,
+    0.0017,
+    -0.0023,
+    0.0009
+  ],
+  "detector_seed": "saved cotangent selected views, subset L1 normalised in FP64 then cast, same cast seed in FD objective",
+  "independent_ray_reference": {
+    "algorithm": "FP64 CPU transform,slabclip,1024midpoints,explicit8weight trilinear,clampedindices",
+    "pixels": [
+      [
+        127,
+        193
+      ],
+      [
+        187,
+        251
+      ],
+      [
+        256,
+        256
+      ],
+      [
+        331,
+        301
+      ],
+      [
+        401,
+        278
+      ]
+    ],
+    "views": [
+      0,
+      37,
+      113
+    ]
+  },
+  "pose_direction": [
+    0.31,
+    -0.27,
+    0.19,
+    0.0007,
+    -0.0011,
+    0.0009
+  ],
+  "precision": [
+    "fp32",
+    "fp64"
+  ],
+  "samples_per_ray": 1024,
+  "schema_version": 2,
+  "views": [
+    0,
+    37,
+    113
+  ],
+  "volume": "same full256^3 chest",
+  "volume_direction": "raw=field*0.01+(field>0)*1e-5*(1+0.2*cos(x/13)+0.2*cos(y/17)+0.2*cos(z/19)), direction=min(raw,0.5*field/0.01), central step0.01, realised FP32 chord",
+  "volume_direction_domain_fraction": 0.5,
+  "volume_fd": {
+    "fp32": {
+      "atol": 1e-06,
+      "rtol": 0.005
+    },
+    "fp64": {
+      "atol": 1e-08,
+      "rtol": 2e-05
+    }
+  }
+}

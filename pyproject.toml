@@ -1,0 +1,93 @@
+[build-system]
+requires = ["hatchling==1.32.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "differentiable-photon-transport"
+version = "1.0.0"
+description = "Differentiable X-ray imaging and photon transport in Python"
+requires-python = ">=3.12"
+license = "Apache-2.0 AND BSD-3-Clause"
+license-files = ["LICENSE", "python/dpt/transport/data/JOE_KUO_LICENSE.txt", "python/dpt/transport/data/SCIPY_LICENSE.txt", "python/dpt/transport/data/XRAYLIB_LICENSE.txt"]
+readme = "README.md"
+authors = [{name = "Chris von Csefalvay"}]
+dependencies = []
+keywords = ["photon transport", "X-ray imaging", "differentiable simulation", "CUDA"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Physics",
+]
+
+[project.urls]
+Source = "https://github.com/chrisvoncsefalvay/dpt"
+Documentation = "https://github.com/chrisvoncsefalvay/dpt/blob/main/docs/index.md"
+Issues = "https://github.com/chrisvoncsefalvay/dpt/issues"
+
+[project.scripts]
+dpt = "dpt.cli:main"
+dpt-check-gpu = "dpt.gpu_check:main"
+
+[project.optional-dependencies]
+analysis = ["numpy>=2.5.3,<3"]
+imaging = ["numpy>=2.5.3,<3", "nibabel>=5.4.2,<6", "pydicom>=3.0.2,<4"]
+warp = ["numpy>=2.5.3,<3", "warp-lang==1.17.0"]
+gpu = ["numpy>=2.5.3,<3", "torch>=2.14.0,<3", "warp-lang==1.17.0"]
+torch = ["numpy>=2.5.3,<3", "torch>=2.14.0,<3", "warp-lang==1.17.0"]
+physical-data = ["xraylib==4.3.0"]
+examples = ["SimpleITK>=2.5.3,<3", "matplotlib>=3.10,<4"]
+benchmarks = ["nvidia-ml-py>=13.580.82", "wandb>=0.31,<1", "matplotlib>=3.10,<4"]
+
+[dependency-groups]
+check = [
+  "warp-lang==1.17.0",
+  "numpy==2.5.3",
+  "nibabel==5.4.2",
+  "pydicom==3.0.2",
+  "scipy==1.18.1",
+  "xraylib==4.3.0",
+  "pyright==1.1.411",
+  "pytest==9.1.1",
+  "ruff==0.16.6",
+]
+gpu = [
+  "numpy==2.5.3",
+  "torch==2.14.0",
+  "warp-lang==1.17.0",
+]
+docs = [
+  "mkdocs==1.6.1",
+  "mkdocs-material==9.7.7",
+  "mkdocstrings-python==2.0.9",
+]
+release = ["build==1.6.1", "twine==7.0.0"]
+
+[tool.hatch.build.targets.sdist]
+include = ["python/dpt", "tests/python", "benchmarks", "examples", "docs", "tools", "mkdocs.yml", "uv.lock", "README.md", "CITATION.cff", "CITATION.bib", "LICENSE", "pyproject.toml"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["python/dpt"]
+
+[tool.uv]
+default-groups = ["check"]
+
+[tool.pyright]
+include = ["python", "tests/python"]
+extraPaths = ["python", "tests/python", "tests/python/warp_cpu"]
+# Warp kernel annotations are runtime DSL expressions rather than Python type expressions.
+ignore = ["python/dpt/_gpu_preflight_kernel.py", "python/dpt/kernels", "python/dpt/transport/kernels.py", "python/dpt/transport/parameter_kernels.py", "python/dpt/transport/physical_kernels.py", "python/dpt/transport/bound_compton_kernels.py", "python/dpt/transport/bound_compton_mixed_kernels.py", "python/dpt/transport/readout_kernels.py", "python/dpt/transport/sampling_kernels.py", "python/dpt/transport/spectrum_kernels.py", "python/dpt/transport/voxel_kernels.py", "python/dpt/transport/recovery_kernels.py", "python/dpt/transport/batched_kernels.py", "python/dpt/transport/batched_model_kernels.py", "python/dpt/transport/contracted_kernels.py", "python/dpt/transport/compton_geometry_boundary_kernels.py", "python/dpt/transport/geometry_ballistic_kernels.py", "python/dpt/transport/geometry_connection_kernels.py", "python/dpt/transport/geometry_detector_proposal_kernels.py", "python/dpt/transport/geometry_driver_kernels.py", "python/dpt/transport/geometry_forward_proposal_kernels.py", "python/dpt/transport/geometry_interface_kernels.py", "python/dpt/transport/geometry_opaque_kernels.py", "python/dpt/transport/geometry_reference_kernels.py", "python/dpt/transport/geometry_sampling_kernels.py", "python/dpt/transport/geometry_source_boundary_kernels.py", "python/dpt/transport/physical_geometry_kernels.py"]
+pythonVersion = "3.12"
+typeCheckingMode = "basic"
+strict = ["python"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-config --strict-markers"
+testpaths = ["tests/python"]
+markers = ["gpu: requires actual CUDA execution (enable with --run-gpu)"]
+
+[tool.ruff]
+line-length = 100
+src = ["python", "tests/python"]
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "N", "RUF", "UP"]

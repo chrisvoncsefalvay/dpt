@@ -1,0 +1,171 @@
+{
+  "schema_version": 2,
+  "anchor_tangent": [
+    0.137,
+    -0.219,
+    0.083,
+    0.0017,
+    -0.0023,
+    0.0009
+  ],
+  "pose_direction": [
+    0.31,
+    -0.27,
+    0.19,
+    0.0007,
+    -0.0011,
+    0.0009
+  ],
+  "cotangent_normalisation": "sum(abs(detector cotangent))=1 except the all-zero case",
+  "material_incident_photons_per_pixel": 10000,
+  "modes": {
+    "fp32": {
+      "paired": {
+        "image": {
+          "rtol": 5e-06,
+          "atol": 5e-07
+        },
+        "volume_gradient": {
+          "rtol": 5e-05,
+          "atol": 1e-08
+        },
+        "pose_gradient": {
+          "rtol": 5e-05,
+          "atol": 1e-07
+        },
+        "paths": {
+          "rtol": 5e-06,
+          "atol": 2e-05
+        },
+        "path_cotangent": {
+          "rtol": 5e-05,
+          "atol": 1e-08
+        }
+      },
+      "scalar": {
+        "adjoint": {
+          "rtol": 2e-05,
+          "atol": 1e-08
+        },
+        "volume_fd": {
+          "rtol": 0.005,
+          "atol": 1e-06,
+          "step": 0.01
+        },
+        "pose_fd": {
+          "rtol": 0.02,
+          "atol": 2e-05,
+          "steps": [
+            0.04,
+            0.02,
+            0.01
+          ],
+          "selected_step": 0.02,
+          "acceptance": "fixed-selected"
+        }
+      },
+      "material": {
+        "adjoint": {
+          "rtol": 2e-05,
+          "atol": 1e-05
+        },
+        "volume_fd": {
+          "rtol": 0.005,
+          "atol": 0.01,
+          "step": 0.001
+        },
+        "pose_fd": {
+          "rtol": 0.02,
+          "atol": 0.01,
+          "steps": [
+            0.04,
+            0.02,
+            0.01
+          ],
+          "selected_step": 0.02,
+          "acceptance": "fixed-selected"
+        }
+      }
+    },
+    "fp64": {
+      "paired": {
+        "image": {
+          "rtol": 1e-11,
+          "atol": 2e-10
+        },
+        "volume_gradient": {
+          "rtol": 1e-10,
+          "atol": 1e-14
+        },
+        "pose_gradient": {
+          "rtol": 1e-10,
+          "atol": 1e-10
+        },
+        "paths": {
+          "rtol": 1e-11,
+          "atol": 2e-10
+        },
+        "path_cotangent": {
+          "rtol": 1e-10,
+          "atol": 1e-14
+        }
+      },
+      "scalar": {
+        "adjoint": {
+          "rtol": 2e-10,
+          "atol": 1e-12
+        },
+        "volume_fd": {
+          "rtol": 2e-05,
+          "atol": 1e-08,
+          "step": 0.01
+        },
+        "pose_fd": {
+          "rtol": 0.005,
+          "atol": 1e-07,
+          "steps": [
+            1e-05,
+            1e-06,
+            1e-07
+          ],
+          "selected_step": 1e-06,
+          "acceptance": "fixed-selected"
+        }
+      },
+      "material": {
+        "adjoint": {
+          "rtol": 2e-10,
+          "atol": 1e-09
+        },
+        "volume_fd": {
+          "rtol": 2e-05,
+          "atol": 1e-06,
+          "step": 0.001
+        },
+        "pose_fd": {
+          "rtol": 0.005,
+          "atol": 1e-06,
+          "steps": [
+            1e-05,
+            1e-06,
+            1e-07
+          ],
+          "selected_step": 1e-06,
+          "acceptance": "fixed-selected"
+        }
+      }
+    }
+  },
+  "units": {
+    "scalar": "dimensionless optical depth or its directional derivative per unit declared step",
+    "material": "expected photons per pixel, L1-normalised detector cotangent; path pairing is in the same objective units",
+    "paired": "componentwise atol + rtol*abs(frozen baseline); identical precision, storage, rays and requested gradients required"
+  },
+  "zero_cotangent": {
+    "volume_gradient": "exact zero",
+    "pose_gradient": "exact zero",
+    "path_cotangent": "exact zero",
+    "forward_image": "unchanged; not required to be zero"
+  },
+  "torch_gradient_storage": "Field storage and returned field gradient are FP32 in both arithmetic modes; compare Torch gradient with native gradient cast to FP32 using modes.fp32.paired.volume_gradient."
+}

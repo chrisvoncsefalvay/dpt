@@ -1,0 +1,8 @@
+Time (%),Total Time (ns),Instances,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Style,Range
+33.4,36989241,1,36989241.0,36989241.0,36989241,36989241,0.0,PushPop,:operation
+33.3,36937348,1,36937348.0,36937348.0,36937348,36937348,0.0,PushPop,:fp64/iteration
+18.8,20853528,1,20853528.0,20853528.0,20853528,20853528,0.0,PushPop,:forward
+14.4,15979844,1,15979844.0,15979844.0,15979844,15979844,0.0,PushPop,:backward
+0.0,48543,1,48543.0,48543.0,48543,48543,0.0,PushPop,:objective
+0.0,31245,2,15622.5,15622.5,13372,17873,3182.7,PushPop,CCCL:cub::DeviceScan::InclusiveScan
+0.0,13200,1,13200.0,13200.0,13200,13200,0.0,PushPop,CCCL:cub::DeviceRunLengthEncode::Encode

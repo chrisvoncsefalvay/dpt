@@ -1,0 +1,205 @@
+{
+  "source_role": "selected",
+  "source_sha256": "01643d02a029127f9a1ac3c04a96b6dda52e91fe5feade622e773fe698e98749",
+  "started_at": "2026-10-20T04:07:37.855297+00:00",
+  "completed_at": "2026-10-20T04:11:04.604595+00:00",
+  "rows": [
+    {
+      "workload": "cli-fp32",
+      "pairs": 3,
+      "cold_launch_count": 5,
+      "metrics": {
+        "cold_module_ms_median": {
+          "raw": [
+            627.62,
+            624.23,
+            607.56
+          ],
+          "median": 624.23
+        },
+        "warm_module_ms_median": {
+          "raw": [
+            1.04,
+            1.07,
+            1.01
+          ],
+          "median": 1.04
+        },
+        "cold_wall_ms_median": {
+          "raw": [
+            3349.0397129789926,
+            3326.295303006191,
+            3226.042925962247
+          ],
+          "median": 3326.295303006191
+        },
+        "warm_wall_ms_median": {
+          "raw": [
+            2606.2439489760436,
+            2674.7456080047414,
+            2640.89800597867
+          ],
+          "median": 2640.89800597867
+        },
+        "compile_elapsed_ms_median": {
+          "raw": [
+            742.795764002949,
+            651.5496950014494,
+            585.144919983577
+          ],
+          "median": 651.5496950014494
+        }
+      }
+    },
+    {
+      "workload": "cli-fp64",
+      "pairs": 3,
+      "cold_launch_count": 5,
+      "metrics": {
+        "cold_module_ms_median": {
+          "raw": [
+            560.9100000000001,
+            552.64,
+            552.8199999999999
+          ],
+          "median": 552.8199999999999
+        },
+        "warm_module_ms_median": {
+          "raw": [
+            1.06,
+            1.1,
+            1.07
+          ],
+          "median": 1.07
+        },
+        "cold_wall_ms_median": {
+          "raw": [
+            3337.9354660282843,
+            3247.5527430069633,
+            3228.762487997301
+          ],
+          "median": 3247.5527430069633
+        },
+        "warm_wall_ms_median": {
+          "raw": [
+            2677.3731240537018,
+            2638.024077983573,
+            2648.758907977026
+          ],
+          "median": 2648.758907977026
+        },
+        "compile_elapsed_ms_median": {
+          "raw": [
+            660.5623419745825,
+            609.5286650233902,
+            580.003580020275
+          ],
+          "median": 609.5286650233902
+        }
+      }
+    },
+    {
+      "workload": "fullscan-fp32",
+      "pairs": 3,
+      "cold_launch_count": 1806,
+      "metrics": {
+        "cold_module_ms_median": {
+          "raw": [
+            2114.71,
+            2151.6,
+            2097.98
+          ],
+          "median": 2114.71
+        },
+        "warm_module_ms_median": {
+          "raw": [
+            5.39,
+            5.430000000000001,
+            5.42
+          ],
+          "median": 5.42
+        },
+        "cold_wall_ms_median": {
+          "raw": [
+            7387.823642988224,
+            7354.255463986192,
+            7287.3449649778195
+          ],
+          "median": 7354.255463986192
+        },
+        "warm_wall_ms_median": {
+          "raw": [
+            5157.600818027277,
+            5193.361837009434,
+            5178.471736027859
+          ],
+          "median": 5178.471736027859
+        },
+        "compile_elapsed_ms_median": {
+          "raw": [
+            2230.222824960947,
+            2160.8936269767582,
+            2108.8732289499603
+          ],
+          "median": 2160.8936269767582
+        }
+      }
+    },
+    {
+      "workload": "fullscan-fp64",
+      "pairs": 3,
+      "cold_launch_count": 1806,
+      "metrics": {
+        "cold_module_ms_median": {
+          "raw": [
+            7668.08,
+            7612.32,
+            7633.52
+          ],
+          "median": 7633.52
+        },
+        "warm_module_ms_median": {
+          "raw": [
+            5634.16,
+            5634.97,
+            5646.839999999999
+          ],
+          "median": 5634.97
+        },
+        "cold_wall_ms_median": {
+          "raw": [
+            23105.777761957143,
+            23089.82300903881,
+            23032.831065007485
+          ],
+          "median": 23089.82300903881
+        },
+        "warm_wall_ms_median": {
+          "raw": [
+            21011.902199999895,
+            21020.08492400637,
+            21090.22484399611
+          ],
+          "median": 21020.08492400637
+        },
+        "compile_elapsed_ms_median": {
+          "raw": [
+            2093.8755619572476,
+            2069.7380850324407,
+            1942.6062210113741
+          ],
+          "median": 2069.7380850324407
+        }
+      }
+    }
+  ],
+  "boundary": "Instrumented process times include imports, data preparation, verification and output. Warp-reported module-event wall times may include compilation, loading or an outstanding-stream wait. Neither module events nor process differences are exclusive compiler CPU time.",
+  "cache_policy": "Three independent private cache pairs per workload and precision. Each warm invocation is a fresh process reusing its paired cache.",
+  "topology_limit": "Recorded cold-launch topology matched across pairs.",
+  "evidence": {
+    "study_sha256": "c93460215336365d18834a2ea70a9e590598ec5cb9cba1d808a1fac8211229c0",
+    "configuration_sha256": "0ac359c7bda75b51acfe029eda9178b7039eee5afd0ddc2d2a0749045d43c855",
+    "study_script_sha256": "a9a7692ac1c81da6dae48d546cb81fcdb6254833d26b767631bca58f36cbb65b",
+    "official_probe_sha256": "3e898de7e46029e9057dc654a2a7215036f773b6704fb599fc0075d44a94a9b1"
+  }
+}

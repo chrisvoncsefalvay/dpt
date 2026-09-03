@@ -1,0 +1,36 @@
+{
+  "geist": {
+    "version": "1.4.2",
+    "source": "https://github.com/vercel/geist-font/releases/download/1.4.2/geist-font-1.4.2.zip",
+    "archive_sha256": "e94caf733a6b019a0d4d97da9548c2ca8cbe4b2703ef1d07113a82d9e774cfe5",
+    "licence": "SIL Open Font License 1.1",
+    "files": {
+      "Geist.woff2": {
+        "archive_member": "geist-font-1.4.2/fonts/Geist/webfonts/Geist[wght].woff2",
+        "sha256": "eef234acc0ed087708ee14adeadd36a1fdd91eafecd336cf658fd5c2d05b3acd"
+      },
+      "GeistMono.woff2": {
+        "archive_member": "geist-font-1.4.2/fonts/GeistMono/webfonts/GeistMono[wght].woff2",
+        "sha256": "7f7734b5c80a7a5751f61d0ebdd7faaccb5248d0e1781885dc42bb9dfd51e3da"
+      },
+      "OFL.txt": {
+        "archive_member": "geist-font-1.4.2/OFL.txt",
+        "sha256": "1781d2806a07d91c4edf4740b88449fab7d0eadad53f7c351b94cd4d4eb8c00f"
+      }
+    }
+  },
+  "mathjax": {
+    "version": "3.2.2",
+    "licence": "Apache-2.0",
+    "files": {
+      "tex-svg.js": {
+        "source": "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js",
+        "sha256": "d4295dc33744836935c1399feece5159577b34c5c8ffb9f1c6324cd82e03a882"
+      },
+      "LICENSE": {
+        "source": "https://raw.githubusercontent.com/mathjax/MathJax/3.2.2/LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      }
+    }
+  }
+}

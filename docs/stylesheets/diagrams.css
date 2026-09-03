@@ -1,0 +1,13 @@
+.md-typeset .mermaid {
+  --md-mermaid-label-fg-color: var(--md-typeset-color);
+  --md-mermaid-edge-color: var(--md-typeset-color);
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.md-typeset .mermaid svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
+}

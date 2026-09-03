@@ -1,0 +1,19 @@
+{
+  "case_sha256": "1d056995fdd60fadf1950465538ac4bae50d867f6628bfc05c5b6f9edcc40477",
+  "summary_sha256": "dd8297745910fdfb7bdff2c8c45220c99463b7ef7300248660a7593224d467d8",
+  "optimisation_sha256": "d3d7e563681b960badbe717cd2444070ec5fdff76a45bf53dd21606cc71b9955",
+  "residual_sha256": {
+    "initial-residual-view0.npy": "ce7f2189e57de8cd049fd46b6fa5bced14eea2e221c6d8296e4922d4e1a3749c",
+    "residual-view0.npy": "a24c5c223b167a5c3f98c1ad3d310b84d6304faa71a2a4bfaf103b9610c23103",
+    "initial-residual-view1.npy": "499422ce27a45a6c8ddb6821799c12f69bb8580605cd3cb059bede8bc61b26d0",
+    "residual-view1.npy": "28b63625247f576ad49ebb59bac9c2d010539c8925478f7d0aa6398e625a08da"
+  },
+  "colour_limits": {
+    "depth": 4.847623825073242,
+    "initial": 771763.5017574443,
+    "final": 0.5540815936401486
+  },
+  "residual_scales": "separate symmetric ranges for initial and fitted residuals",
+  "zero_count_display_floor": 0.5,
+  "images": "simulated from the real CT; not acquired radiographs"
+}

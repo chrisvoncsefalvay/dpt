@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Please cite this software when using DPT in your research."
+type: software
+title: "DPT: Differentiable Photon Transport"
+version: 1.0.0
+authors:
+  - family-names: "von Csefalvay"
+    given-names: "Chris"
+repository-code: "https://github.com/chrisvoncsefalvay/dpt"
+url: "https://github.com/chrisvoncsefalvay/dpt"
+license:
+  - Apache-2.0
+  - BSD-3-Clause
+abstract: "Differentiable X-ray imaging and photon transport in Python."
+keywords:
+  - photon transport
+  - X-ray imaging
+  - differentiable simulation
+  - CUDA

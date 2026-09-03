@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {{ super() }}
+  <footer class="dpt-citation" aria-label="Software citation">
+    <p class="dpt-citation__label">Cite DPT</p>
+    <p>{{ config.extra.dpt.citation }}</p>
+    <p><a href="{{ 'citation/' | url }}">Citation details</a> · <a href="{{ 'CITATION.bib' | url }}" download="CITATION.bib">BibTeX</a> · <a href="{{ 'CITATION.cff' | url }}" download="CITATION.cff">CFF</a></p>
+  </footer>
+{% endblock %}

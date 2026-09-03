@@ -1,0 +1,491 @@
+{
+  "schema_version": 1,
+  "preparation_started_at": "2026-10-19T15:30:48.001004+00:00",
+  "operation": "volume",
+  "precision": "fp32",
+  "views": [
+    "ap"
+  ],
+  "source": {
+    "sha256": "b402f807c1fae59846d7473df91fdbad597e4b402630f97ea8bbb54d299d0e2c",
+    "files": {
+      "python/dpt/__init__.py": "9268e8ad6c4c24d64e0cfdd92b060f72815be8b0841fc520445a3a11e723fc33",
+      "python/dpt/_dicom_io.py": "9ff0699c465087d7f69461558ace192e373b97068b79eb77b79a1e377e6041e2",
+      "python/dpt/_gpu_preflight_kernel.py": "da64574a5f7bf44747027ac814ed61d5ad67e35c9293351093543bbd8e4ae11f",
+      "python/dpt/_reductions.py": "548f9167e0f3a46d102566ee375c5b0bfa9bb9ff4604156578db9a7b2c9c70d5",
+      "python/dpt/_runtime.py": "fc3be582b8786c52aea8b4a3a6a94ca5026e123530868f25d72b0b0b7af3f12f",
+      "python/dpt/aperture.py": "34e3c54142684c4ce7e66aa12b4a1f041fbfe364059cb3ab312914d63c6185b5",
+      "python/dpt/api.py": "2734698445e41a5b2888057fe9fd5552de5202c1e76842acf18829e9c3497242",
+      "python/dpt/autodiff.py": "012ab2d11957f812c7a087aa71295be606276870a3b7e6a56b3eafd1060de283",
+      "python/dpt/batched_projection.py": "b37ed6c764706cb99b56d4028bb1ecca5bb69efcd624e28ba6fe36fbbb0154cc",
+      "python/dpt/beam_hardening.py": "c721630eaa4b46e3a8c4bcaf0d1178efd20dbc6e425bd954faa9e89b4f6b43a1",
+      "python/dpt/bounded_statistics.py": "4aeb0c796389e801acba0af7257873de304b58e91da219fbc1848a4f30b7f5fd",
+      "python/dpt/calibration.py": "d437b34e6403429a48735264f82c9208ee6b5987b7b7a8b1cce49a6fc3c61eb3",
+      "python/dpt/cli.py": "719f495abe205bb617117f0d24b9b816ab891a9ea29b8cf9aaeaf6f6839b30da",
+      "python/dpt/contracts.py": "6aef29b957393296d9bfed968926924a799c5021c994f68ec55dc75fc5db0222",
+      "python/dpt/detector.py": "d13925142a8fa240fd3498db0485ac2194e24ad6a9f1ae014597657d4a1d3f63",
+      "python/dpt/detector_physics.py": "b368aa2d63d6ed939fda6de0a9a21f287e9a17e2a4b6cd4890dd5872aeb1e2dd",
+      "python/dpt/detector_transfer.py": "766cc2e9533ef1c30871c86df7779451db5e16630257c0b25c5e91103b2a6b25",
+      "python/dpt/examples/__init__.py": "c0f9d43a4bb3d0d17166a53e7afc231f1deed76729a587d88e2b3e514a84792c",
+      "python/dpt/examples/_common.py": "5008e9c44a835efde700afce7d18ba62d0503cb5b6f625dda9c42258a1ff109f",
+      "python/dpt/examples/acquisition_design.py": "e85d716f0f6f108318bbced17f60dedbd0b86c3336b415331c7a8dc3070fdd3d",
+      "python/dpt/examples/make_case.py": "32dcd5bd338fb8c1f5ae31a268777968cf95413527a7ea1913e560a922ef59b6",
+      "python/dpt/examples/photon_counting.py": "3cc4f835e30c8735e0b198fe756419bbd61adf9a7420adb0ea010c98f93462d9",
+      "python/dpt/examples/quickstart.py": "c96ecf0777bc4ed763787fd2dd5b28cf4bb09586126272908004522b1c226aa2",
+      "python/dpt/examples/reconstruction.py": "8f5f1983400264e43eda734bc6e9696b8cf95ba95394da8302b4f38df7708396",
+      "python/dpt/examples/registration.py": "4e431a26463dc129101c6721ba7427e5b394bae07633987d0284e585e8e63165",
+      "python/dpt/examples/three_material.py": "1c01bc06b65648dec8b431d52b4502ad22673911a6882a313fc9810f83a21984",
+      "python/dpt/experiments.py": "20a21ac7052fa079e54e2039e56ccc074ed5c707521ca2a9f3861a1937e34f2d",
+      "python/dpt/fdk.py": "5bc01f786c51f7cfbb25602c0e7437abe76c3ff8c6876ac4c26f6f256eb34402",
+      "python/dpt/geometry.py": "8881dd0b6833d002b41b6d98cbe4f05034cd29345a59c0352ed060e740eb7acb",
+      "python/dpt/geometry_device.py": "838dd2d7f526350ed1ffdcc6d6140ff00db24d3bd77ab781d5c4f624fc33af63",
+      "python/dpt/gpu_check.py": "daa7467aeb49348460fe6265b5bbe288f7af88fb0ca73405f411f7031f98e73a",
+      "python/dpt/imaging.py": "dea2923a5a6e8d948deeb9c01426ba97f586dc1964031bad8d6a3f875a0eec68",
+      "python/dpt/imaging_io.py": "d76425bd1cdfeade81937a9cd480562e15ad9fd43fc9406f7a204945462b4f59",
+      "python/dpt/interop/__init__.py": "71d728ac4995d600e2c53c6245492d65d4552ed03a4fde49f901c59b0cef0b72",
+      "python/dpt/interop/_torch_streams.py": "c6a719d4d9dada0a72daf8b75a25c8901b41d2ffbc05f46a5f3771255f927611",
+      "python/dpt/interop/arrays.py": "b65e5308ce7334c46004cb1aa17203169c4ffa2be3290056aa90cd7a82a620d3",
+      "python/dpt/interop/torch.py": "7e74ac14316212dad0d249d6ce246cb47849db46fd86d0a353715014685c82b5",
+      "python/dpt/interop/torch_transport.py": "bdb3bd97d5e14a774929891431f0cabb4e7144ce5e29241b2f8212814a69db74",
+      "python/dpt/kernels/__init__.py": "39a47d684c71e510c32884da609914747235ea704a14e64b45720d004d171bfc",
+      "python/dpt/kernels/_native_compensated.py": "af45be237a2dcc9741bbedff03149a736fbfd0233077d3319fe00e3a8e118d58",
+      "python/dpt/kernels/aperture.py": "ff494493f2102e690eefae838ab4056d1335e7a23040dc26ecbfed2122e8253f",
+      "python/dpt/kernels/batched_geometry.py": "96a8df6e6dad92bdd0049f7d5f8c50a7bbba48bd9f8ec7bdcd1e27e43634ec5f",
+      "python/dpt/kernels/batched_projection.py": "f747505e3a950abd342bcd1dba1c4b6c856c06456f85d29691504501a43b109c",
+      "python/dpt/kernels/beam_hardening.py": "d28da7bc215d57c19ccc1daa7d2106505c76ecf85b193fdda183b7592f946f1f",
+      "python/dpt/kernels/control_readback.py": "abd8b573a7daf51479a254c4b8bddab2f7821682b981d240e4cbb50ad232f294",
+      "python/dpt/kernels/detector.py": "54037e28ca1e7369e97feeaa8384373953e3c744b2032f8ca86c824565f0698b",
+      "python/dpt/kernels/detector_physics.py": "3ac2af652bdd48505d786e1bb872b0bbe6cea34f4a7bd12e1bfc00a64ac60700",
+      "python/dpt/kernels/detector_transfer.py": "e7291f5547f30cdd6da5b026c830e7af40215330fe945316b8eab13276cc0ae6",
+      "python/dpt/kernels/geometry.py": "8056707643e1151f0d10b7a0a41a8025cc3b9546465d7ea980aa4765834010ff",
+      "python/dpt/kernels/log_calibration.py": "9bcf24e74d2c421e3d8e1543ce35563761d32bc5f3d4148eea457942e78b3d5b",
+      "python/dpt/kernels/material_iteration.py": "e424dbc39c23242d01f0ad141184c24f7c675257fa766f69bfcc8550b52e1336",
+      "python/dpt/kernels/material_iteration_projection.py": "a887553eb2444637ac1333c6b4bb627c993fe423defcfdd27506096eecff1f23",
+      "python/dpt/kernels/material_preconditioning.py": "dd9e42e136f8908c453453b755db50a69f6135615066432181a552d49005a4e3",
+      "python/dpt/kernels/material_projection.py": "72fd64cff79790cc6f7061091fe557f5d636f25f3ded8b971ee82f91b41bdcdd",
+      "python/dpt/kernels/material_projection_fp32.py": "c679689f38aa33c4d19323569b1c1f1de73051a728acf1812268b927c2e7f12c",
+      "python/dpt/kernels/material_reconstruction.py": "fc98e5e67f98e4703c5df1e4bcddb6e112fc1b8267100545b781e18bd2cf8ea4",
+      "python/dpt/kernels/numerics.py": "e7543144aa00c2b05bec0c36d1a2534b63eddc9f3fe64f5a148b5c37d2f51496",
+      "python/dpt/kernels/objectives.py": "8bc9b844c7518236eddd5ddaed1132c000b54a701e06dc253b791926399bbc4e",
+      "python/dpt/kernels/photon_counting.py": "a9f325c267091f4b62036ecc619e377394ce5804b6b79fe0500dc0a67916cb0e",
+      "python/dpt/kernels/pose_optimization.py": "0405849efc28be722a3f90a777c143e6415a26a95a466b7b5818e9d7eb185808",
+      "python/dpt/kernels/projection.py": "217375f6b405fc2e0d65866f5d1b1bf4a7aedec254b8b2c8b8e2596590cc9269",
+      "python/dpt/kernels/projection_adjoint.py": "147cc6e6e28b5f0adfefbf04f8fe087a002db654e54c976888af509277588f42",
+      "python/dpt/kernels/projection_checks.py": "ce2d859db576836eadec1354a07b9a3d84dfa8a25efdf0f9999da96f04eb3722",
+      "python/dpt/kernels/projection_fp32.py": "51ebf9551f320dde181de400f430d5645b4ae711c66aa0e5be72f2940710d703",
+      "python/dpt/kernels/random.py": "c991d7f275462bd1cabe7a6d2a77a0a226c580b153ac44e1506029794c46ab71",
+      "python/dpt/kernels/reductions.py": "c9e647a4069179ad86294275c3d61790f4e1edcff0f06c5ab957db224a4d34bf",
+      "python/dpt/kernels/regularization.py": "ffdb18d38f27b84286b5f2adc58e01850edb39b2e39d4649499e5cee3be15821",
+      "python/dpt/kernels/response_matrix.py": "9512b7a25f56ecd859d368d85318b1ade09ca747f3c42e5da57728c675e6c74b",
+      "python/dpt/kernels/spectral.py": "409d38afe4daf2751249e762f8a5e5e2263f984a403166b83a1d9c389e2a1aba",
+      "python/dpt/kernels/spectral_common.py": "8944dadb682c99a522e458048bddd2cc39ae0ce5c48452e13386b8628a17cd6a",
+      "python/dpt/kernels/transmission.py": "da48ac0c9b11e4819fae4316e78dabbf1e94fc034002cdb94a95e49cfdbee630",
+      "python/dpt/kernels/transport_diagnostics.py": "26ae07287e9ee89aef43b0e3dfa038af8be384c7991819ac5025be85f643bc72",
+      "python/dpt/line_search.py": "1e60c384b30b00d0eab6d3256aeaa2feaec81dd214046653bbcc8ceed4f8db91",
+      "python/dpt/material_iteration_graph.py": "70dde7a7ffe20ade9cbe2fdb2c4b04ceca3e60b9cfd2f5c96e4abb98d65da1eb",
+      "python/dpt/material_preconditioning.py": "c39d7f2ed6d497e8de1cb44e47fca4c8c9c178233fa347a76062f0f1f11b48ab",
+      "python/dpt/material_projection.py": "79451aff95d67057328813fc79bd3684e0a6bfdcedb34277e9174691380a27e1",
+      "python/dpt/material_reconstruction.py": "4902f55b7574d9d719ed8ccf51a3afbc2d429b94a80e79acde1090b490852b0c",
+      "python/dpt/materials.py": "8d37eb5b66b3747ae93b310009a7b79d2a198ba5643027e4750c7b34d79724db",
+      "python/dpt/objectives.py": "6f1e319e5b70492130064005651afeb9d78f2c4dd04262e03e5771476db15ffd",
+      "python/dpt/operator_checks.py": "789fb5c3fcc94b3f023438c9566086d87071cf8a2355de645bb22bce5cb5e6bb",
+      "python/dpt/phantoms.py": "f162472bfbbc3747e0aebb5385cf9af64fd8f6ad5ae71acda17c883d066efc43",
+      "python/dpt/photon_counting.py": "3b2f4415583d70c2d982ffbcb2b070547e5c55d72fdd7747e95101e6877f763c",
+      "python/dpt/physical_data.py": "cac079eb746192b9f3ba12b301b1c13018c38b07d81a338d1e98fc9e241acb55",
+      "python/dpt/pipeline.py": "81f4e50d04c463168cdea04cfed768fa6948d1ad33932fe27f087f4840c98b6b",
+      "python/dpt/pose_optimization.py": "781bcc2ab5ac39594d251f96e38b75d3ffc2e25c35ea0a34255a6a963d8d7dff",
+      "python/dpt/precision.py": "f000dd2c0d5b4b0807d1f089413d47207c69111c6e0a52642cbb1f9714e3df52",
+      "python/dpt/projection.py": "60725914a7da03054356abf585620bc1a8f091bea7df1db8786b0abc154592c4",
+      "python/dpt/projective.py": "a944ef4072b44c6932e7f5755cd65a30f7a4cd5d12116243106e8db87b91850a",
+      "python/dpt/recovery.py": "5d8f5401bb1694d460ca2b90a193745052c3b45ebc37f6f773dce585042982db",
+      "python/dpt/reference_data.py": "778e3d18ad34dabe3059eaaebea9d852f927a4b82f6003c1b6885b0c53c342f6",
+      "python/dpt/registration.py": "c2067cc2eeaf1420245bf67f10475caff7af7cc611c1928b6850f40ddacf3ebe",
+      "python/dpt/regularization.py": "f4a4329637c7278f4c3ccd7a2e259fd12b31190e84fc5e371a496048c67b4da5",
+      "python/dpt/rendering.py": "0e70d0485c1b2ab9ba167c2a884e9ec2e1b793a29371fef53d295901f6832bef",
+      "python/dpt/response_matrix.py": "f6ddec76d7beeba16aa69749ed448aa00ecd6f5839bc2a5674a0920fd547ad39",
+      "python/dpt/solver_lifecycle.py": "b05a186069768e80ae4af27c23ecec596e5436c81a58c64026d9bda3d7c39325",
+      "python/dpt/spectral.py": "8b0959e96713c8e75e188091ab5c2675eec2c245af82b5feec55d97564c91d4d",
+      "python/dpt/spectral_inputs.py": "eccc2e80806cf9d3d785d39ec507e481fe128e59aa74ea8ee5ab7f78bc486334",
+      "python/dpt/spectral_recovery.py": "da8274d9ad9721e32c24c0fb60450d43f4d423d6bd3a9efab472b7adb5e2828c",
+      "python/dpt/statistics.py": "2943d3e693a78bceb417b5943044256a27fcc3397cc558c81490e67706e336c2",
+      "python/dpt/stochastic_models.py": "a8b66e9807799bb8b59068fd76252710a9097c5ceab7d1e08af2801a4df530d5",
+      "python/dpt/stochastic_recovery.py": "935ea1a27f05a8b81127920adf906997461da78e430ff59065503efef8cc5c90",
+      "python/dpt/tigre_geometry.py": "d18300354058a3e95ca0e7968c9b5661b7d17a03a2676088b76a0961cc456777",
+      "python/dpt/torch/__init__.py": "d7ae4a0d505b9e6391a83607ccc20d9646b3d193c3a72a27064990212450785d",
+      "python/dpt/torch/geometry.py": "f503d5ba0327ac64f2c07cdf30a176957da68eeb2f65bcb5e5f98d59976e219f",
+      "python/dpt/torch/modules.py": "87e6ea8fd7ade84235f50d8d30b3fd5ee33495e2eb37d77f02d3f7e0e7311497",
+      "python/dpt/torch/operators.py": "61c979ea3fcf6566adbcdb4f6b99bffb54bf2cf9909575e9ad786d03b7f097c4",
+      "python/dpt/transmission.py": "62033e7bbdd676f1e11f25605ac105bc5b51686d52665b791103fd6a19c0b043",
+      "python/dpt/transport/__init__.py": "5d6e96f55f892803e54a135263347cc8285874423bb8c423723ca598317f548a",
+      "python/dpt/transport/_constants.py": "47fb4c883f971563c9ae806c740155d30caff5cb2e280d6fad67113d2a94e43f",
+      "python/dpt/transport/batched.py": "ba4c6d1c2f288d62d11b28d8e46b7003b4035d7c698a1d57367baa2ced245ab9",
+      "python/dpt/transport/batched_kernels.py": "f40c81c59618a2e026747852e6ffdbe3a3356de758b232df1023f3beb4daee73",
+      "python/dpt/transport/batched_model_kernels.py": "0adf0b97b4cfac3cbfc14b7500e1035c8d6ae8dba45e099a113c956ec242b1e0",
+      "python/dpt/transport/bound_compton.py": "dfbdbc41752c431265ed728491365e0f599247fe585e9e94c7a405d21cd8600d",
+      "python/dpt/transport/bound_compton_kernels.py": "ead7d22c7ac91de72267ce2649538be61ad545804c89cfd7da02c33ee4bb04cc",
+      "python/dpt/transport/bound_compton_mixed.py": "6bfbf8a13e5a60e2ffc0cb523195b6ce8df048b47b8aa6fe454330f7038551b9",
+      "python/dpt/transport/bound_compton_mixed_kernels.py": "b740c83fccd5e4e2e9c4312339eb113d7d9fbfb72e8d5c3cb66ac7184d76c0d4",
+      "python/dpt/transport/bound_compton_quadrature.py": "29aa5103ce321db70efa55bf4c74a0c12203ba51055a023282017cbae8cf38fc",
+      "python/dpt/transport/bound_compton_tail.py": "dd36bf7525991db72cd537ce70c4b55db6e5e42fcf7f370d4296a214424832c7",
+      "python/dpt/transport/compton_boundary_arguments.py": "d57732dee585e13fdf751a261abddcc28f0bc5fcdc9f2623efd504631a9d60dd",
+      "python/dpt/transport/compton_geometry_boundary.py": "c6e6240ff04c8ae1627304f2f1de5de550979ce6744d83eaea756f52d7dda6fa",
+      "python/dpt/transport/compton_geometry_boundary_kernels.py": "0c10aa344834e1248790d89a55b42c31a94a36f3168af0bc6e0442300475a20d",
+      "python/dpt/transport/contracted_kernels.py": "5a5dbdc5dacce1fe9f61b867620b2cd9917d26e68204f7398a3d6cfb34e991a3",
+      "python/dpt/transport/derivatives.py": "29ae7a2249f70206a94d7665c9eb86d778f2606659de7b970b85d2043e26268d",
+      "python/dpt/transport/elastic_geometry.py": "6e09f82735730a3109c9dd15df3198180aae5cb03169d173a6df0956a2f05e46",
+      "python/dpt/transport/elastic_geometry_prefix.py": "f2c93fb8e7af6f83a38e7a8e088e112baf980285613fe5492837ec02b16a11a1",
+      "python/dpt/transport/energy_balance.py": "02216a00eeeb128065448d1f3fd84a92cfa2a10f734fbcf572552fe5beeee20e",
+      "python/dpt/transport/estimators.py": "6aef1cc38ec7732590088996ac807c576d8db57d08684e17683950ca7ebcd6d6",
+      "python/dpt/transport/experiments.py": "1609ad403fcd5624aabae075460d09d3e6a42290792327b3e91728cdcfe62860",
+      "python/dpt/transport/forward.py": "5f41c5a993bc7e2a27e05cdfaa7b2a5ea26697800330d73c30213cde6ec089cf",
+      "python/dpt/transport/geometry_admission.py": "36870f4e7c41d370c4c3d9ab18bf26735e0a53dbc76fbe70138edce7650a66f0",
+      "python/dpt/transport/geometry_ballistic.py": "b1cdd2d0c2cff3859ea83f6d8a0238c3354960484402003a2dd543ee62e73741",
+      "python/dpt/transport/geometry_ballistic_kernels.py": "78ae42fc48a1c292751b29389e0850f425144c12aa71a7fd0dd37111640707be",
+      "python/dpt/transport/geometry_bound_admission.py": "29f01a773d2dbad40cca7f2c4acfe37d91ea9406260b6fdc2b7141d923f4d2f6",
+      "python/dpt/transport/geometry_composed.py": "f59bf02f73f219919b5c047f84f51c5aa0d7b675144d68ffb9736ed214d8221b",
+      "python/dpt/transport/geometry_connection_kernels.py": "a9e32d7b88e5b71eb47ae78df34b79afc0818ac09ee04fe0d1bb08c1cfea4517",
+      "python/dpt/transport/geometry_derivatives.py": "478edf492cb16b778db27567a16a5a1552ac72c88e659e2de3bd12d3f1799179",
+      "python/dpt/transport/geometry_detector_proposal_arguments.py": "3fdf84c1bb1e9cc7033c6dadc5f8a96da2b4e46368ba56cdde6b5b2a2c3cd206",
+      "python/dpt/transport/geometry_detector_proposal_kernels.py": "5bf6399a614d29d4266f7e572cee1ca43aa75e70a6fc7c957b5e7862e84f485a",
+      "python/dpt/transport/geometry_detector_proposals.py": "797b112d728ca74fb72a9243b1cc314281ea17ecb911247484d0248690d6c17f",
+      "python/dpt/transport/geometry_driver_kernels.py": "507fd37d56cadc80e110eb4b3be91bc5f6f59c9d76acff86a836176792aa452d",
+      "python/dpt/transport/geometry_flights.py": "a48fea53db871a7aaff6c5dcd8a896bddf0021cf6cd017275effd5d0d4256b36",
+      "python/dpt/transport/geometry_forward_proposal_arguments.py": "21b24fd23cea34c888573dd527bdb098bba2a689b540c1b7665edf4f03038490",
+      "python/dpt/transport/geometry_forward_proposal_kernels.py": "db88fa2d479c236d9bd10d51b1febce2f2227339e9c01fb8a11dcf04f915f36d",
+      "python/dpt/transport/geometry_forward_proposals.py": "3f53034d508c61e14c8970c405b1a47cf6b7f7b53c871c88ed60261e137ccc11",
+      "python/dpt/transport/geometry_grazing_admission.py": "5bec636d14a0f18b793d082de93b5b346ff1d6b442d73f98ab4301c7418bf768",
+      "python/dpt/transport/geometry_histories.py": "72aa89df0cc56b4102eb7ba7ee616e0ff8f0d339134039f65cbe3001d5fc00c0",
+      "python/dpt/transport/geometry_interface_arguments.py": "08446d01d6d721ef4a63f1d7e43ee33c58c0cc893e3c29e58d02e0122bbbb89f",
+      "python/dpt/transport/geometry_interface_kernels.py": "f0728e4c8c7a7064593045ff59eafb8bf28c72b4b9cf976a74f9afe6a8c28305",
+      "python/dpt/transport/geometry_interfaces.py": "df916062e3e310d60a1dda86a33dcc7db5ff7d28e0889dda96f5eec6b1c592d8",
+      "python/dpt/transport/geometry_law_signatures.py": "3ac36ee41aab6af8dff0ac8534a408b887b2eeae2f7145889cb79f7f25c8431d",
+      "python/dpt/transport/geometry_opaque_kernels.py": "7da198b289b860ba298b50c7827a1827beb835fdd510548485bdc62f5ca6b87f",
+      "python/dpt/transport/geometry_opaque_source.py": "0b63ae6dd2df8cb9c51fb2613eaceeba9a550988fdf7c1502a70067594807efc",
+      "python/dpt/transport/geometry_parameters.py": "4390a987a665491db4b2fa6fb010cbcf7490d13a5c7b33a8d91d04a67c51ac1a",
+      "python/dpt/transport/geometry_path_measure.py": "0be89d9dce8db8071a8d0391298c45b325b75ddfb20c09428b798852964ddae7",
+      "python/dpt/transport/geometry_physical_admission.py": "83e0e8d6437a78bb3770e2c839132cdfc60edf6948c905a1d86a34d4aedab1ce",
+      "python/dpt/transport/geometry_reference_kernels.py": "c8108632fef3e8286c5f82c8e20acac956e5da1ee3bfdc96b5adceded9bf8147",
+      "python/dpt/transport/geometry_sampling.py": "abf1be4d9a2756fe5b8468272a51ac8bb33d708617b1848ada19e6b9acb9328f",
+      "python/dpt/transport/geometry_sampling_kernels.py": "19ba6c7f0bc04c0fa503506f49344ecbd978415569ebe807e7d3446ddcd23c1d",
+      "python/dpt/transport/geometry_source_boundary_arguments.py": "0cd21c65c9227eb1453cc0c4a4cff33383fdcd6a911eccdefb6a5f5e27197f9a",
+      "python/dpt/transport/geometry_source_boundary_kernels.py": "f1386fc8a751b0f57074d63c2443c09fb8d6441e559852d43755b421fd20f535",
+      "python/dpt/transport/geometry_source_jumps.py": "b231b251f4f81488dbd202f5fb7c4896a5bb9974221706f1e64cc3e25d1281fa",
+      "python/dpt/transport/geometry_startup_admission.py": "971a03b58d82bdae6811f8393ad3a5eba15d3c81c9912b9277f912ca25c2349e",
+      "python/dpt/transport/geometry_tangents.py": "9f8c9af793740a17237ff41ad0f7338952fd4af2b110c94c03ccf2101ecd0e8b",
+      "python/dpt/transport/geometry_terminal.py": "8dc250f5ec2d70bd28fe98ce57bad21590e183d8afe641477e485c7132f2b34e",
+      "python/dpt/transport/geometry_whole_source_admission.py": "4d72a391a1142955db2fb898939e9b387a524daa5345a8795fd198b0835d2141",
+      "python/dpt/transport/graph.py": "554831a40a1870cd293728da3183a08aa483ec6992e7252b37c1e7f4a47aab74",
+      "python/dpt/transport/inverse.py": "2ce62ecd8a02aa28c41bb5a1b0e1cf4731caeaf9e3dea8448007c07ba0368e32",
+      "python/dpt/transport/kernels.py": "bec83ac2fd7e8acdb047b22d16018d75ee035566ecb595d1d15e1ccc6a2e499b",
+      "python/dpt/transport/model.py": "8f3392c119d31c2f2a35f5cc5f3ed10b17cedd07704f94e2f3bc00c1c17721d4",
+      "python/dpt/transport/parameter_kernels.py": "fd69f243115730572f6ac1895f296f1b4f106d8f82db9f150132ab84694f6f83",
+      "python/dpt/transport/parameters.py": "f2f3fcb3b0f1af6f5ac11aed44531e5cdc258514b3ff24249879469d6ad75070",
+      "python/dpt/transport/physical.py": "627cc763a8f79ef11cc31d1ecba9bdd59fb5cd4324c491c6a453274668b55b15",
+      "python/dpt/transport/physical_geometry_events.py": "1d822785f8f3b2a55bd5a2402c58b4fbca90dbe1e66824fbc7dce5e5f8f71d2c",
+      "python/dpt/transport/physical_geometry_kernels.py": "dfd1741890e9becdd4d2be5612f84828e3810a523762256fafcbe4bf6140bb28",
+      "python/dpt/transport/physical_kernels.py": "0a1344115688c48ddbfb0fb924daa294965421960590bf6eb75a479d8471ec00",
+      "python/dpt/transport/readout.py": "49728e0e92ffb2e931541b4a5db502232676169abe5e58ee3bb487ddca740ad0",
+      "python/dpt/transport/readout_kernels.py": "5f6b1709c2221ebb6b2c3139126efdf5842348fa9707a38c956670c82b640564",
+      "python/dpt/transport/recovery_experiments.py": "9b4e207f540b7a9449723ddbc7b178bf0cf0d6dc9c34a93740348423cb04c80f",
+      "python/dpt/transport/recovery_kernels.py": "275f092524c81c20eec7b6f728a253f0afed27584fbf4c387807deb825d4098b",
+      "python/dpt/transport/rng.py": "d93f45dbc71c3076cfbb093961f14623f582e8e0a82429afb99de1fe28d4a4a0",
+      "python/dpt/transport/sampling.py": "702122ff71d9863ac6e72424589d74841b9424625b9c95c34ced11dd3251f359",
+      "python/dpt/transport/sampling_identity.py": "f0d8c2f2e51b01f81c597274ac1e2af84220c2bcf1516ba45736fd45a6fd0fa1",
+      "python/dpt/transport/sampling_kernels.py": "824d0266c374b8b7a0ac6ebfad2638c8bfab0215f8e57f92eed0796a36c463aa",
+      "python/dpt/transport/sharding.py": "21246e2c7e6e550f0714e086df4368aff770a01f4ccac99a22ef9499adf1e64f",
+      "python/dpt/transport/simulation.py": "0c625ba35a8f1f6c757f22ab2a760037c00206a52a6bdcec1eb27615ba3f2d32",
+      "python/dpt/transport/source.py": "2df0572fb35ee4e4db33f48157978b7ed07fc7f07d92ad4b88b4eaf2e062c857",
+      "python/dpt/transport/source_spectrum.py": "1f78945d4a30ec7b1f938866b9ca5c3715c4deb5b92b9d966181c79a0f8dc76d",
+      "python/dpt/transport/spectrum_kernels.py": "02522a3042cae842857ef8b941486f6698c9f45cd404158b530e691c8b732986",
+      "python/dpt/transport/uncollided_geometry.py": "554075f7b507edfcde4d86e385c277df07b70c3f16ffc588b535c0e6503d52a9",
+      "python/dpt/transport/voxel_derivatives.py": "2762101e4d64606c38217075f5289cb07261e506f8f19a729e4b54b8d90824fd",
+      "python/dpt/transport/voxel_kernels.py": "1a17cb1572092196a3d0c68e239be1939606c144e6d79385f24357439a6fbe9a",
+      "python/dpt/validation/__init__.py": "fc5a55cbf5e70192ca2345c4232659f4fa624814663ef1ce0ae28228935a0f73",
+      "python/dpt/validation/autodiff.py": "5bc609554371c8f36a4f6010e48c2348b012a14dfb018b85f282ecdd4b3a0fbf",
+      "python/dpt/validation/detector.py": "19ef9f9287a03c832695bf2992c476b4eb6a2d705a6695835d3a8b16dbbd63e2",
+      "python/dpt/validation/identifiability.py": "960ee14bbf9ff6e82ab191a5f4738e008983947d68b1ad3a892fe88654969c75",
+      "python/dpt/validation/objectives.py": "e4b69bc8c11df84db7cb42ab61f8bce7dd60b2ff795ba6d6585a37ee1094e55b",
+      "python/dpt/validation/projection.py": "7d7ede0a5266c816379e17517c6140ea6ff948607116f11b03008a9b6e6f2495",
+      "python/dpt/validation/recovery.py": "41dfdbd7fd827ce841d5e4e338639d0e8effc5b01d625ba0c97f7ff9971702e8",
+      "python/dpt/validation/spectral.py": "d58d888d7f178cc3ca1e0a7ccd13e71fc2c4bcaa19b8f4aeafd59c6bf1f89d85",
+      "python/dpt/validation/transmission.py": "b05e5e967eda218e927d20ac38cd5034ee3e0d7d917783e1a05ac9b1f0aa9b35",
+      "python/dpt/validation/transport.py": "1ebcbe81d3bca470905f4b8f9c10c8de5041e11208f86248184ca82c1cf0687a",
+      "python/dpt/validation/transport_weighted.py": "2ded37d3bc7bf41c15914b159e81e925e9fbecf54bfea77862db355869e9f264",
+      "python/dpt/volumes.py": "7b29e313c9181a3023ac14e37a9b8acee653d0e39fb28b5a3ca6bbd8c0bc2426"
+    },
+    "revision": {
+      "command": [
+        "git",
+        "-C",
+        "measurements/20261019/candidate",
+        "rev-parse",
+        "HEAD"
+      ],
+      "returncode": 128,
+      "stdout": "",
+      "stderr": "fatal: not a git repository (or any of the parent directories): .git\n"
+    }
+  },
+  "input": {
+    "file": "measurements/20261019/data/CTChest.nii.gz",
+    "sha256": "f1ec515605619d4dc0e5085ee34e9188c8e76f11bac4e5cdba33e4aa905d1a37",
+    "grid": {
+      "shape": [
+        139,
+        512,
+        512
+      ],
+      "spacing_mm": [
+        0.7617189884185791,
+        0.7617189884185791,
+        2.5
+      ],
+      "origin_mm": [
+        195.0,
+        171.6999969482422,
+        -347.75
+      ],
+      "orientation": [
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "native_shape_zyx": [
+      139,
+      512,
+      512
+    ],
+    "resampled": false,
+    "units": "HU",
+    "attenuation_model": "water-scaled monoenergetic",
+    "energy_kev": 60,
+    "mu_water_mm_inverse": 0.02059,
+    "field_dtype": "float32",
+    "geometry": [
+      {
+        "source_mm": [
+          0.3807984590531992,
+          1280.854457404986,
+          -175.25
+        ],
+        "origin_mm": [
+          683.5250937177063,
+          -674.8060355915503,
+          -858.3942952586534
+        ],
+        "u": [
+          -1.0,
+          1.2246467991473532e-16,
+          0.0
+        ],
+        "v": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "spacing_mm": [
+          2.673754580268702,
+          2.673754580268702
+        ],
+        "shape": [
+          512,
+          512
+        ]
+      },
+      {
+        "source_mm": [
+          1304.154460456744,
+          -22.91920459270485,
+          -175.25
+        ],
+        "origin_mm": [
+          -651.5060325397924,
+          -706.0634998513582,
+          -858.3942952586534
+        ],
+        "u": [
+          6.123233995736766e-17,
+          1.0,
+          0.0
+        ],
+        "v": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "spacing_mm": [
+          2.673754580268702,
+          2.673754580268702
+        ],
+        "shape": [
+          512,
+          512
+        ]
+      },
+      {
+        "source_mm": [
+          922.2879959900381,
+          898.9879929382801,
+          -175.25
+        ],
+        "origin_mm": [
+          22.483163399859336,
+          -966.928767064496,
+          -858.3942952586534
+        ],
+        "u": [
+          -0.7071067811865475,
+          0.7071067811865476,
+          0.0
+        ],
+        "v": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "spacing_mm": [
+          2.673754580268702,
+          2.673754580268702
+        ],
+        "shape": [
+          512,
+          512
+        ]
+      }
+    ],
+    "view_names": [
+      "ap",
+      "lateral",
+      "oblique"
+    ],
+    "samples_per_ray": 1024,
+    "integration": "clipped midpoint",
+    "source_object_distance_mm": 1303.7736619976909,
+    "source_detector_distance_mm": 1955.6604929965363,
+    "detector_pitch_column_row_mm": [
+      2.673754580268702,
+      2.673754580268702
+    ],
+    "pose": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "baseline_sha256": "c29bb21230fb67a8b837e7920517b33e83891945492250473b2779cc77833ff5",
+  "harness_sha256": "1efce2c81db1f895648eb15e529833a50eb0ddbcb153d9272163a2511fd6d9c6",
+  "warmup_calls": 3,
+  "capture": {
+    "nvtx_range": "operation",
+    "start_stop_api": "cudaProfilerStart/Stop",
+    "selection": "complete first matching operation NVTX range",
+    "timing_limit": "Nsight replay/timeline measurements"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "nvidia_smi_before": {
+      "command": [
+        "nvidia-smi",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout": "\n==============NVSMI LOG==============\n\nTimestamp                                              : Mon Oct 19 08:30:48 2026\nDriver Version                                         : 580.178.04\nCUDA Version                                           : 13.0\n\nAttached GPUs                                          : 1\nGPU 00000000:02:00.0\n    Product Name                                       : NVIDIA RTX PRO 6000 Blackwell Workstation Edition\n    Product Brand                                      : NVIDIA RTX\n    Product Architecture                               : Blackwell\n    Display Mode                                       : Requested functionality has been deprecated\n    Display Attached                                   : Yes\n    Display Active                                     : Enabled\n    Persistence Mode                                   : Disabled\n    Addressing Mode                                    : HMM\n    MIG Mode\n        Current                                        : N/A\n        Pending                                        : N/A\n    Accounting Mode                                    : Disabled\n    Accounting Mode Buffer Size                        : 4000\n    Driver Model\n        Current                                        : N/A\n        Pending                                        : N/A\n    Serial Number                                      : 1793725035865\n    GPU UUID                                           : GPU-2011319e-f88c-67ca-77d8-8c0bc08f57d0\n    GPU PDI                                            : 0xd928b469c2c80963\n    Minor Number                                       : 0\n    VBIOS Version                                      : 98.02.52.00.03\n    MultiGPU Board                                     : No\n    Board ID                                           : 0x200\n    Board Part Number                                  : 900-5G144-0100-000\n    GPU Part Number                                    : 2BB1-870-A1\n    FRU Part Number                                    : N/A\n    Platform Info\n        Chassis Serial Number                          : \n        Slot Number                                    : 0\n        Tray Index                                     : 0\n        Host ID                                        : 1\n        Peer Type                                      : Direct Connected\n        Module Id                                      : 1\n        GPU Fabric GUID                                : 0x0000000000000000\n    Inforom Version\n        Image Version                                  : G144.0520.00.02\n        OEM Object                                     : 2.1\n        ECC Object                                     : 7.16\n        Power Management Object                        : N/A\n    Inforom BBX Object Flush\n        Latest Timestamp                               : N/A\n        Latest Duration                                : N/A\n    GPU Operation Mode\n        Current                                        : N/A\n        Pending                                        : N/A\n    GPU C2C Mode                                       : Disabled\n    GPU Virtualization Mode\n        Virtualization Mode                            : None\n        Host VGPU Mode                                 : N/A\n        vGPU Heterogeneous Mode                        : N/A\n    GPU Recovery Action                                : None\n    GSP Firmware Version                               : 580.178.04\n    IBMNPU\n        Relaxed Ordering Mode                          : N/A\n    PCI\n        Bus                                            : 0x02\n        Device                                         : 0x00\n        Domain                                         : 0x0000\n        Base Classcode                                 : 0x3\n        Sub Classcode                                  : 0x0\n        Device Id                                      : 0x2BB110DE\n        Bus Id                                         : 00000000:02:00.0\n        Sub System Id                                  : 0x204B1028\n        GPU Link Info\n            PCIe Generation\n                Max                                    : 5\n                Current                                : 5\n                Device Current                         : 5\n                Device Max                             : 5\n                Host Max                               : 5\n            Link Width\n                Max                                    : 16x\n                Current                                : 16x\n        Bridge Chip\n            Type                                       : N/A\n            Firmware                                   : N/A\n        Replays Since Reset                            : 0\n        Replay Number Rollovers                        : 0\n        Tx Throughput                                  : 1532 KB/s\n        Rx Throughput                                  : 4112 KB/s\n        Atomic Caps Outbound                           : N/A\n        Atomic Caps Inbound                            : FETCHADD_32 FETCHADD_64 SWAP_32 SWAP_64 CAS_32 CAS_64 \n    Fan Speed                                          : 38 %\n    Performance State                                  : P0\n    Clocks Event Reasons\n        Idle                                           : Not Active\n        Applications Clocks Setting                    : Not Active\n        SW Power Cap                                   : Not Active\n        HW Slowdown                                    : Not Active\n            HW Thermal Slowdown                        : Not Active\n            HW Power Brake Slowdown                    : Not Active\n        Sync Boost                                     : Not Active\n        SW Thermal Slowdown                            : Not Active\n        Display Clock Setting                          : Not Active\n    Clocks Event Reasons Counters\n        SW Power Capping                               : 27379906 us\n        Sync Boost                                     : 0 us\n        SW Thermal Slowdown                            : 0 us\n        HW Thermal Slowdown                            : 0 us\n        HW Power Braking                               : 0 us\n    Sparse Operation Mode                              : N/A\n    FB Memory Usage\n        Total                                          : 97887 MiB\n        Reserved                                       : 674 MiB\n        Used                                           : 248 MiB\n        Free                                           : 96967 MiB\n    BAR1 Memory Usage\n        Total                                          : 256 MiB\n        Used                                           : 35 MiB\n        Free                                           : 221 MiB\n    Conf Compute Protected Memory Usage\n        Total                                          : 0 MiB\n        Used                                           : 0 MiB\n        Free                                           : 0 MiB\n    Compute Mode                                       : Default\n    Utilization\n        GPU                                            : 0 %\n        Memory                                         : 0 %\n        Encoder                                        : 0 %\n        Decoder                                        : 0 %\n        JPEG                                           : 0 %\n        OFA                                            : 0 %\n    Encoder Stats\n        Active Sessions                                : 0\n        Average FPS                                    : 0\n        Average Latency                                : 0\n    FBC Stats\n        Active Sessions                                : 0\n        Average FPS                                    : 0\n        Average Latency                                : 0\n    DRAM Encryption Mode\n        Current                                        : Disabled\n        Pending                                        : Disabled\n    ECC Mode\n        Current                                        : Disabled\n        Pending                                        : Disabled\n    ECC Errors\n        Volatile\n            SRAM Correctable                           : N/A\n            SRAM Uncorrectable Parity                  : N/A\n            SRAM Uncorrectable SEC-DED                 : N/A\n            DRAM Correctable                           : N/A\n            DRAM Uncorrectable                         : N/A\n        Aggregate\n            SRAM Correctable                           : N/A\n            SRAM Uncorrectable Parity                  : N/A\n            SRAM Uncorrectable SEC-DED                 : N/A\n            DRAM Correctable                           : N/A\n            DRAM Uncorrectable                         : N/A\n            SRAM Threshold Exceeded                    : N/A\n        Aggregate Uncorrectable SRAM Sources\n            SRAM L2                                    : N/A\n            SRAM SM                                    : N/A\n            SRAM Microcontroller                       : N/A\n            SRAM PCIE                                  : N/A\n            SRAM Other                                 : N/A\n        Channel Repair Pending                         : No\n        TPC Repair Pending                             : No\n        Unrepairable Memory                            : N/A\n    Retired Pages\n        Single Bit ECC                                 : N/A\n        Double Bit ECC                                 : N/A\n        Pending Page Blacklist                         : N/A\n    Remapped Rows\n        Correctable Error                              : 0\n        Inactive Correctable Error                     : 0\n        Uncorrectable Error                            : 0\n        Inactive Uncorrectable Error                   : 0\n        Pending                                        : No\n        Remapping Failure Occurred                     : No\n        Bank Remap Availability Histogram\n            Max                                        : 512 bank(s)\n            High                                       : 0 bank(s)\n            Partial                                    : 0 bank(s)\n            Low                                        : 0 bank(s)\n            None                                       : 0 bank(s)\n    Temperature\n        GPU Current Temp                               : 53 C\n        GPU T.Limit Temp                               : 41 C\n        GPU Shutdown T.Limit Temp                      : -5 C\n        GPU Slowdown T.Limit Temp                      : -2 C\n        GPU Max Operating T.Limit Temp                 : 0 C\n        GPU Target Temperature                         : N/A\n        Memory Current Temp                            : N/A\n        Memory Max Operating T.Limit Temp              : N/A\n    GPU Power Readings\n        Average Power Draw                             : 82.91 W\n        Instantaneous Power Draw                       : 65.83 W\n        Current Power Limit                            : 600.00 W\n        Requested Power Limit                          : 600.00 W\n        Default Power Limit                            : 600.00 W\n        Min Power Limit                                : 150.00 W\n        Max Power Limit                                : 600.00 W\n    GPU Memory Power Readings \n        Average Power Draw                             : N/A\n        Instantaneous Power Draw                       : N/A\n    Module Power Readings\n        Average Power Draw                             : N/A\n        Instantaneous Power Draw                       : N/A\n        Current Power Limit                            : N/A\n        Requested Power Limit                          : N/A\n        Default Power Limit                            : N/A\n        Min Power Limit                                : N/A\n        Max Power Limit                                : N/A\n    Power Smoothing                                    : N/A\n    Workload Power Profiles\n        Requested Profiles                             : N/A\n        Enforced Profiles                              : N/A\n    Clocks\n        Graphics                                       : 2647 MHz\n        SM                                             : 2647 MHz\n        Memory                                         : 14001 MHz\n        Video                                          : 2227 MHz\n    Applications Clocks\n        Graphics                                       : 2617 MHz\n        Memory                                         : 14001 MHz\n    Default Applications Clocks\n        Graphics                                       : 2617 MHz\n        Memory                                         : 14001 MHz\n    Deferred Clocks\n        Memory                                         : N/A\n    Max Clocks\n        Graphics                                       : 3090 MHz\n        SM                                             : 3090 MHz\n        Memory                                         : 14001 MHz\n        Video                                          : 3090 MHz\n    Max Customer Boost Clocks\n        Graphics                                       : N/A\n    Clock Policy\n        Auto Boost                                     : N/A\n        Auto Boost Default                             : N/A\n    Fabric\n        State                                          : N/A\n        Status                                         : N/A\n        CliqueId                                       : N/A\n        ClusterUUID                                    : N/A\n        Health\n            Summary                                    : N/A\n            Bandwidth                                  : N/A\n            Route Recovery in progress                 : N/A\n            Route Unhealthy                            : N/A\n            Access Timeout Recovery                    : N/A\n            Incorrect Configuration                    : N/A\n            Partition Assigned                         : N/A\n    Processes\n        GPU instance ID                   : N/A\n        Compute instance ID               : N/A\n        Process ID                        : 12299\n            Type                          : G\n            Name                          : /usr/lib/xorg/Xorg\n            Used GPU Memory               : 68 MiB\n        GPU instance ID                   : N/A\n        Compute instance ID               : N/A\n        Process ID                        : 12556\n            Type                          : G\n            Name                          : /usr/bin/gnome-shell\n            Used GPU Memory               : 98 MiB\n    Capabilities\n        EGM                                            : disabled\n\n",
+      "stderr": ""
+    },
+    "warp_cache_path": "measurements/20261019/cache/final-profile/warp",
+    "cuda_cache_path": "measurements/20261019/cache/final-profile/cuda",
+    "versions": {
+      "numpy": "2.5.3",
+      "torch": "2.14.0",
+      "warp-lang": "1.17.0",
+      "nibabel": "5.4.2"
+    },
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "torch_cuda": "13.0",
+    "warp_lineinfo_before_dpt_kernel_import": true,
+    "nvidia_smi_after": {
+      "command": [
+        "nvidia-smi",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout": "\n==============NVSMI LOG==============\n\nTimestamp                                              : Mon Oct 19 08:30:53 2026\nDriver Version                                         : 580.178.04\nCUDA Version                                           : 13.0\n\nAttached GPUs                                          : 1\nGPU 00000000:02:00.0\n    Product Name                                       : NVIDIA RTX PRO 6000 Blackwell Workstation Edition\n    Product Brand                                      : NVIDIA RTX\n    Product Architecture                               : Blackwell\n    Display Mode                                       : Requested functionality has been deprecated\n    Display Attached                                   : Yes\n    Display Active                                     : Enabled\n    Persistence Mode                                   : Disabled\n    Addressing Mode                                    : HMM\n    MIG Mode\n        Current                                        : N/A\n        Pending                                        : N/A\n    Accounting Mode                                    : Disabled\n    Accounting Mode Buffer Size                        : 4000\n    Driver Model\n        Current                                        : N/A\n        Pending                                        : N/A\n    Serial Number                                      : 1793725035865\n    GPU UUID                                           : GPU-2011319e-f88c-67ca-77d8-8c0bc08f57d0\n    GPU PDI                                            : 0xd928b469c2c80963\n    Minor Number                                       : 0\n    VBIOS Version                                      : 98.02.52.00.03\n    MultiGPU Board                                     : No\n    Board ID                                           : 0x200\n    Board Part Number                                  : 900-5G144-0100-000\n    GPU Part Number                                    : 2BB1-870-A1\n    FRU Part Number                                    : N/A\n    Platform Info\n        Chassis Serial Number                          : \n        Slot Number                                    : 0\n        Tray Index                                     : 0\n        Host ID                                        : 1\n        Peer Type                                      : Direct Connected\n        Module Id                                      : 1\n        GPU Fabric GUID                                : 0x0000000000000000\n    Inforom Version\n        Image Version                                  : G144.0520.00.02\n        OEM Object                                     : 2.1\n        ECC Object                                     : 7.16\n        Power Management Object                        : N/A\n    Inforom BBX Object Flush\n        Latest Timestamp                               : N/A\n        Latest Duration                                : N/A\n    GPU Operation Mode\n        Current                                        : N/A\n        Pending                                        : N/A\n    GPU C2C Mode                                       : Disabled\n    GPU Virtualization Mode\n        Virtualization Mode                            : None\n        Host VGPU Mode                                 : N/A\n        vGPU Heterogeneous Mode                        : N/A\n    GPU Recovery Action                                : None\n    GSP Firmware Version                               : 580.178.04\n    IBMNPU\n        Relaxed Ordering Mode                          : N/A\n    PCI\n        Bus                                            : 0x02\n        Device                                         : 0x00\n        Domain                                         : 0x0000\n        Base Classcode                                 : 0x3\n        Sub Classcode                                  : 0x0\n        Device Id                                      : 0x2BB110DE\n        Bus Id                                         : 00000000:02:00.0\n        Sub System Id                                  : 0x204B1028\n        GPU Link Info\n            PCIe Generation\n                Max                                    : 5\n                Current                                : 5\n                Device Current                         : 5\n                Device Max                             : 5\n                Host Max                               : 5\n            Link Width\n                Max                                    : 16x\n                Current                                : 16x\n        Bridge Chip\n            Type                                       : N/A\n            Firmware                                   : N/A\n        Replays Since Reset                            : 0\n        Replay Number Rollovers                        : 0\n        Tx Throughput                                  : 2199 KB/s\n        Rx Throughput                                  : 2305 KB/s\n        Atomic Caps Outbound                           : N/A\n        Atomic Caps Inbound                            : FETCHADD_32 FETCHADD_64 SWAP_32 SWAP_64 CAS_32 CAS_64 \n    Fan Speed                                          : 38 %\n    Performance State                                  : P1\n    Clocks Event Reasons\n        Idle                                           : Not Active\n        Applications Clocks Setting                    : Not Active\n        SW Power Cap                                   : Not Active\n        HW Slowdown                                    : Not Active\n            HW Thermal Slowdown                        : Not Active\n            HW Power Brake Slowdown                    : Not Active\n        Sync Boost                                     : Not Active\n        SW Thermal Slowdown                            : Not Active\n        Display Clock Setting                          : Not Active\n    Clocks Event Reasons Counters\n        SW Power Capping                               : 27379906 us\n        Sync Boost                                     : 0 us\n        SW Thermal Slowdown                            : 0 us\n        HW Thermal Slowdown                            : 0 us\n        HW Power Braking                               : 0 us\n    Sparse Operation Mode                              : N/A\n    FB Memory Usage\n        Total                                          : 97887 MiB\n        Reserved                                       : 674 MiB\n        Used                                           : 1376 MiB\n        Free                                           : 95839 MiB\n    BAR1 Memory Usage\n        Total                                          : 256 MiB\n        Used                                           : 38 MiB\n        Free                                           : 218 MiB\n    Conf Compute Protected Memory Usage\n        Total                                          : 0 MiB\n        Used                                           : 0 MiB\n        Free                                           : 0 MiB\n    Compute Mode                                       : Default\n    Utilization\n        GPU                                            : 4 %\n        Memory                                         : 1 %\n        Encoder                                        : 0 %\n        Decoder                                        : 0 %\n        JPEG                                           : 0 %\n        OFA                                            : 0 %\n    Encoder Stats\n        Active Sessions                                : 0\n        Average FPS                                    : 0\n        Average Latency                                : 0\n    FBC Stats\n        Active Sessions                                : 0\n        Average FPS                                    : 0\n        Average Latency                                : 0\n    DRAM Encryption Mode\n        Current                                        : Disabled\n        Pending                                        : Disabled\n    ECC Mode\n        Current                                        : Disabled\n        Pending                                        : Disabled\n    ECC Errors\n        Volatile\n            SRAM Correctable                           : N/A\n            SRAM Uncorrectable Parity                  : N/A\n            SRAM Uncorrectable SEC-DED                 : N/A\n            DRAM Correctable                           : N/A\n            DRAM Uncorrectable                         : N/A\n        Aggregate\n            SRAM Correctable                           : N/A\n            SRAM Uncorrectable Parity                  : N/A\n            SRAM Uncorrectable SEC-DED                 : N/A\n            DRAM Correctable                           : N/A\n            DRAM Uncorrectable                         : N/A\n            SRAM Threshold Exceeded                    : N/A\n        Aggregate Uncorrectable SRAM Sources\n            SRAM L2                                    : N/A\n            SRAM SM                                    : N/A\n            SRAM Microcontroller                       : N/A\n            SRAM PCIE                                  : N/A\n            SRAM Other                                 : N/A\n        Channel Repair Pending                         : No\n        TPC Repair Pending                             : No\n        Unrepairable Memory                            : N/A\n    Retired Pages\n        Single Bit ECC                                 : N/A\n        Double Bit ECC                                 : N/A\n        Pending Page Blacklist                         : N/A\n    Remapped Rows\n        Correctable Error                              : 0\n        Inactive Correctable Error                     : 0\n        Uncorrectable Error                            : 0\n        Inactive Uncorrectable Error                   : 0\n        Pending                                        : No\n        Remapping Failure Occurred                     : No\n        Bank Remap Availability Histogram\n            Max                                        : 512 bank(s)\n            High                                       : 0 bank(s)\n            Partial                                    : 0 bank(s)\n            Low                                        : 0 bank(s)\n            None                                       : 0 bank(s)\n    Temperature\n        GPU Current Temp                               : 54 C\n        GPU T.Limit Temp                               : 39 C\n        GPU Shutdown T.Limit Temp                      : -5 C\n        GPU Slowdown T.Limit Temp                      : -2 C\n        GPU Max Operating T.Limit Temp                 : 0 C\n        GPU Target Temperature                         : N/A\n        Memory Current Temp                            : N/A\n        Memory Max Operating T.Limit Temp              : N/A\n    GPU Power Readings\n        Average Power Draw                             : 180.38 W\n        Instantaneous Power Draw                       : 110.21 W\n        Current Power Limit                            : 600.00 W\n        Requested Power Limit                          : 600.00 W\n        Default Power Limit                            : 600.00 W\n        Min Power Limit                                : 150.00 W\n        Max Power Limit                                : 600.00 W\n    GPU Memory Power Readings \n        Average Power Draw                             : N/A\n        Instantaneous Power Draw                       : N/A\n    Module Power Readings\n        Average Power Draw                             : N/A\n        Instantaneous Power Draw                       : N/A\n        Current Power Limit                            : N/A\n        Requested Power Limit                          : N/A\n        Default Power Limit                            : N/A\n        Min Power Limit                                : N/A\n        Max Power Limit                                : N/A\n    Power Smoothing                                    : N/A\n    Workload Power Profiles\n        Requested Profiles                             : N/A\n        Enforced Profiles                              : N/A\n    Clocks\n        Graphics                                       : 2850 MHz\n        SM                                             : 2850 MHz\n        Memory                                         : 13365 MHz\n        Video                                          : 2392 MHz\n    Applications Clocks\n        Graphics                                       : 2617 MHz\n        Memory                                         : 14001 MHz\n    Default Applications Clocks\n        Graphics                                       : 2617 MHz\n        Memory                                         : 14001 MHz\n    Deferred Clocks\n        Memory                                         : N/A\n    Max Clocks\n        Graphics                                       : 3090 MHz\n        SM                                             : 3090 MHz\n        Memory                                         : 14001 MHz\n        Video                                          : 3090 MHz\n    Max Customer Boost Clocks\n        Graphics                                       : N/A\n    Clock Policy\n        Auto Boost                                     : N/A\n        Auto Boost Default                             : N/A\n    Fabric\n        State                                          : N/A\n        Status                                         : N/A\n        CliqueId                                       : N/A\n        ClusterUUID                                    : N/A\n        Health\n            Summary                                    : N/A\n            Bandwidth                                  : N/A\n            Route Recovery in progress                 : N/A\n            Route Unhealthy                            : N/A\n            Access Timeout Recovery                    : N/A\n            Incorrect Configuration                    : N/A\n            Partition Assigned                         : N/A\n    Processes\n        GPU instance ID                   : N/A\n        Compute instance ID               : N/A\n        Process ID                        : 12299\n            Type                          : G\n            Name                          : /usr/lib/xorg/Xorg\n            Used GPU Memory               : 68 MiB\n        GPU instance ID                   : N/A\n        Compute instance ID               : N/A\n        Process ID                        : 12556\n            Type                          : G\n            Name                          : /usr/bin/gnome-shell\n            Used GPU Memory               : 98 MiB\n        GPU instance ID                   : N/A\n        Compute instance ID               : N/A\n        Process ID                        : 2131218\n            Type                          : C\n            Name                          : measurements/20261019/venv/bin/python\n            Used GPU Memory               : 992 MiB\n    Capabilities\n        EGM                                            : disabled\n\n",
+      "stderr": ""
+    }
+  },
+  "resolved_geometry": [
+    {
+      "source_mm": [
+        0.3807984590531992,
+        1280.854457404986,
+        -175.25
+      ],
+      "origin_mm": [
+        683.5250937177063,
+        -674.8060355915503,
+        -858.3942952586534
+      ],
+      "u": [
+        -1.0,
+        1.2246467991473532e-16,
+        0.0
+      ],
+      "v": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "spacing_mm": [
+        2.673754580268702,
+        2.673754580268702
+      ],
+      "shape": [
+        512,
+        512
+      ]
+    }
+  ],
+  "native_spec": {
+    "samples_per_ray": 1024,
+    "active_pose": false,
+    "active_volume": true,
+    "precision": "float32",
+    "integration": "midpoint",
+    "field_domain": "physical",
+    "sampling_precision": "float32",
+    "storage_precision": "float32",
+    "validate": "once"
+  },
+  "workspace_bytes": 4,
+  "boundary": "resident preallocated buffers; deferred final status check outside capture",
+  "requested_gradients": [
+    "volume"
+  ],
+  "dtypes": {
+    "field": "float32",
+    "depth": "float32",
+    "volume_gradient": "float32",
+    "pose": "float64",
+    "pose_gradient": null
+  },
+  "warmup_completed_at": "2026-10-19T15:30:51.192805+00:00",
+  "profile_completed_at": "2026-10-19T15:30:52.989785+00:00",
+  "completed_checks_passed": true
+}

@@ -1,0 +1,3 @@
+Time (%),Total Time (ns),Instances,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Style,Range
+50.1,16616168,1,16616168.0,16616168.0,16616168,16616168,0.0,PushPop,:operation
+49.9,16532447,1,16532447.0,16532447.0,16532447,16532447,0.0,PushPop,:fp32/public

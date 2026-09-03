@@ -1,0 +1,753 @@
+{
+  "generated_at_utc": "2026-10-19T15:31:49.772705+00:00",
+  "input_results_sha256": "256e5994893f267904bdd43af52e2513774a50cf5e9adc6fc2b28711da5b07ac",
+  "ct_sha256": "f1ec515605619d4dc0e5085ee34e9188c8e76f11bac4e5cdba33e4aa905d1a37",
+  "font_family": "Geist",
+  "image_error": {
+    "max_abs": 1.3650795122721604e-05,
+    "rmse": 7.395093763476429e-07,
+    "relative_l2": 5.283067288282985e-07
+  },
+  "latency_error_points": [
+    {
+      "label": "DPT FP32",
+      "group": "DPT FP32",
+      "wall_median_ms": 4.472851491300389,
+      "wall_p95_ms": 4.600362473865971,
+      "image_rmse": 7.395093763476429e-07,
+      "result_file": "../results/release-chest-512-03/results.json",
+      "result_sha256": "256e5994893f267904bdd43af52e2513774a50cf5e9adc6fc2b28711da5b07ac",
+      "operation": "fp32/public_projector_3views",
+      "configuration": {
+        "precision": "fp32",
+        "field_storage": "float32",
+        "sample_arithmetic": "fp32",
+        "geometry": [
+          {
+            "source_mm": [
+              0.3807984590531992,
+              1280.854457404986,
+              -175.25
+            ],
+            "origin_mm": [
+              683.5250937177063,
+              -674.8060355915503,
+              -858.3942952586534
+            ],
+            "u": [
+              -1.0,
+              1.2246467991473532e-16,
+              0.0
+            ],
+            "v": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "spacing_mm": [
+              2.673754580268702,
+              2.673754580268702
+            ],
+            "shape": [
+              512,
+              512
+            ]
+          },
+          {
+            "source_mm": [
+              1304.154460456744,
+              -22.91920459270485,
+              -175.25
+            ],
+            "origin_mm": [
+              -651.5060325397924,
+              -706.0634998513582,
+              -858.3942952586534
+            ],
+            "u": [
+              6.123233995736766e-17,
+              1.0,
+              0.0
+            ],
+            "v": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "spacing_mm": [
+              2.673754580268702,
+              2.673754580268702
+            ],
+            "shape": [
+              512,
+              512
+            ]
+          },
+          {
+            "source_mm": [
+              922.2879959900381,
+              898.9879929382801,
+              -175.25
+            ],
+            "origin_mm": [
+              22.483163399859336,
+              -966.928767064496,
+              -858.3942952586534
+            ],
+            "u": [
+              -0.7071067811865475,
+              0.7071067811865476,
+              0.0
+            ],
+            "v": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "spacing_mm": [
+              2.673754580268702,
+              2.673754580268702
+            ],
+            "shape": [
+              512,
+              512
+            ]
+          }
+        ],
+        "samples_per_ray": 1024,
+        "sampling_rule": "clipped midpoint",
+        "requested_gradients": [],
+        "objective": "central detector-region mean",
+        "workspace_bytes": 12,
+        "boundary": "resident input tensor; prepared module, allocation and validation included"
+      }
+    },
+    {
+      "label": "DPT FP64",
+      "group": "DPT FP64",
+      "wall_median_ms": 18.791958485962823,
+      "wall_p95_ms": 19.261811452452093,
+      "image_rmse": 0.0,
+      "result_file": "../results/release-chest-512-03/results.json",
+      "result_sha256": "256e5994893f267904bdd43af52e2513774a50cf5e9adc6fc2b28711da5b07ac",
+      "operation": "fp64/public_projector_3views",
+      "configuration": {
+        "precision": "fp64",
+        "field_storage": "float32",
+        "sample_arithmetic": "fp64",
+        "geometry": [
+          {
+            "source_mm": [
+              0.3807984590531992,
+              1280.854457404986,
+              -175.25
+            ],
+            "origin_mm": [
+              683.5250937177063,
+              -674.8060355915503,
+              -858.3942952586534
+            ],
+            "u": [
+              -1.0,
+              1.2246467991473532e-16,
+              0.0
+            ],
+            "v": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "spacing_mm": [
+              2.673754580268702,
+              2.673754580268702
+            ],
+            "shape": [
+              512,
+              512
+            ]
+          },
+          {
+            "source_mm": [
+              1304.154460456744,
+              -22.91920459270485,
+              -175.25
+            ],
+            "origin_mm": [
+              -651.5060325397924,
+              -706.0634998513582,
+              -858.3942952586534
+            ],
+            "u": [
+              6.123233995736766e-17,
+              1.0,
+              0.0
+            ],
+            "v": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "spacing_mm": [
+              2.673754580268702,
+              2.673754580268702
+            ],
+            "shape": [
+              512,
+              512
+            ]
+          },
+          {
+            "source_mm": [
+              922.2879959900381,
+              898.9879929382801,
+              -175.25
+            ],
+            "origin_mm": [
+              22.483163399859336,
+              -966.928767064496,
+              -858.3942952586534
+            ],
+            "u": [
+              -0.7071067811865475,
+              0.7071067811865476,
+              0.0
+            ],
+            "v": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "spacing_mm": [
+              2.673754580268702,
+              2.673754580268702
+            ],
+            "shape": [
+              512,
+              512
+            ]
+          }
+        ],
+        "samples_per_ray": 1024,
+        "sampling_rule": "clipped midpoint",
+        "requested_gradients": [],
+        "objective": "central detector-region mean",
+        "workspace_bytes": 12,
+        "boundary": "resident input tensor; prepared module, allocation and validation included"
+      }
+    },
+    {
+      "label": "astra",
+      "group": "ASTRA DLPack",
+      "wall_median_ms": 6.944257009308785,
+      "wall_p95_ms": 7.298458923469298,
+      "image_rmse": 0.0015144091883738818,
+      "result_file": "../results/competitor-astra-tigre/results.json",
+      "result_sha256": "3157828aba936183bf7cc413099720df61c557065ce360c81fa2838b1aadcd0c",
+      "operation": "astra/forward_3views",
+      "configuration": {
+        "package": "astra-toolbox",
+        "version": "2.5.0",
+        "sources": {
+          "__init__.py": "ec71aec7f31d84697263cbfd03b7607b4bdf430584ee3b58449b0f53a5900249",
+          "algorithm.py": "e81d6311b142944d7f26bbf7de045a2cf39bba1381ff60712631d39614bf0983",
+          "algorithm_c.cpython-312-x86_64-linux-gnu.so": "82ba218600044fe1698e6053fd72eab144b968c8566868c17f35ba88e207dfa4",
+          "astra.py": "0588b3507b1682bb4b38773e436ff0448a4d15dcc42a95025297d8c08c8f0148",
+          "astra_c.cpython-312-x86_64-linux-gnu.so": "97086ff7ff90cc6653ea5ae2b10a582831f860de10eee7840dff890777c112db",
+          "config.py": "56ea4b72e6ce357e5b99a1e44fb15567c5dffa114b617c4230c8472909e77de8",
+          "creators.py": "314399148c6a285a656d5911d0675dd8513592970a617e24765f92d152cfc5ac",
+          "data2d.py": "20b996f86de0e14518f7c3a1172ceb6f3db54cde50504821092e1f7eedeb7972",
+          "data2d_c.cpython-312-x86_64-linux-gnu.so": "021c0fbeb85f70798c95cc698fd68a36e4728e62e12a32a29b7a6d2e8a7ee7d7",
+          "data3d.py": "dbaa5bb1e65179cae9c6d6b277c9722498bf52a4a3c5c834ba4482b923d75dd3",
+          "data3d_c.cpython-312-x86_64-linux-gnu.so": "e112ce5c2888c4aeffad03eb9e8febda25b62cc3d371c3232108c5b7764e73ac",
+          "experimental.cpython-312-x86_64-linux-gnu.so": "cfc0071983bcd0180b6380f98fd5bdf361458e7524a629912401ffc12a1162d2",
+          "extrautils.cpython-312-x86_64-linux-gnu.so": "9944bebaa054a303d8685b16442c860910c14e7a4997a1454ffbf90a1b94b50f",
+          "functions.py": "a0b1ae0754b251ccf223d8ef127ff5dc7a963e3ade7cde8a88e67e0bf31dae1d",
+          "log.py": "fabd42e8f4673c08c33f95245be1f121f6ea29485f0002dc7430f3c63d453f5f",
+          "log_c.cpython-312-x86_64-linux-gnu.so": "315c69f34e90e612a789bdb938eb0f5ae13be4fd5a33e11652b91bd63d1aad18",
+          "matlab.py": "d1c6bd27c4a573e303149e14822a9820979b3c917a7493252aca0f676e3896d8",
+          "matrix.py": "e0edf925e176d0cde99a80081cd35e8a1a90cfb818ac09aebd8fcbac7f0d002f",
+          "matrix_c.cpython-312-x86_64-linux-gnu.so": "45cfe3a2b0dce5a6fa08cbe05af7b749fa0e545e0a63a7f8a67e8037fa834c5f",
+          "optomo.py": "149c221970c2bc9da6382d6450dd19ef5b1089e8e6c4821cacbefdc4d6de4152",
+          "plugin.py": "be4ed3c752449c312ca826508ba267d4ef6649ac8c06a8d7723305418a93930e",
+          "plugin_c.cpython-312-x86_64-linux-gnu.so": "3f6ae6302a9b4cda4d28afaf80bdee7bb986e6e98ddce6a8c5c6d3a2cd23a351",
+          "plugins/__init__.py": "0ee4f2a9487a97096af040529883fc916fd3c94721980cc1f53f47d1d4175ddb",
+          "plugins/cgls.py": "6bac4b830555a06a1f1870002f438f6fa647324e29e5203bbaade65a32ad1906",
+          "plugins/sirt.py": "fe0cb80b5322c2e079d7976019543be3f5405ee05f174917ad8fb7004afc6218",
+          "projector.py": "3248bd03e6d9d6f757de1f388d8f46c1cf95ddec86c60131b08ae2cbf96bd35f",
+          "projector3d.py": "0b0044c77bc6e7a7cacd5f8ae35dd64ab3c1da86173967c9b1724d5424dde0e7",
+          "projector3d_c.cpython-312-x86_64-linux-gnu.so": "1e2fd98e8c6b65de6eac63eae0b4173008ea58ed9eeae9e5b9ec4bfc268c90b9",
+          "projector_c.cpython-312-x86_64-linux-gnu.so": "b898ed30610602b0ce318387a7f198afca21799e1c85f4d9bc07c535a61a3475",
+          "pythonutils.py": "7058e1e77c2dda8f56450bd68b281d2e9608be7153fd68b212361e557c6adde7",
+          "tests.py": "f9815988cf1b8f3b71d210bc68293960c0430eefc0e757a2839bb3219c43d7f2",
+          "utils.cpython-312-x86_64-linux-gnu.so": "a64f607bd88e68a3491863c57577fe21e4947e138bd86b02b60d5699f4619653"
+        },
+        "algorithm": "cuda3d Joseph/slice-interpolated forward; standard voxel-driven backprojection",
+        "sampling": "ASTRA native slice traversal; no DPT midpoint-count equivalence",
+        "geometry": {
+          "cone_vec": [
+            [
+              -1.596500709410975e-13,
+              -1303.7736619976909,
+              0.0,
+              1.1368683772161603e-13,
+              651.8868309988454,
+              0.0,
+              2.673754580268702,
+              -3.274404988431641e-16,
+              0.0,
+              0.0,
+              0.0,
+              2.673754580268702
+            ],
+            [
+              -1303.7736619976909,
+              7.815970093361102e-14,
+              0.0,
+              651.8868309988454,
+              0.0,
+              0.0,
+              -1.6372024942158204e-16,
+              -2.673754580268702,
+              0.0,
+              0.0,
+              0.0,
+              2.673754580268702
+            ],
+            [
+              -921.9071975309851,
+              -921.9071975309848,
+              0.0,
+              460.95359876549253,
+              460.95359876549236,
+              0.0,
+              1.8906299949365903,
+              -1.8906299949365906,
+              0.0,
+              0.0,
+              0.0,
+              2.673754580268702
+            ]
+          ],
+          "volume_extent_xyz_mm": [
+            390.0001220703125,
+            390.0001220703125,
+            347.5
+          ]
+        },
+        "layout": "native ZYX volume; detector-row, view, detector-column ASTRA output",
+        "boundary": "direct_FP with preallocated resident Torch DLPack buffers; zero and device synchronisation included",
+        "backward_boundary": "direct_BP with preallocated resident DLPack buffers; zero and device synchronisation included",
+        "backprojection": "ASTRA standard BP; actual adjoint defect measured, not assumed exact",
+        "stream": "internal stream not assumed to equal Torch current stream; device event times omitted",
+        "api_reference": "https://raw.githubusercontent.com/astra-toolbox/astra-toolbox/v2.5.0/python/astra/projector3d.py",
+        "image_error_vs_frozen_dpt_fp64": {
+          "max_abs": 0.05408580592723755,
+          "rmse": 0.0015144091883738818,
+          "relative_l2": 0.0010818964437865493
+        },
+        "views": 3,
+        "detector_shape": [
+          512,
+          512
+        ],
+        "native_shape_zyx": [
+          139,
+          512,
+          512
+        ],
+        "field_dtype": "float32",
+        "objective": "mean of central AP detector region; other two view cotangents are zero",
+        "requested_gradients": []
+      }
+    },
+    {
+      "label": "tigre",
+      "group": "TIGRE, including transfers",
+      "wall_median_ms": 71.54758897377178,
+      "wall_p95_ms": 80.53196700639091,
+      "image_rmse": 0.007067370966945352,
+      "result_file": "../results/competitor-astra-tigre/results.json",
+      "result_sha256": "3157828aba936183bf7cc413099720df61c557065ce360c81fa2838b1aadcd0c",
+      "operation": "tigre/forward_3views",
+      "configuration": {
+        "package": "TIGRE",
+        "version": "3.1.3",
+        "sources": {
+          "__init__.py": "ea1e6db53966c12a7c5ebc3493ca06b8159e0a1361b9579b744f782695aa1223",
+          "algorithms/__init__.py": "78f0990f16953fbc4c8a860f9ab134e8eaad3ebdf4624169068ee1940c3e3d25",
+          "algorithms/art_family_algorithms.py": "60ce3227b988054f6c7d85a4fe9c0dc9f68fa1a83c3c7fac30355831d5af3c91",
+          "algorithms/ista_algorithms.py": "5a34548fac39ad3a1afb338679e51e60ff0fa493b07204761558328169e6e187",
+          "algorithms/iterative_recon_alg.py": "cad64d19b8ca2514e53611c2879a33c09d7bb8ea9f513fc1f667bb77696b3dc6",
+          "algorithms/krylov_subspace_algorithms.py": "94d458b045a8944af69e162b3d0efdf1a43c2e4bca497415c642e6c06f0100a0",
+          "algorithms/pocs_algorithms.py": "a54380770df8977728ffaec446e76577f1ec952d9c5fe33cbd2d33f7f2857d25",
+          "algorithms/single_pass_algorithms.py": "c9d244b57ade49291eb7a2e15bef5cd2f10a52998f8dc4d2333f0739a94b60ba",
+          "algorithms/statistical_algorithms.py": "2fa1010f3f60bc83d4beea6ed2773d69592edfb7d0ea5dbc0889d1e395ccf572",
+          "tests/utilities/pytorch_bindings_test.py": "55155c14af6c9872e0d3eb0a76025750bf1d6af9d19a170808bcaf7aef8c1c94",
+          "utilities/Atb.py": "38ef1682ad6b81e2edae066c1c49ff0bea918e2681f71dc357f5424dc10deff2",
+          "utilities/Ax.py": "c8fc7e3679d3e0bb5fe51a3fdc8dd69fe8e00502389fd6fae860050dc57e0b6c",
+          "utilities/CTnoise.py": "a1b7dda17e84f1646be53c2134ae2657954c90eaa35f91de8bd19d1d0996aaf7",
+          "utilities/Measure_Quality.py": "e088c892f4d2bc67cc2ffbd1c6bcb6c65623cac9666711928d34a4b71d68abed",
+          "utilities/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "utilities/common_geometry.py": "f7a919f0499093519e2677691f8f630ebbc54d09a6267a1983176c62c59df869",
+          "utilities/computeCOR.py": "7f4e5be0bbe4b73a1305c11364df09fbf99cc982e751546e7ef31724882cd6e7",
+          "utilities/crop_CBCT.py": "84132371ac987666ac1fa741ee166dd26213906754e1a8a6563558f214e7389a",
+          "utilities/cuda_interface/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "utilities/curved_detector.py": "e97ab80314a738d0e2c3297a5ae7076716d4b4a0321117023c6b84deec8a8590",
+          "utilities/errors.py": "b63e18de0b1ba59a7dd5902d0b3ed98b43037877a9823d20d21849f69a346b07",
+          "utilities/filtering.py": "38c0e1d4771715fba0ab6949863ee8fcd0b3062fc11d673ed4d5acdfa382402a",
+          "utilities/geometry.py": "641adb9f2507a072c81e9eac2fb923009b6bcb528a1ce659bfbd7075a2aced54",
+          "utilities/geometry_default.py": "c7b062ccfcc90ee808a82696816470005123663850067e81edc3bb83f1893a1f",
+          "utilities/gpu.py": "2c9d8f235f5515316ca3868a10867cddebca730f4455cc604ea3c456b02a674a",
+          "utilities/im3Dnorm.py": "a69af8329b19a08b0823b1dc877f2db6e7c36fec99fb2aae6c4fe1f2579f70dc",
+          "utilities/im_3d_denoise.py": "00f4fc58a22df15e38081ca5c9c6d01c94824f8c2d1c35c3e39fa3a97ee6c47c",
+          "utilities/init_multigrid.py": "23842dc13d930001373fbd984ceead71d8cab8c59d076adccf4ff31bd49ab051",
+          "utilities/io/BrukerDataLoader.py": "bc04d06cebfc68b12f403551345d49453571b5c422c8dfb86192933bfc3c3203",
+          "utilities/io/DXChangeDataLoader.py": "a0a69a87fc8cafcfebeccf0325c050b69efec2c50e22512f15012c4d98bd1b8a",
+          "utilities/io/DiondoDataLoader.py": "c2f1cf79b1750ea70aa761cef46ffc84dcf1a3352ad83b0f7cebaf2636258b7d",
+          "utilities/io/NikonDataLoader.py": "6fd3f9c4f4718b3065891eda92d3beabe4e9f8e9a60a8c1bbabf6ccd7d06be1e",
+          "utilities/io/VarianDataLoader.py": "879f886de113e325dea62c9ee6d7ccc1b6d6c5db5826f143427ce314e0d5fcf0",
+          "utilities/io/YXLONDataLoader.py": "6b4f4cb4d5669eed4723e1a95d15fb7e0dee843129d53ab785cfea81bf23f0d4",
+          "utilities/io/__init__.py": "c33fee4a1a0d2e22f91807a636144d6657b770e337c166540e282c706cc3013e",
+          "utilities/io/varian/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "utilities/io/varian/scatter.py": "54a16f77a26d960f30b6bfe0e54c441e4583cd17b0c4e1df460f6e5f81457e26",
+          "utilities/io/varian/utils.py": "b42d94eaf4a6b58b3d15d152f20a5febd69354fc7c118727fe54d48cf541d31d",
+          "utilities/io/varian/varian_io.py": "839b06035408951af3df836a8dda6deed2d8eb9ccbd343c9a9b10027d87b92c0",
+          "utilities/io/varian/xim.py": "ec01182ea270a3f1de0142c18d4e6192d22974f057225a839e6a4132d5aca74d",
+          "utilities/order_subsets.py": "b05315eff6df5ba485a1fe9a1c6e559766fa3688490ee1897d291d3649dfb1c1",
+          "utilities/parkerweight.py": "bf38bda2a2caae074151f6966f5e47de635f97b615b1e3b74f648ce8085b715f",
+          "utilities/power_method.py": "87ca234b5beff0d15fdd649cd5f3fa5cded4e7922c542658f9b7a4436ef136a0",
+          "utilities/pytorch_bindings.py": "0604899a13612447c91469d7a9ce8e56a94b82f1ad9864918de03f648eafa6e1",
+          "utilities/sample_loader.py": "c96c1ab2d46a4f11ef6ed1588a9dd27a4ddba00a6d8a26b50e478da06d7be38c",
+          "utilities/sl3d.py": "6a2843498887136eb0b405ea520daead36571d79ea25b47f45708d3cbaf47520",
+          "utilities/visualization/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "utilities/visualization/plot_angles.py": "48aa0cda72e33344c4710447f75ba46d1ff689d955fda4fd67f2b95c36ede4f0",
+          "utilities/visualization/plot_geometry.py": "fedc17d57a05e4f5e5cb9a6d7d44cc01942b60558658c02f09f5c0d82319d1d4",
+          "utilities/visualization/plotimg.py": "588c2465fa1e282f4c2c8d1136f6248f53f0cc360eca87c85fb73f9cc23863f2",
+          "utilities/visualization/plotproj.py": "d9a913e7714a2708f484ae30083476b8b7baad9e56023b01dd23d09519f05e14"
+        },
+        "algorithm": "Siddon forward; explicit matched native Atb",
+        "sampling": "native voxel intersections; no DPT midpoint-count equivalence",
+        "geometry": {
+          "angles_radians": [
+            -1.5707963267948968,
+            3.141592653589793,
+            -2.356194490192345
+          ],
+          "DSO_mm": [
+            1303.7736619976909,
+            1303.7736619976909,
+            1303.7736619976909
+          ],
+          "DSD_mm": [
+            1955.6604929965363,
+            1955.6604929965363,
+            1955.660492996536
+          ],
+          "mapping_residuals": {
+            "source_max_abs_mm": 2.2737367544323206e-13,
+            "detector_centre_max_abs_mm": 3.410605131648481e-13,
+            "column_direction_max_abs": 1.1102230246251565e-16,
+            "row_direction_max_abs": 0.0
+          }
+        },
+        "boundary": "shipped TIGRE PyTorch A: GPU tensor to CPU NumPy, native upload/project/download, GPU output",
+        "backward_boundary": "benchmark adapter: GPU cotangent to CPU, explicit Atb matched, GPU volume result",
+        "backprojection": "Atb(..., backprojection_type='matched'); measured adjoint defect",
+        "iteration_adapter": "shipped Torch forward plus explicit matched BP; shipped default FDK backward is not used",
+        "stream": "internal stream unknown; completed device-synchronised wall time only",
+        "source_revision": {
+          "command": [
+            "git",
+            "-C",
+            "measurements/20261019/competitors/TIGRE",
+            "rev-parse",
+            "HEAD"
+          ],
+          "returncode": 128,
+          "stdout": "",
+          "stderr": "fatal: not a git repository (or any of the parent directories): .git\n"
+        },
+        "source_dirty": {
+          "command": [
+            "git",
+            "-C",
+            "measurements/20261019/competitors/TIGRE",
+            "status",
+            "--short"
+          ],
+          "returncode": 128,
+          "stdout": "",
+          "stderr": "fatal: not a git repository (or any of the parent directories): .git\n"
+        },
+        "image_error_vs_frozen_dpt_fp64": {
+          "max_abs": 0.180420411583885,
+          "rmse": 0.007067370966945352,
+          "relative_l2": 0.005048941577189359
+        },
+        "views": 3,
+        "detector_shape": [
+          512,
+          512
+        ],
+        "native_shape_zyx": [
+          139,
+          512,
+          512
+        ],
+        "field_dtype": "float32",
+        "objective": "mean of central AP detector region; other two view cotangents are zero",
+        "requested_gradients": []
+      }
+    },
+    {
+      "label": "diffdrr-trilinear-512",
+      "group": "DiffDRR trilinear",
+      "wall_median_ms": 45.69812351837754,
+      "wall_p95_ms": 45.88999726111069,
+      "image_rmse": 0.0014867491017472928,
+      "result_file": "../results/competitor-diffdrr/results.json",
+      "result_sha256": "5597bb6b76d5033e37263c7cb3d7b27e750f796f69a85d29dad5ce103df16998",
+      "operation": "diffdrr-trilinear-512/forward_3views",
+      "configuration": {
+        "package": "diffdrr",
+        "version": "0.6.1",
+        "sources": {
+          "__init__.py": "6da01c1232d260521e359179d6d38c980ff300c84df07bca69e97e514f91b9e7",
+          "_modidx.py": "544d83d6b0881da21ca2d9c4482e23ca7ce40a2d5ec853faeddf1b700271d51e",
+          "data.py": "21ca7dbfa2835ebfb8cad6508ae23c5368c5d781d507e59d52721a662d8acac9",
+          "detector.py": "18348758c3352b39e859ccfdbdce256cc4da51dbb245ff917291b7026429e96f",
+          "drr.py": "09b73d5aff11775aafdc66bf574d56d06c452e70a6186f2694160a12fcabed48",
+          "metrics.py": "a611155073a6c5f65c7f611a5595eda266fe05bf850e1ede66eb46fac623d818",
+          "pose.py": "e4869a311cc2ba0691ac3c11686f621ad5c7615cf084c421af8cf6b0273d3e7c",
+          "registration.py": "b62ed5ea40356e05c7b3b512fb79b310016eba198c92723c6a8f7ac0af3c6077",
+          "renderers.py": "1b95938e115e69efb059605f4632c7c21b3484c1aab4e27382d1d09d0d4c6dfe",
+          "utils.py": "4526ae44e37b96413fd8d19e1fe14237110cab5379de93207bf48631457ebb90",
+          "visualization.py": "56e087ba8b222ee62e3d221b56463663e466be0f45d410d10114d874b3fce42d"
+        },
+        "algorithm": "trilinear inclusive rectangular rule",
+        "n_points": 512,
+        "patch_rays": 32768,
+        "voxel_shift": 0.5,
+        "align_corners": false,
+        "padding": "grid_sample default zero",
+        "sampling_interval": "one library-computed global alpha interval per full view, reused by all patches",
+        "geometry_dtype": "local voxel coordinates FP32; pose/world-to-local composition FP64 before cast",
+        "boundary": "resident Torch input/output; geometry and patch loop included; no image host transfer",
+        "backprojection": "native PyTorch autograd of the actual forward discretisation",
+        "comparison_limit": "DPT uses half-cell extension and clipped midpoints; no same-algorithm speedup claim",
+        "image_error_vs_frozen_dpt_fp64": {
+          "max_abs": 0.053030684505423586,
+          "rmse": 0.0014867491017472928,
+          "relative_l2": 0.00106213603188079
+        },
+        "views": 3,
+        "detector_shape": [
+          512,
+          512
+        ],
+        "native_shape_zyx": [
+          139,
+          512,
+          512
+        ],
+        "field_dtype": "float32",
+        "objective": "mean of central AP detector region; other two view cotangents are zero",
+        "requested_gradients": []
+      }
+    },
+    {
+      "label": "diffdrr-trilinear-1024",
+      "group": "DiffDRR trilinear",
+      "wall_median_ms": 94.47605648892932,
+      "wall_p95_ms": 95.17243160225917,
+      "image_rmse": 0.001467562349854395,
+      "result_file": "../results/competitor-diffdrr/results.json",
+      "result_sha256": "5597bb6b76d5033e37263c7cb3d7b27e750f796f69a85d29dad5ce103df16998",
+      "operation": "diffdrr-trilinear-1024/forward_3views",
+      "configuration": {
+        "package": "diffdrr",
+        "version": "0.6.1",
+        "sources": {
+          "__init__.py": "6da01c1232d260521e359179d6d38c980ff300c84df07bca69e97e514f91b9e7",
+          "_modidx.py": "544d83d6b0881da21ca2d9c4482e23ca7ce40a2d5ec853faeddf1b700271d51e",
+          "data.py": "21ca7dbfa2835ebfb8cad6508ae23c5368c5d781d507e59d52721a662d8acac9",
+          "detector.py": "18348758c3352b39e859ccfdbdce256cc4da51dbb245ff917291b7026429e96f",
+          "drr.py": "09b73d5aff11775aafdc66bf574d56d06c452e70a6186f2694160a12fcabed48",
+          "metrics.py": "a611155073a6c5f65c7f611a5595eda266fe05bf850e1ede66eb46fac623d818",
+          "pose.py": "e4869a311cc2ba0691ac3c11686f621ad5c7615cf084c421af8cf6b0273d3e7c",
+          "registration.py": "b62ed5ea40356e05c7b3b512fb79b310016eba198c92723c6a8f7ac0af3c6077",
+          "renderers.py": "1b95938e115e69efb059605f4632c7c21b3484c1aab4e27382d1d09d0d4c6dfe",
+          "utils.py": "4526ae44e37b96413fd8d19e1fe14237110cab5379de93207bf48631457ebb90",
+          "visualization.py": "56e087ba8b222ee62e3d221b56463663e466be0f45d410d10114d874b3fce42d"
+        },
+        "algorithm": "trilinear inclusive rectangular rule",
+        "n_points": 1024,
+        "patch_rays": 32768,
+        "voxel_shift": 0.5,
+        "align_corners": false,
+        "padding": "grid_sample default zero",
+        "sampling_interval": "one library-computed global alpha interval per full view, reused by all patches",
+        "geometry_dtype": "local voxel coordinates FP32; pose/world-to-local composition FP64 before cast",
+        "boundary": "resident Torch input/output; geometry and patch loop included; no image host transfer",
+        "backprojection": "native PyTorch autograd of the actual forward discretisation",
+        "comparison_limit": "DPT uses half-cell extension and clipped midpoints; no same-algorithm speedup claim",
+        "image_error_vs_frozen_dpt_fp64": {
+          "max_abs": 0.05264623454662232,
+          "rmse": 0.001467562349854395,
+          "relative_l2": 0.0010484289844063688
+        },
+        "views": 3,
+        "detector_shape": [
+          512,
+          512
+        ],
+        "native_shape_zyx": [
+          139,
+          512,
+          512
+        ],
+        "field_dtype": "float32",
+        "objective": "mean of central AP detector region; other two view cotangents are zero",
+        "requested_gradients": []
+      }
+    },
+    {
+      "label": "diffdrr-trilinear-2048",
+      "group": "DiffDRR trilinear",
+      "wall_median_ms": 189.0655535098631,
+      "wall_p95_ms": 189.94768606498837,
+      "image_rmse": 0.001466238961333143,
+      "result_file": "../results/competitor-diffdrr/results.json",
+      "result_sha256": "5597bb6b76d5033e37263c7cb3d7b27e750f796f69a85d29dad5ce103df16998",
+      "operation": "diffdrr-trilinear-2048/forward_3views",
+      "configuration": {
+        "package": "diffdrr",
+        "version": "0.6.1",
+        "sources": {
+          "__init__.py": "6da01c1232d260521e359179d6d38c980ff300c84df07bca69e97e514f91b9e7",
+          "_modidx.py": "544d83d6b0881da21ca2d9c4482e23ca7ce40a2d5ec853faeddf1b700271d51e",
+          "data.py": "21ca7dbfa2835ebfb8cad6508ae23c5368c5d781d507e59d52721a662d8acac9",
+          "detector.py": "18348758c3352b39e859ccfdbdce256cc4da51dbb245ff917291b7026429e96f",
+          "drr.py": "09b73d5aff11775aafdc66bf574d56d06c452e70a6186f2694160a12fcabed48",
+          "metrics.py": "a611155073a6c5f65c7f611a5595eda266fe05bf850e1ede66eb46fac623d818",
+          "pose.py": "e4869a311cc2ba0691ac3c11686f621ad5c7615cf084c421af8cf6b0273d3e7c",
+          "registration.py": "b62ed5ea40356e05c7b3b512fb79b310016eba198c92723c6a8f7ac0af3c6077",
+          "renderers.py": "1b95938e115e69efb059605f4632c7c21b3484c1aab4e27382d1d09d0d4c6dfe",
+          "utils.py": "4526ae44e37b96413fd8d19e1fe14237110cab5379de93207bf48631457ebb90",
+          "visualization.py": "56e087ba8b222ee62e3d221b56463663e466be0f45d410d10114d874b3fce42d"
+        },
+        "algorithm": "trilinear inclusive rectangular rule",
+        "n_points": 2048,
+        "patch_rays": 32768,
+        "voxel_shift": 0.5,
+        "align_corners": false,
+        "padding": "grid_sample default zero",
+        "sampling_interval": "one library-computed global alpha interval per full view, reused by all patches",
+        "geometry_dtype": "local voxel coordinates FP32; pose/world-to-local composition FP64 before cast",
+        "boundary": "resident Torch input/output; geometry and patch loop included; no image host transfer",
+        "backprojection": "native PyTorch autograd of the actual forward discretisation",
+        "comparison_limit": "DPT uses half-cell extension and clipped midpoints; no same-algorithm speedup claim",
+        "image_error_vs_frozen_dpt_fp64": {
+          "max_abs": 0.052891567264517825,
+          "rmse": 0.001466238961333143,
+          "relative_l2": 0.0010474835534449865
+        },
+        "views": 3,
+        "detector_shape": [
+          512,
+          512
+        ],
+        "native_shape_zyx": [
+          139,
+          512,
+          512
+        ],
+        "field_dtype": "float32",
+        "objective": "mean of central AP detector region; other two view cotangents are zero",
+        "requested_gradients": []
+      }
+    },
+    {
+      "label": "diffdrr-siddon",
+      "group": "DiffDRR Siddon",
+      "wall_median_ms": 172.70518199075013,
+      "wall_p95_ms": 173.47321245761123,
+      "image_rmse": 0.007066084166933022,
+      "result_file": "../results/competitor-diffdrr/results.json",
+      "result_sha256": "5597bb6b76d5033e37263c7cb3d7b27e750f796f69a85d29dad5ce103df16998",
+      "operation": "diffdrr-siddon/forward_3views",
+      "configuration": {
+        "package": "diffdrr",
+        "version": "0.6.1",
+        "sources": {
+          "__init__.py": "6da01c1232d260521e359179d6d38c980ff300c84df07bca69e97e514f91b9e7",
+          "_modidx.py": "544d83d6b0881da21ca2d9c4482e23ca7ce40a2d5ec853faeddf1b700271d51e",
+          "data.py": "21ca7dbfa2835ebfb8cad6508ae23c5368c5d781d507e59d52721a662d8acac9",
+          "detector.py": "18348758c3352b39e859ccfdbdce256cc4da51dbb245ff917291b7026429e96f",
+          "drr.py": "09b73d5aff11775aafdc66bf574d56d06c452e70a6186f2694160a12fcabed48",
+          "metrics.py": "a611155073a6c5f65c7f611a5595eda266fe05bf850e1ede66eb46fac623d818",
+          "pose.py": "e4869a311cc2ba0691ac3c11686f621ad5c7615cf084c421af8cf6b0273d3e7c",
+          "registration.py": "b62ed5ea40356e05c7b3b512fb79b310016eba198c92723c6a8f7ac0af3c6077",
+          "renderers.py": "1b95938e115e69efb059605f4632c7c21b3484c1aab4e27382d1d09d0d4c6dfe",
+          "utils.py": "4526ae44e37b96413fd8d19e1fe14237110cab5379de93207bf48631457ebb90",
+          "visualization.py": "56e087ba8b222ee62e3d221b56463663e466be0f45d410d10114d874b3fce42d"
+        },
+        "algorithm": "Siddon exact cell intersections with nearest samples",
+        "n_points": null,
+        "patch_rays": 32768,
+        "voxel_shift": 0.5,
+        "align_corners": false,
+        "padding": "grid_sample default zero",
+        "sampling_interval": "all axis-plane crossings; default unfiltered intersections",
+        "geometry_dtype": "local voxel coordinates FP32; pose/world-to-local composition FP64 before cast",
+        "boundary": "resident Torch input/output; geometry and patch loop included; no image host transfer",
+        "backprojection": "native PyTorch autograd of the actual forward discretisation",
+        "comparison_limit": "DPT uses half-cell extension and clipped midpoints; no same-algorithm speedup claim",
+        "image_error_vs_frozen_dpt_fp64": {
+          "max_abs": 0.18058372831056957,
+          "rmse": 0.007066084166933022,
+          "relative_l2": 0.005048022285119624
+        },
+        "views": 3,
+        "detector_shape": [
+          512,
+          512
+        ],
+        "native_shape_zyx": [
+          139,
+          512,
+          512
+        ],
+        "field_dtype": "float32",
+        "objective": "mean of central AP detector region; other two view cotangents are zero",
+        "requested_gradients": []
+      }
+    }
+  ],
+  "sensitivity_source": "../results/release-chest-512-03",
+  "sweep_source": "../results/release-chest-512-03",
+  "files": [
+    "acquisition_geometry.pdf",
+    "acquisition_geometry.png",
+    "acquisition_geometry.svg",
+    "ct_projections.pdf",
+    "ct_projections.png",
+    "ct_projections.svg",
+    "detector_region_sensitivity.pdf",
+    "detector_region_sensitivity.png",
+    "detector_region_sensitivity.svg",
+    "fp32_fp64_error.pdf",
+    "fp32_fp64_error.png",
+    "fp32_fp64_error.svg",
+    "latency_error.pdf",
+    "latency_error.png",
+    "latency_error.svg",
+    "view_sweep.gif",
+    "view_sweep_geometry.pdf",
+    "view_sweep_geometry.png",
+    "view_sweep_geometry.svg",
+    "view_sweep_samples.pdf",
+    "view_sweep_samples.png",
+    "view_sweep_samples.svg"
+  ]
+}

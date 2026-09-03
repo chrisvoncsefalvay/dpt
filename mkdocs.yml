@@ -1,0 +1,97 @@
+site_name: 'DPT: Differentiable Photon Transport'
+site_description: Real CT projection and differentiable X-ray imaging on CUDA.
+site_author: Chris von Csefalvay
+docs_dir: docs
+site_dir: site
+strict: true
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  font: false
+  palette:
+    scheme: default
+    primary: white
+    accent: black
+  features:
+    - navigation.sections
+    - navigation.footer
+    - content.code.copy
+    - search.highlight
+
+extra_css:
+  - stylesheets/manual.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - assets/vendor/mathjax/tex-svg.js
+
+hooks:
+  - docs/hooks/manual.py
+
+nav:
+  - Overview: index.md
+  - User guide:
+      - Install and project: getting-started/install.md
+      - NIfTI, DICOM and geometry: geometry.md
+      - PyTorch differentiation: pytorch.md
+      - Spectrum, detector and transport: components.md
+      - Agentic imaging with a real CT: applications/agentic-imaging.md
+      - Performance: performance.md
+  - Reference:
+      - API and mathematics: reference/index.md
+      - Citation: citation.md
+      - Build the documentation: documentation.md
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [python]
+          options:
+            allow_inspection: false
+            show_source: false
+            show_root_heading: true
+            show_signature_annotations: true
+            separate_signature: true
+            show_if_no_docstring: true
+            show_docstring_examples: false
+            members_order: source
+            heading_level: 3
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+exclude_docs: |
+  requirements*.txt
+  requirements*.in
+  hooks/
+  overrides/
+
+validation:
+  nav:
+    omitted_files: ignore
+    not_found: warn
+    absolute_links: warn
+  links:
+    not_found: warn
+    anchors: warn
+    unrecognized_links: warn
+
+extra:
+  generator: false

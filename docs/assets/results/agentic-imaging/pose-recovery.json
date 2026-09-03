@@ -1,0 +1,436 @@
+{
+  "evidence_kind": "Synthetic noiseless, quantised two-view software example; matched generation and fitting model",
+  "measured_on": "2026-10-23",
+  "device": {
+    "device_name": "NVIDIA GB10",
+    "device_class": "cuda",
+    "warp_version": "1.17.0",
+    "cuda_arch": 121,
+    "cuda_driver_version": [
+      13,
+      0
+    ],
+    "cuda_toolkit_version": [
+      12,
+      9
+    ]
+  },
+  "input_configuration": {
+    "arrays": {
+      "attenuation": {
+        "path": "attenuation.npy",
+        "rights": "Apache-2.0",
+        "sha256": "edfa0af0377ab342c46e890fbe10c1f66dbba120001c08d48d1c0edf31445342",
+        "source": "Original asymmetric Gaussian phantom; synthetic data",
+        "units": "mm^-1"
+      },
+      "counts0": {
+        "path": "counts0.npy",
+        "rights": "Apache-2.0",
+        "sha256": "c2e4e65c6459e181a2de7c73d86c3faea92b580eb6925040c7c8d780389227a8",
+        "source": "Synthetic noiseless rounded expected primary counts; open beam 1000000",
+        "units": "counts"
+      },
+      "counts1": {
+        "path": "counts1.npy",
+        "rights": "Apache-2.0",
+        "sha256": "adb0312a04b3a25f3e7bfdbc8ef2fc50006138bc33e089155738cacea7fd3628",
+        "source": "Synthetic noiseless rounded expected primary counts; open beam 1000000",
+        "units": "counts"
+      },
+      "mask0": {
+        "path": "mask0.npy",
+        "rights": "Apache-2.0",
+        "sha256": "1c7fc29845d60940c594a16ac3b286df28f6e477c748dbd43e8e249e41bd4aa6",
+        "source": "Original asymmetric Gaussian phantom; synthetic data",
+        "units": "dimensionless"
+      },
+      "mask1": {
+        "path": "mask1.npy",
+        "rights": "Apache-2.0",
+        "sha256": "1c7fc29845d60940c594a16ac3b286df28f6e477c748dbd43e8e249e41bd4aa6",
+        "source": "Original asymmetric Gaussian phantom; synthetic data",
+        "units": "dimensionless"
+      }
+    },
+    "input_kind": "synthetic noiseless phantom with rounded expected counts",
+    "registration": {
+      "attenuation": "attenuation",
+      "chart": {
+        "anchor": {
+          "rotation": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "translation_mm": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "rotation_radius_radians": 0.15,
+        "scales": [
+          0.1,
+          0.1,
+          0.1,
+          0.01,
+          0.01,
+          0.01
+        ]
+      },
+      "grid": {
+        "orientation": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "origin_mm": [
+          -4.0,
+          -4.0,
+          -4.0
+        ],
+        "shape": [
+          9,
+          9,
+          9
+        ],
+        "spacing_mm": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "policy": {
+        "gradient_tolerance": 0.0001
+      },
+      "precision": "float64",
+      "samples_per_ray": 96,
+      "views": [
+        {
+          "geometry": {
+            "origin_mm": [
+              30.0,
+              -5.5,
+              -5.5
+            ],
+            "shape": [
+              12,
+              12
+            ],
+            "source_mm": [
+              -30.0,
+              0.13,
+              0.17
+            ],
+            "spacing_mm": [
+              1.0,
+              1.0
+            ],
+            "u": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "v": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "id": "view0",
+          "mask": "mask0",
+          "observation": "counts0",
+          "open_beam_counts": 1000000.0
+        },
+        {
+          "geometry": {
+            "origin_mm": [
+              -5.5,
+              30.0,
+              -5.5
+            ],
+            "shape": [
+              12,
+              12
+            ],
+            "source_mm": [
+              0.13,
+              -30.0,
+              0.17
+            ],
+            "spacing_mm": [
+              1.0,
+              1.0
+            ],
+            "u": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "id": "view1",
+          "mask": "mask1",
+          "observation": "counts1",
+          "open_beam_counts": 1000000.0
+        }
+      ]
+    },
+    "schema_version": 1
+  },
+  "source_sha256": {
+    "examples/agentic_imaging.py": "422601ce219285b229032bdbeed7e16d0528e97e0f9b664772771268d52307fa",
+    "python/dpt/registration.py": "c2067cc2eeaf1420245bf67f10475caff7af7cc611c1928b6850f40ddacf3ebe",
+    "python/dpt/recovery.py": "5d8f5401bb1694d460ca2b90a193745052c3b45ebc37f6f773dce585042982db",
+    "python/dpt/examples/registration.py": "4e431a26463dc129101c6721ba7427e5b394bae07633987d0284e585e8e63165"
+  },
+  "fit": {
+    "status": "stationary",
+    "termination": "gradient_tolerance",
+    "case_sha256": "24c00ba12b73f20f44680a7ca0b6a1c7fdc3380ad3f073962cf009d64b9bb555",
+    "initial_loss": 1762.51166325448,
+    "final_loss": 1.2674761899627997e-05,
+    "gradient_infinity_norm": 1.3118095892437117e-05,
+    "solver_evaluations": 32,
+    "additional_final_view_evaluations": 2,
+    "initial_pose_object_to_world": {
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "pose_object_to_world": {
+      "rotation": [
+        0.9998375124933495,
+        -0.010148127761390133,
+        -0.014898460123439063,
+        0.009848129526734526,
+        0.9997500069524919,
+        -0.02007331420859437,
+        0.015098442169172971,
+        0.019923330580773887,
+        0.9996875001432365
+      ],
+      "translation_mm": [
+        0.11994952923712293,
+        -0.0800012060796591,
+        0.06009960494064336
+      ]
+    },
+    "policy": {
+      "max_iterations": 120,
+      "max_evaluations": 800,
+      "memory": 10,
+      "line_search_evaluations": 32,
+      "gradient_tolerance": 0.0001,
+      "relative_loss_tolerance": 1e-12,
+      "step_tolerance": 1e-10,
+      "armijo": 0.0001,
+      "curvature": 0.9,
+      "maximum_step": 16.0,
+      "minimum_step": 1e-14,
+      "absolute_loss_resolution": 0.0
+    },
+    "chart": {
+      "anchor": {
+        "rotation": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "scales": [
+        0.1,
+        0.1,
+        0.1,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "rotation_radius_radians": 0.15
+    },
+    "views": [
+      {
+        "id": "view0",
+        "included_pixels": 144,
+        "half_deviance": 5.966010475921896e-06,
+        "residual_rms_counts": 0.2803409718828023,
+        "residual_max_abs_counts": 0.5219199390849099
+      },
+      {
+        "id": "view1",
+        "included_pixels": 144,
+        "half_deviance": 6.708751423706101e-06,
+        "residual_rms_counts": 0.29716845576038214,
+        "residual_max_abs_counts": 0.5631430813809857
+      }
+    ],
+    "evaluation_reference_used_for_fit": false,
+    "interpretation": "Numerical stationarity of the fitted objective"
+  },
+  "assessment": {
+    "source": "Known generating pose of the synthetic example",
+    "uncertainty": "Known synthetic reference pose",
+    "initial": {
+      "translation_mm": 0.15620498018127985,
+      "rotation_radians": 0.026925824035672518,
+      "landmark_rms_mm": 0.16120607905502052,
+      "landmark_max_mm": 0.16248038344065038,
+      "landmarks": 4
+    },
+    "final": {
+      "translation_mm": 3.9871941276861077e-07,
+      "rotation_radians": 1.0273826972699567e-06,
+      "landmark_rms_mm": 1.7955264213345228e-06,
+      "landmark_max_mm": 2.02091829602758e-06,
+      "landmarks": 4
+    }
+  },
+  "limited_fit": {
+    "status": "unresolved",
+    "termination": "iteration_budget",
+    "case_sha256": "24c00ba12b73f20f44680a7ca0b6a1c7fdc3380ad3f073962cf009d64b9bb555",
+    "initial_loss": 1762.51166325448,
+    "final_loss": 346.2251147965926,
+    "gradient_infinity_norm": 951.2220688812231,
+    "solver_evaluations": 2,
+    "additional_final_view_evaluations": 2,
+    "initial_pose_object_to_world": {
+      "rotation": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "translation_mm": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "pose_object_to_world": {
+      "rotation": [
+        0.9999996146106361,
+        -0.00015581782934918743,
+        0.0008640019579678295,
+        0.0001558902169756586,
+        0.9999999843450132,
+        -8.371507344244296e-05,
+        -0.0008639889001408627,
+        8.384973063223905e-05,
+        0.9999996232461306
+      ],
+      "translation_mm": [
+        0.10003664262120435,
+        -0.050131228728904784,
+        0.07576288725007094
+      ]
+    },
+    "policy": {
+      "max_iterations": 1,
+      "max_evaluations": 2,
+      "memory": 10,
+      "line_search_evaluations": 32,
+      "gradient_tolerance": 0.0001,
+      "relative_loss_tolerance": 1e-12,
+      "step_tolerance": 1e-10,
+      "armijo": 0.0001,
+      "curvature": 0.9,
+      "maximum_step": 16.0,
+      "minimum_step": 1e-14,
+      "absolute_loss_resolution": 0.0
+    },
+    "chart": {
+      "anchor": {
+        "rotation": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "translation_mm": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "scales": [
+        0.1,
+        0.1,
+        0.1,
+        0.01,
+        0.01,
+        0.01
+      ],
+      "rotation_radius_radians": 0.15
+    },
+    "views": [
+      {
+        "id": "view0",
+        "included_pixels": 144,
+        "half_deviance": 192.00230646175527,
+        "residual_rms_counts": 1577.3238100702083,
+        "residual_max_abs_counts": 3546.763133422588
+      },
+      {
+        "id": "view1",
+        "included_pixels": 144,
+        "half_deviance": 154.22280833483737,
+        "residual_rms_counts": 1399.9003051732402,
+        "residual_max_abs_counts": 4198.319552191184
+      }
+    ],
+    "evaluation_reference_used_for_fit": false,
+    "interpretation": "Numerical stationarity of the fitted objective"
+  }
+}

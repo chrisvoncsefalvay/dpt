@@ -1,0 +1,297 @@
+{
+  "generated_at_utc": "2026-10-20T04:12:08.643308+00:00",
+  "generator_sha256": "597959f73454e7c1beba436f00c1e1f9242022d6ee2e4da87a87c308fa19efe2",
+  "plot_helpers_sha256": "45e91a87cdd5f97068936866c98b8e17d1dd58ca9b91dfc6157c06f1af5c0766",
+  "input_metadata_sha256": "582576bb332e1f185ee6b2ad1179f19e57996e7ffff127124c8d422d13cddc34",
+  "source_ct_sha256": "f1ec515605619d4dc0e5085ee34e9188c8e76f11bac4e5cdba33e4aa905d1a37",
+  "native_shape_zyx": [
+    139,
+    512,
+    512
+  ],
+  "derived_shape_zyx": [
+    256,
+    256,
+    256
+  ],
+  "hu": {
+    "file": "hu.npy",
+    "shape": [
+      256,
+      256,
+      256
+    ],
+    "dtype": "float64",
+    "units": "HU",
+    "sha256": "c4fb8009b83f56647d41e840d95126ac30633f0ae81b21170e9e7ffe20cec91e",
+    "raw_sha256": "a8b7ef4ee25a13630b0d9afc3b4ec88d2734d6f2d224c455286bfca0f825d71e",
+    "bytes": 134217856
+  },
+  "runs": {
+    "fp64": {
+      "results_sha256": "059bf421dcd0a5b32ac1fe324e0e6e3d0beaf49c0da0c532daa01cf56582276b",
+      "outputs_sha256": "fe6457e3a45ac530f753acbaed991e13a08c56a82589975019dbd8533c34bb6c",
+      "source_sha256": "01643d02a029127f9a1ac3c04a96b6dda52e91fe5feade622e773fe698e98749",
+      "started_at_utc": "2026-10-20T03:31:19.747136+00:00",
+      "completed_at_utc": "2026-10-20T03:51:15.969373+00:00",
+      "precision": "fp64",
+      "images": {
+        "file": "images.npy",
+        "shape": [
+          360,
+          512,
+          512
+        ],
+        "dtype": "float64",
+        "units": "dimensionless optical depth",
+        "sha256": "a074ecc49fb5db52e1dbb1948fb155dc4a38d2ef758ef0bee0c0827e9e623d90",
+        "raw_sha256": "2c81e4216df43e74072f11586e2a1735a3cddd9bbc14080bd89a40bc6cf767f2",
+        "bytes": 754974848
+      },
+      "cotangent_sha256": "2573b6e35cc026f202e965e7350432c3c7911da16662118165d31fd1c1bb0bac",
+      "contract_sha256": "01a8f6f547e9aa98101a3a5e3b6d9c77f8b7c1d1438878ef954accfcf71cb286"
+    },
+    "fp32": {
+      "results_sha256": "aae43fff8e8bb0f39b981565fbf4faec0d6c8c911cd2469e32a207c7cc068b88",
+      "outputs_sha256": "5869c62c238d71465e1b4989510d5bfbcce5c8dd185856cad99e2668baa54066",
+      "source_sha256": "01643d02a029127f9a1ac3c04a96b6dda52e91fe5feade622e773fe698e98749",
+      "started_at_utc": "2026-10-20T03:53:06.007211+00:00",
+      "completed_at_utc": "2026-10-20T03:54:56.711605+00:00",
+      "precision": "fp32",
+      "images": {
+        "file": "images.npy",
+        "shape": [
+          360,
+          512,
+          512
+        ],
+        "dtype": "float32",
+        "units": "dimensionless optical depth",
+        "sha256": "ec69bcd0fe7979c04ad8c88bb37d1ae3807276643a39c9d68eaaeb43f2f8adbb",
+        "raw_sha256": "aaec1764224da4ae202711970bf87207777a85421f278f09d092ff6493881e42",
+        "bytes": 377487488
+      },
+      "cotangent_sha256": "2573b6e35cc026f202e965e7350432c3c7911da16662118165d31fd1c1bb0bac",
+      "contract_sha256": "01a8f6f547e9aa98101a3a5e3b6d9c77f8b7c1d1438878ef954accfcf71cb286"
+    }
+  },
+  "view_indices": [
+    0,
+    45,
+    90
+  ],
+  "view_names": [
+    "PA",
+    "Oblique",
+    "Lateral"
+  ],
+  "geometry": [
+    {
+      "source_mm": [
+        0.38079845905303955,
+        -622.9192045927048,
+        -175.25
+      ],
+      "origin_mm": [
+        -673.5191448415712,
+        577.0807954072952,
+        -849.1499433006243
+      ],
+      "u": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "v": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "spacing_mm": [
+        2.6375731636032262,
+        2.6375731636032262
+      ],
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "source_mm": [
+        424.6448671709815,
+        -447.1832733046333,
+        -175.25
+      ],
+      "origin_mm": [
+        -900.4024900019767,
+        -75.17435562987754,
+        -849.1499433006243
+      ],
+      "u": [
+        0.7071067811865476,
+        0.7071067811865475,
+        0.0
+      ],
+      "v": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "spacing_mm": [
+        2.6375731636032262,
+        2.6375731636032262
+      ],
+      "shape": [
+        512,
+        512
+      ]
+    },
+    {
+      "source_mm": [
+        600.380798459053,
+        -22.91920459270481,
+        -175.25
+      ],
+      "origin_mm": [
+        -599.619201540947,
+        -696.819147893329,
+        -849.1499433006243
+      ],
+      "u": [
+        6.123233995736766e-17,
+        1.0,
+        0.0
+      ],
+      "v": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "spacing_mm": [
+        2.6375731636032262,
+        2.6375731636032262
+      ],
+      "shape": [
+        512,
+        512
+      ]
+    }
+  ],
+  "grid": {
+    "shape": [
+      256,
+      256,
+      256
+    ],
+    "spacing_mm": [
+      1.5234379768371582,
+      1.5234379768371582,
+      1.357421875
+    ],
+    "origin_mm": [
+      194.6191405057907,
+      171.3191374540329,
+      -348.3212890625
+    ],
+    "orientation": [
+      -1.0,
+      0.0,
+      0.0,
+      0.0,
+      -1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "affine_ras_mm": [
+    [
+      -1.5234379768371582,
+      0.0,
+      0.0,
+      194.6191405057907
+    ],
+    [
+      0.0,
+      -1.5234379768371582,
+      0.0,
+      171.3191374540329
+    ],
+    [
+      0.0,
+      0.0,
+      1.357421875,
+      -348.3212890625
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "slice_index": 128,
+  "ct_display_window_hu": [
+    -1000.0,
+    1000.0
+  ],
+  "shared_optical_depth_scale": [
+    0,
+    7.566841125488281
+  ],
+  "shared_signed_error_scale": [
+    -1.4569492261529149e-05,
+    1.4569492261529149e-05
+  ],
+  "error_metrics": {
+    "full_360_views": {
+      "pixels": 94371840,
+      "max_abs": 2.265686137059575e-05,
+      "rmse": 9.924333591147255e-07,
+      "relative_l2": 5.259701681413809e-07,
+      "units": "dimensionless optical depth"
+    },
+    "displayed_views": {
+      "pixels": 786432,
+      "max_abs": 1.4569492261529149e-05,
+      "rmse": 9.978509608480805e-07,
+      "relative_l2": 5.280206451278544e-07,
+      "units": "dimensionless optical depth"
+    }
+  },
+  "sensitivity": {
+    "precision": "fp32",
+    "array": {
+      "file": "volume_vjp.npy",
+      "shape": [
+        256,
+        256,
+        256
+      ],
+      "dtype": "float32",
+      "units": "objective per mm^-1",
+      "sha256": "46a00c6e7af35f8298eed8f5468daf61f3ec8a1ab44c62b7472e9cceda59ef48",
+      "raw_sha256": "7b7a394f82b7ec317e985a7f8e9310d358a22fdb7cc554f7dd6e86532830c86d",
+      "bytes": 67108992
+    },
+    "display": {
+      "slice_max_abs": 1.1495343642309308e-05,
+      "display_half_range": 1.1495343642309308e-05,
+      "units": "mm"
+    }
+  },
+  "font": "Geist",
+  "font_sha256": "e3ae361e9bac2580895054c0945d1c9f16a7454a551957a703f6daa0586597d0",
+  "figures": {
+    "fullscan_ct_projections.pdf": "e9867516991687bc5d8ae783ec744c20ecbfaaf63e7075e176c23ac08374a19c",
+    "fullscan_ct_projections.png": "dca9c65a1b06ad84a7ced23b2357b7b7d993bedc7f8bf07bfe824b2bf9b891a2",
+    "fullscan_ct_projections.svg": "a645e0252efb15670a1cd8c4f0ab9c7fed28b3993a526eaa2f2ebe46c19a593b",
+    "fullscan_fp32_fp64_error.pdf": "f5563adf1ff9e53b35a6821487f711df870efd68afcadfb12043043fd0e27605",
+    "fullscan_fp32_fp64_error.png": "c5743df9bc2d74297345f62faf6672bb9c320f80a3fff9ef87441e5458413036",
+    "fullscan_fp32_fp64_error.svg": "cc309daf082ad0f8dcb7a1a85d47056b243609209796a46d02becc4801ae9dc2",
+    "fullscan_volume_sensitivity.pdf": "dc00dc882a2dd195790cde4710cfdfa5ce7af9e94fffeb769b5aa2b5f4b678d1",
+    "fullscan_volume_sensitivity.png": "d9886cf75af400d8e3d45b0dc8e98a93199d0bb4c3fd52cac6d3d35431ee6098",
+    "fullscan_volume_sensitivity.svg": "60195e106f3398573c41ac431e1af1984cee7275688fb6e4895a539a43020949"
+  }
+}

@@ -1,0 +1,54 @@
+name: Build documentation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/docs.yml
+      - CITATION.*
+      - README.md
+      - docs/**
+      - mkdocs.yml
+      - pyproject.toml
+      - python/dpt/**
+  pull_request:
+    paths:
+      - .github/workflows/docs.yml
+      - CITATION.*
+      - README.md
+      - docs/**
+      - mkdocs.yml
+      - pyproject.toml
+      - python/dpt/**
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  documentation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12"
+      - name: Install documentation dependencies
+        run: python -m pip install --require-hashes -r docs/requirements.txt
+      - name: Validate citation
+        run: |
+          python -m venv "$RUNNER_TEMP/citation-venv"
+          "$RUNNER_TEMP/citation-venv/bin/python" -m pip install cffconvert==2.0.0
+          "$RUNNER_TEMP/citation-venv/bin/cffconvert" --validate
+      - name: Build manual
+        run: python -m mkdocs build --strict
+      - name: Save rendered documentation
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: dpt-documentation
+          path: site/
+          if-no-files-found: error
+          retention-days: 14

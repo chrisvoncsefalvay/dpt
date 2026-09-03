@@ -1,0 +1,126 @@
+@font-face {
+  font-family: Geist;
+  src: url("../assets/vendor/geist/Geist.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("../assets/vendor/geist/GeistMono.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --md-text-font: Geist, sans-serif;
+  --md-code-font: "Geist Mono", monospace;
+  --md-default-fg-color: #111;
+  --md-default-bg-color: #fff;
+  --md-typeset-a-color: #111;
+  --md-accent-fg-color: #555;
+}
+
+.md-header {
+  border-bottom: 1px solid #ddd;
+  box-shadow: none;
+}
+
+.md-header__title {
+  font-weight: 500;
+}
+
+.md-typeset {
+  color: #111;
+  font-size: .8rem;
+  line-height: 1.65;
+}
+
+.md-typeset h1 {
+  color: #111;
+  font-weight: 550;
+  letter-spacing: -.025em;
+  line-height: 1.15;
+  margin-bottom: .6em;
+}
+
+.md-typeset h2 {
+  font-weight: 550;
+  letter-spacing: -.015em;
+}
+
+.md-typeset a {
+  text-decoration: underline;
+  text-decoration-color: #aaa;
+  text-underline-offset: .15em;
+}
+
+.md-typeset a:hover {
+  text-decoration-color: currentColor;
+}
+
+.md-typeset .headerlink {
+  text-decoration: none;
+}
+
+.md-typeset figcaption {
+  text-align: left;
+}
+
+.dpt-byline {
+  margin: 0 0 1.8rem;
+  font-size: .85rem;
+}
+
+.dpt-version {
+  display: inline-block;
+  margin-left: .9rem;
+  color: #555;
+  font-family: "Geist Mono", monospace;
+  font-size: .65rem;
+}
+
+.dpt-citation {
+  margin-top: 3rem;
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+  font-size: .68rem;
+  overflow-wrap: anywhere;
+}
+
+.dpt-citation__label {
+  font-weight: 600;
+}
+
+.md-typeset .arithmatex {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+@media print {
+  .md-header,
+  .md-sidebar,
+  .md-footer,
+  .md-top,
+  .md-content__button {
+    display: none !important;
+  }
+
+  .md-content {
+    margin: 0;
+  }
+
+  .md-typeset h1,
+  .md-typeset h2,
+  .md-typeset h3 {
+    break-after: avoid;
+  }
+
+  .md-typeset figure,
+  .md-typeset pre,
+  .dpt-citation {
+    break-inside: avoid;
+  }
+}
