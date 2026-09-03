@@ -4,7 +4,25 @@ An imaging agent has a CT volume, two calibrated radiographs and an initial obje
 
 The agent checks the inputs, calls a bounded fit and reads the result before deciding whether to stop. DPT renders the images and computes pose derivatives. The tool returns the estimated object-to-world transform, residuals for each view and the solver's termination reason.
 
-## Run the worked example
+## Use your CT
+
+Pass a NIfTI file or a DICOM series directory:
+
+```bash
+python -m pip install '.[gpu,imaging,examples]'
+python examples/agentic_imaging.py run scan.nii.gz --output outputs/ct-run
+python examples/agentic_imaging.py run dicom-series/ --output outputs/dicom-run
+```
+
+The command prepares AP and lateral radiographs from the CT, inspects the case, fits the pose and assesses the result. It writes the prepared case to `case/` and the fitted results to `fit/` inside the output directory. CT values default to HU; voxel spacing, origin and orientation remain attached to the native volume.
+
+Use `--series-uid UID` when a DICOM directory contains several image series. The loader lists the available UIDs if selection is needed. `--source` and `--rights` record optional source information and usage terms.
+
+`--max-iterations` and `--max-evaluations` bound the fit. Each run needs a new output directory. The `prepare-ct`, `inspect`, `fit` and `assess` commands remain available for an agent to call separately.
+
+For a CT and an existing radiograph, use the [single-image pose example](agentic-radiograph.md).
+
+## Run the recorded example
 
 This case uses the real Slicer CTBrain head CT. Its native grid has 512 × 507 × 76 voxels, with approximately 0.430 × 0.430 × 2.528 mm spacing. The complete volume retains its oblique orientation and native sampling.
 

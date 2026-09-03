@@ -1,7 +1,8 @@
-"""Tools for an agent to inspect, fit and assess a calibrated two-view pose case.
+"""Tools for an agent to prepare, fit and assess a calibrated two-view pose case.
 
 The calling agent chooses when to run or retry a fit. DPT supplies the numerical
-solver. The demo contains synthetic attenuation and rounded expected counts.
+solver. A supplied NIfTI or DICOM CT produces two simulated count images;
+prepare-demo generates a synthetic attenuation phantom.
 """
 
 from __future__ import annotations
@@ -261,9 +262,10 @@ def prepare_ct(
     output: Path,
     device: str,
     *,
-    units: str,
-    source: str,
-    rights: str,
+    units: str = "HU",
+    source: str = "User-supplied CT",
+    rights: str = "Not specified",
+    series_uid: str | None = None,
     size: int = 128,
     samples_per_ray: int = 768,
     energy_kev: float = 60.0,
@@ -272,13 +274,13 @@ def prepare_ct(
 ) -> dict:
     """Keep a supplied CT grid and simulate AP/lateral count images from its HU values."""
     from dpt.examples.make_case import write_case
-    from dpt.imaging import standard_views
+    from dpt.imaging import read_volume, standard_views
     from dpt.rendering import load_attenuation
 
     if output.exists():
         raise ContractError("output directory already exists; choose a new directory")
     if units != "HU":
-        raise ContractError("prepare-ct requires explicitly declared HU units")
+        raise ContractError("prepare-ct requires CT values in HU")
     if finite_scalar(energy_kev, "energy_kev") != 60.0:
         raise ContractError("the water-scaled HU conversion requires energy_kev=60.0")
     for name, value in (("source", source), ("rights", rights)):
@@ -286,10 +288,15 @@ def prepare_ct(
             raise ContractError(f"{name} must describe the supplied CT")
     integer(size, "size", minimum=1)
     integer(samples_per_ray, "samples_per_ray", minimum=1)
-    if not volume_path.name.lower().endswith((".nii", ".nii.gz")):
-        raise ContractError("prepare-ct requires a NIfTI .nii or .nii.gz file")
-    original_hash = _sha256(volume_path)
-    volume, attenuation = load_attenuation(volume_path, units=units, energy_kev=energy_kev)
+    if not volume_path.is_dir() and not volume_path.name.lower().endswith((".nii", ".nii.gz")):
+        raise ContractError("prepare-ct requires a NIfTI .nii/.nii.gz file or DICOM directory")
+    volume, attenuation = load_attenuation(
+        volume_path, units=units, series_uid=series_uid, energy_kev=energy_kev
+    )
+    metadata = volume.metadata
+    original_hashes = metadata.source_sha256
+    # The attenuation owns its converted samples; release the HU copy before projection.
+    del volume
     grid = attenuation.grid
     anchor, centre, points = _centred_pose(grid, initial_translation_mm, initial_rotation_degrees)
     geometry = standard_views(grid, ("ap", "lateral"), shape=(size, size))
@@ -307,8 +314,11 @@ def prepare_ct(
         provenance,
         rights.strip(),
     )
-    if _sha256(volume_path) != original_hash:
+    checked_volume = read_volume(volume_path, units=units, series_uid=series_uid)
+    if checked_volume.metadata.source_sha256 != original_hashes:
         raise ContractError("source CT changed while preparing the case")
+    del checked_volume
+    single_file_hash = {"sha256": original_hashes[0]} if len(original_hashes) == 1 else {}
     output.parent.mkdir(parents=True, exist_ok=True)
     case_path = write_case(
         output,
@@ -316,11 +326,13 @@ def prepare_ct(
             "input_kind": "real CT attenuation with simulated noiseless rounded primary counts",
             "ct_input": {
                 "filename": volume_path.name,
-                "sha256": original_hash,
+                **single_file_hash,
+                "source_file_sha256": list(original_hashes),
+                "series_uid": series_uid,
                 "source": source.strip(),
                 "rights": rights.strip(),
                 "input_units": units,
-                "input_metadata": asdict(volume.metadata),
+                "input_metadata": asdict(metadata),
                 "resampled": False,
                 "coordinate_frame": "RAS",
                 "physical_centre_mm": centre,
@@ -369,11 +381,60 @@ def prepare_ct(
         "status": "ct_prepared",
         "case": str(case_path),
         "reference": str(output / "reference.json"),
-        "source_sha256": original_hash,
+        "source_sha256": original_hashes[0] if len(original_hashes) == 1 else list(original_hashes),
+        "source_file_sha256": list(original_hashes),
         "grid_shape": grid.shape,
         "detector_shape": [size, size],
         "samples_per_ray": samples_per_ray,
     }
+
+
+def run_ct(
+    volume_path: Path,
+    output: Path,
+    device: str,
+    *,
+    max_iterations: int = 120,
+    max_evaluations: int = 800,
+    **preparation_options,
+) -> dict:
+    """Prepare a supplied CT, validate its case, fit within a budget and assess."""
+    if output.exists():
+        raise ContractError("output directory already exists; choose a new directory")
+    # Validate solver budgets before loading the CT or starting CUDA work.
+    RecoveryPolicy(max_iterations=max_iterations, max_evaluations=max_evaluations)
+    try:
+        output.mkdir(parents=True, exist_ok=False)
+    except FileExistsError as error:
+        raise ContractError("output directory already exists; choose a new directory") from error
+    try:
+        prepared = prepare_ct(volume_path, output / "case", device, **preparation_options)
+    except BaseException:
+        # A rejected input can be retried at the same path; retain any partial evidence.
+        with contextlib.suppress(OSError):
+            output.rmdir()
+        raise
+    write_json(output / "preparation.json", prepared)
+    case_path = Path(prepared["case"])
+    inspection = inspect_case(case_path)
+    write_json(output / "inspection.json", inspection)
+    fit_case(case_path, output / "fit", device, max_iterations, max_evaluations)
+    assessment = assess_run(output / "fit", Path(prepared["reference"]))
+    write_json(output / "assessment.json", assessment)
+    result = {
+        "status": assessment["status"],
+        "termination": assessment["termination"],
+        "output": str(output.resolve()),
+        "case": str(case_path.resolve()),
+        "reference": str(Path(prepared["reference"]).resolve()),
+        "preparation": str((output / "preparation.json").resolve()),
+        "inspection": str((output / "inspection.json").resolve()),
+        "fit": str((output / "fit").resolve()),
+        "summary": str((output / "fit" / "summary.json").resolve()),
+        "assessment": str((output / "assessment.json").resolve()),
+    }
+    write_json(output / "run.json", result)
+    return result
 
 
 def fit_case(case_path: Path, output: Path, device: str, iterations: int, evaluations: int) -> dict:
@@ -502,18 +563,27 @@ def main() -> None:
     demo = commands.add_parser("prepare-demo", help="create two synthetic calibrated images")
     demo.add_argument("--output", type=Path, required=True)
     demo.add_argument("--device", default="cuda:0")
-    ct = commands.add_parser("prepare-ct", help="simulate two projections of a supplied real CT")
-    ct.add_argument("volume", type=Path)
-    ct.add_argument("--output", type=Path, required=True)
-    ct.add_argument("--units", choices=("HU",), required=True)
-    ct.add_argument("--source", required=True)
-    ct.add_argument("--rights", required=True)
-    ct.add_argument("--device", default="cuda:0")
-    ct.add_argument("--size", type=int, default=128)
-    ct.add_argument("--samples-per-ray", type=int, default=768)
-    ct.add_argument("--energy-kev", type=float, default=60.0)
-    ct.add_argument("--initial-translation-mm", type=float, nargs=3, default=(3.0, -2.0, 1.5))
-    ct.add_argument("--initial-rotation-degrees", type=float, nargs=3, default=(2.0, -1.5, 1.0))
+    ct = commands.add_parser("prepare-ct", help="simulate two projections of a supplied CT")
+    run = commands.add_parser("run", help="prepare, fit and assess a NIfTI or DICOM CT")
+    for command in (ct, run):
+        command.add_argument("volume", type=Path, help="NIfTI .nii/.nii.gz file or DICOM directory")
+        command.add_argument("--output", type=Path, required=True)
+        command.add_argument("--units", choices=("HU",), default="HU")
+        command.add_argument("--source", default="User-supplied CT")
+        command.add_argument("--rights", default="Not specified")
+        command.add_argument("--series-uid", help="select a DICOM SeriesInstanceUID")
+        command.add_argument("--device", default="cuda:0")
+        command.add_argument("--size", type=int, default=128)
+        command.add_argument("--samples-per-ray", type=int, default=768)
+        command.add_argument("--energy-kev", type=float, default=60.0)
+        command.add_argument(
+            "--initial-translation-mm", type=float, nargs=3, default=(3.0, -2.0, 1.5)
+        )
+        command.add_argument(
+            "--initial-rotation-degrees", type=float, nargs=3, default=(2.0, -1.5, 1.0)
+        )
+    run.add_argument("--max-iterations", type=int, default=120)
+    run.add_argument("--max-evaluations", type=int, default=800)
     inspect = commands.add_parser("inspect", help="validate a two-view case on the host")
     inspect.add_argument("--case", type=Path, required=True)
     fit = commands.add_parser("fit", help="run one bounded fit from the case's initial pose")
@@ -531,19 +601,27 @@ def main() -> None:
         with contextlib.redirect_stdout(sys.stderr):
             if args.command == "prepare-demo":
                 result = prepare_demo(args.output, args.device)
-            elif args.command == "prepare-ct":
-                result = prepare_ct(
+            elif args.command in ("prepare-ct", "run"):
+                operation = run_ct if args.command == "run" else prepare_ct
+                fit_options = (
+                    {"max_iterations": args.max_iterations, "max_evaluations": args.max_evaluations}
+                    if args.command == "run"
+                    else {}
+                )
+                result = operation(
                     args.volume,
                     args.output,
                     args.device,
                     units=args.units,
                     source=args.source,
                     rights=args.rights,
+                    series_uid=args.series_uid,
                     size=args.size,
                     samples_per_ray=args.samples_per_ray,
                     energy_kev=args.energy_kev,
                     initial_translation_mm=args.initial_translation_mm,
                     initial_rotation_degrees=args.initial_rotation_degrees,
+                    **fit_options,
                 )
             elif args.command == "inspect":
                 result = inspect_case(args.case)

@@ -37,6 +37,7 @@ nav:
       - PyTorch differentiation: pytorch.md
       - Spectrum, detector and transport: components.md
       - Agentic imaging with a real CT: applications/agentic-imaging.md
+      - Pose from a radiograph: applications/agentic-radiograph.md
       - Performance: performance.md
   - Reference:
       - API and mathematics: reference/index.md

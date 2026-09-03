@@ -10,4 +10,4 @@ The manual covers [physical geometry](geometry.md), [PyTorch differentiation](py
 
 ## Getting started
 
-[Install DPT and make a projection](getting-started/install.md) from a NIfTI or DICOM volume. The [worked CT example](applications/agentic-imaging.md) shows pose estimation with inspectable solver steps and rendered residuals.
+[Install DPT and make a projection](getting-started/install.md) from a NIfTI or DICOM volume. The [worked CT example](applications/agentic-imaging.md) runs directly from either format. The [CT and radiograph example](applications/agentic-radiograph.md) estimates pose from an existing image using approximate camera geometry.

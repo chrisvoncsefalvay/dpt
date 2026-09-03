@@ -59,6 +59,55 @@ def _case(tmp_path, *, counts=None, mask=None, number_of_views=2):
     )
 
 
+def _nifti(path):
+    nib = pytest.importorskip("nibabel")
+    image = nib.Nifti1Image(np.arange(60, dtype=np.float32).reshape(3, 4, 5), np.eye(4))
+    image.header.set_xyzt_units("mm")
+    nib.save(image, path)
+    return path
+
+
+def _dicom_series(directory):
+    pydicom = pytest.importorskip("pydicom")
+    from dicom_fixtures import pixels, record, save
+
+    directory.mkdir()
+    uid, frame_uid = pydicom.uid.generate_uid(), pydicom.uid.generate_uid()
+    paths = []
+    for index in range(2):
+        path = directory / f"slice-{1 - index}.dcm"
+        image = record(path, enhanced=False)
+        image.SeriesInstanceUID, image.FrameOfReferenceUID = uid, frame_uid
+        image.ImagePositionPatient = [31.0, -9.0, 15.0 + 4 * index]
+        image.RescaleSlope, image.RescaleIntercept, image.RescaleType = 2, -1000, "HU"
+        image.PixelData = pixels()[index].astype("<i2").tobytes()
+        paths.append(save(image, path))
+    return uid, paths
+
+
+def _host_views(values, grid, panels, truth, samples, device, source, rights):
+    """Build valid case records with constant test counts; no projection is measured."""
+    arrays = {"attenuation": CaseArray(values, "mm^-1", source, rights)}
+    views = []
+    for index, panel in enumerate(panels):
+        arrays[f"counts{index}"] = CaseArray(
+            np.ones(panel.shape, dtype=np.float32), "counts", "host schema test", rights
+        )
+        arrays[f"mask{index}"] = CaseArray(
+            np.ones(panel.shape, dtype=np.float32), "dimensionless", "host schema test", rights
+        )
+        views.append(
+            {
+                "id": f"view{index}",
+                "geometry": asdict(panel),
+                "observation": f"counts{index}",
+                "mask": f"mask{index}",
+                "open_beam_counts": 1000000,
+            }
+        )
+    return arrays, views
+
+
 def test_inspection_keeps_pose_and_inputs_unchanged(tmp_path):
     case = _case(tmp_path)
     original = {path.name: path.read_bytes() for path in case.parent.iterdir()}
@@ -144,6 +193,8 @@ def test_existing_outputs_are_preserved_before_cuda_is_needed(tmp_path):
         example.prepare_ct(
             tmp_path / "not-read.nii.gz", output, "cuda:0", units="HU", source="test", rights="test"
         )
+    with pytest.raises(ContractError, match="already exists"):
+        example.run_ct(tmp_path / "not-read.nii.gz", output, "cuda:0")
     assert sentinel.read_text() == "existing result"
     assert list(output.iterdir()) == [sentinel]
 
@@ -180,7 +231,7 @@ def test_ct_initial_rotation_uses_physical_centre_on_an_oblique_grid():
 @pytest.mark.parametrize(
     "field,value", [("units", "unknown"), ("source", " "), ("rights", ""), ("energy_kev", 80)]
 )
-def test_ct_requires_explicit_units_source_and_rights_before_loading(tmp_path, field, value):
+def test_ct_rejects_invalid_explicit_fields_before_loading(tmp_path, field, value):
     options = {"units": "HU", "source": "supplied CT", "rights": "declared use terms"}
     options[field] = value
     with pytest.raises(ContractError):
@@ -252,3 +303,211 @@ def test_ct_preparation_keeps_native_voxels_geometry_and_source_identity(tmp_pat
     reference = json.loads(Path(report["reference"]).read_text())
     assert reference["landmark_kind"] == "eight geometric points derived from the CT grid"
     assert input_path.read_bytes() == original
+
+
+@pytest.mark.parametrize("suffix", [".nii", ".nii.gz"])
+def test_ct_defaults_accept_nifti_and_keep_single_file_hashes(tmp_path, monkeypatch, suffix):
+    input_path = _nifti(tmp_path / f"ct{suffix}")
+    monkeypatch.setattr(example, "_simulated_views", _host_views)
+    report = example.prepare_ct(input_path, tmp_path / "output", "cuda:0", size=4)
+    config = json.loads(Path(report["case"]).read_text())
+    digest = example._sha256(input_path)
+    assert report["source_sha256"] == digest
+    assert report["source_file_sha256"] == [digest]
+    assert config["ct_input"]["sha256"] == digest
+    assert config["ct_input"]["source_file_sha256"] == [digest]
+    assert config["ct_input"]["input_units"] == "HU"
+    assert config["ct_input"]["source"] == "User-supplied CT"
+    assert config["ct_input"]["rights"] == "Not specified"
+    assert config["ct_input"]["input_metadata"]["coordinate_frame"] == "RAS"
+    assert example.inspect_case(Path(report["case"]))["status"] == "inputs_valid"
+
+
+def test_dicom_preparation_preserves_native_grid_and_selected_file_hashes(tmp_path, monkeypatch):
+    pytest.importorskip("pydicom")
+    from dicom_fixtures import pixels
+
+    _, paths = _dicom_series(tmp_path / "selected")
+    unrelated = tmp_path / "selected" / "readme.txt"
+    unrelated.write_text("auxiliary file")
+    original = [path.read_bytes() for path in paths]
+    captured = {}
+
+    def host_views(values, grid, *args):
+        captured["grid"] = grid
+        expected = np.maximum(1 + (pixels()[:2].astype(np.float64) * 2 - 1000) / 1000, 0) * 0.02059
+        np.testing.assert_array_equal(values, expected.astype(np.float32))
+        unrelated.write_text("changed auxiliary file")
+        return _host_views(values, grid, *args)
+
+    monkeypatch.setattr(example, "_simulated_views", host_views)
+    report = example.prepare_ct(tmp_path / "selected", tmp_path / "output", "cuda:0", size=4)
+    config = json.loads(Path(report["case"]).read_text())
+    hashes = [example._sha256(path) for path in paths]
+    assert report["source_sha256"] == hashes
+    assert report["source_file_sha256"] == hashes
+    assert config["ct_input"]["source_file_sha256"] == hashes
+    assert "sha256" not in config["ct_input"]
+    assert config["ct_input"]["input_metadata"]["source_format"] == "dicom"
+    assert config["ct_input"]["resampled"] is False
+    assert captured["grid"].shape == (2, 2, 3)
+    assert captured["grid"].spacing_mm == (1, 1, 4)
+    np.testing.assert_allclose(captured["grid"].grid_to_object((1, 1, 1)), (-30.8, 7.6, 19))
+    assert [path.read_bytes() for path in paths] == original
+    assert example.inspect_case(Path(report["case"]))["status"] == "inputs_valid"
+
+
+def test_dicom_multiple_series_requires_and_honours_uid(tmp_path, monkeypatch):
+    uid_a, paths_a = _dicom_series(tmp_path / "a")
+    uid_b, paths_b = _dicom_series(tmp_path / "b")
+    monkeypatch.setattr(example, "_simulated_views", _host_views)
+    with pytest.raises(ContractError, match="multiple image series") as error:
+        example.prepare_ct(tmp_path, tmp_path / "ambiguous", "cuda:0", size=4)
+    assert uid_a in str(error.value) and uid_b in str(error.value)
+    assert not (tmp_path / "ambiguous").exists()
+    report = example.prepare_ct(
+        tmp_path, tmp_path / "output", "cuda:0", series_uid=uid_b, size=4
+    )
+    selected = [example._sha256(path) for path in paths_b]
+    assert report["source_file_sha256"] == selected
+    assert not set(selected).intersection(example._sha256(path) for path in paths_a)
+    config = json.loads(Path(report["case"]).read_text())
+    assert config["ct_input"]["series_uid"] == uid_b
+
+
+@pytest.mark.parametrize("format", ["nifti", "dicom"])
+def test_ct_preparation_detects_input_changes(tmp_path, monkeypatch, format):
+    if format == "nifti":
+        input_path = _nifti(tmp_path / "ct.nii.gz")
+
+        def change_input():
+            import nibabel as nib
+
+            image = nib.load(input_path)
+            changed = nib.Nifti1Image(image.get_fdata() + 1, image.affine, image.header)
+            nib.save(changed, input_path)
+
+    else:
+        _, paths = _dicom_series(tmp_path / "dicom")
+        input_path = tmp_path / "dicom"
+
+        def change_input():
+            import pydicom
+
+            image = pydicom.dcmread(paths[0])
+            image.RescaleIntercept = -999
+            image.save_as(paths[0], enforce_file_format=True)
+
+    def changed_views(*args):
+        result = _host_views(*args)
+        change_input()
+        return result
+
+    monkeypatch.setattr(example, "_simulated_views", changed_views)
+    with pytest.raises(ContractError, match="source CT changed"):
+        example.prepare_ct(input_path, tmp_path / "output", "cuda:0", size=4)
+    assert not (tmp_path / "output").exists()
+
+
+@pytest.mark.parametrize("status", ["stationary", "unresolved"])
+@pytest.mark.parametrize("input_kind", ["nifti", "dicom"])
+def test_run_prepares_inspects_fits_and_assesses_with_bounded_solver(
+    tmp_path, monkeypatch, status, input_kind
+):
+    preparation_options = {}
+    output = tmp_path / "run"
+    if input_kind == "nifti":
+        input_path = _nifti(tmp_path / "ct.nii.gz")
+    else:
+        uid, _ = _dicom_series(tmp_path / "selected")
+        _dicom_series(tmp_path / "other")
+        input_path = tmp_path
+        with pytest.raises(ContractError, match="multiple image series"):
+            example.run_ct(input_path, output, "cuda:0", size=4)
+        assert not output.exists()
+        preparation_options["series_uid"] = uid
+    monkeypatch.setattr(example, "_simulated_views", _host_views)
+    calls = []
+
+    def host_fit(case_path, output, device, iterations, evaluations):
+        calls.append((output, device, iterations, evaluations))
+        inspection = json.loads((output.parent / "inspection.json").read_text())
+        assert inspection["status"] == "inputs_valid"
+        config = json.loads(case_path.read_text())
+        output.mkdir()
+        summary = {
+            "status": status,
+            "termination": "gradient_tolerance" if status == "stationary" else "iteration_budget",
+            "case_sha256": example._sha256(case_path),
+            "initial_pose_object_to_world": config["registration"]["chart"]["anchor"],
+            "pose_object_to_world": asdict(RigidTransform()),
+        }
+        (output / "summary.json").write_text(json.dumps(summary))
+        return summary
+
+    monkeypatch.setattr(example, "fit_case", host_fit)
+    report = example.run_ct(
+        input_path,
+        output,
+        "cuda:0",
+        size=4,
+        max_iterations=7,
+        max_evaluations=23,
+        **preparation_options,
+    )
+    assert calls == [(output / "fit", "cuda:0", 7, 23)]
+    assert report["status"] == status
+    assert Path(report["case"]) == output / "case" / "case.json"
+    assert json.loads((output / "run.json").read_text()) == report
+    for name in ("case", "reference", "preparation", "inspection", "fit", "summary", "assessment"):
+        assert Path(report[name]).exists()
+    assessment = json.loads(Path(report["assessment"]).read_text())
+    assert assessment["status"] == status
+    assert assessment["geometric_evaluation"]["final"]["translation_mm"] == 0
+
+
+def test_run_preserves_partial_preparation_evidence_on_failure(tmp_path, monkeypatch):
+    def failed_preparation(volume_path, output, device, **options):
+        output.mkdir()
+        (output / "evidence.txt").write_text("partial preparation")
+        raise ContractError("preparation interrupted")
+
+    monkeypatch.setattr(example, "prepare_ct", failed_preparation)
+    output = tmp_path / "run"
+    with pytest.raises(ContractError, match="preparation interrupted"):
+        example.run_ct(tmp_path / "ct.nii.gz", output, "cuda:0")
+    assert (output / "case" / "evidence.txt").read_text() == "partial preparation"
+
+
+@pytest.mark.parametrize("field", ["max_iterations", "max_evaluations"])
+def test_run_rejects_invalid_budget_before_input_or_cuda(tmp_path, field):
+    with pytest.raises(ContractError, match=field):
+        example.run_ct(tmp_path / "not-read.nii", tmp_path / "output", "cuda:0", **{field: 0})
+    assert not (tmp_path / "output").exists()
+
+
+@pytest.mark.parametrize("command,function", [("prepare-ct", "prepare_ct"), ("run", "run_ct")])
+@pytest.mark.parametrize("series_uid", [None, "1.2.826.0.1.99"])
+def test_ct_cli_needs_only_input_output_and_forwards_series(
+    tmp_path, monkeypatch, capsys, command, function, series_uid
+):
+    captured = {}
+
+    def operation(volume, output, device, **options):
+        captured.update(volume=volume, output=output, device=device, **options)
+        return {"status": "host_dispatch_test"}
+
+    arguments = ["agentic_imaging.py", command, "ct.nii.gz", "--output", str(tmp_path / "output")]
+    if series_uid is not None:
+        arguments += ["--series-uid", series_uid]
+    monkeypatch.setattr(example, function, operation)
+    monkeypatch.setattr("sys.argv", arguments)
+    example.main()
+    assert json.loads(capsys.readouterr().out) == {"status": "host_dispatch_test"}
+    assert captured["units"] == "HU"
+    assert captured["source"] == "User-supplied CT"
+    assert captured["rights"] == "Not specified"
+    assert captured["series_uid"] == series_uid
+    if command == "run":
+        assert captured["max_iterations"] == 120
+        assert captured["max_evaluations"] == 800

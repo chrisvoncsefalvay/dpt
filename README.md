@@ -72,25 +72,39 @@ volume_sensitivity = field.grad
 
 [The differentiation example](examples/differentiate_projection.py) saves sensitivity in the input CT. [Pose fitting](examples/fit_pose.py) accepts measured images and calibration.
 
-## Worked case: agentic pose recovery from a CT
+## Agentic imaging
 
-Give a coding agent a CT volume, two calibrated images and an initial pose. It checks the inputs, requests a bounded fit and reads both view residuals before reporting the estimated object-to-world transform. DPT computes the projections and pose derivatives.
+Give a coding agent a NIfTI CT or a DICOM series directory. One command prepares two simulated radiographs, fits the CT pose and writes the assessment:
+
+```bash
+python examples/agentic_imaging.py run scan.nii.gz --output outputs/ct-run
+python examples/agentic_imaging.py run dicom-series/ --output outputs/dicom-run
+```
+
+CT values default to HU. A DICOM folder containing several series requires `--series-uid`. The commands return JSON with the case, fit and assessment paths.
+
+For a CT and a reference radiograph, including one from another patient, the [single-image example](docs/applications/agentic-radiograph.md) adjusts the pose to reduce image loss using approximate camera geometry:
+
+```bash
+python examples/agentic_radiograph.py inspect scan.nii.gz radiograph.png
+python examples/agentic_radiograph.py fit scan.nii.gz radiograph.png \
+  --output outputs/radiograph-fit
+```
+
+It writes the estimated transform, camera settings, candidate scores, pose trajectory and an image overlay.
+
+### Recorded two-view CT case
 
 This example uses the real **Slicer CTBrain** volume at its native **512 × 507 × 76** resolution, including its oblique orientation. The AP and lateral radiographs are simulated at **256 × 256** pixels. With CTBrain downloaded above:
 
 ```bash
 mkdir -p outputs
-python examples/agentic_imaging.py prepare-ct \
-  "$HOME/.cache/dpt/samples/CTBrain.nii.gz" --units HU \
+python examples/agentic_imaging.py run \
+  "$HOME/.cache/dpt/samples/CTBrain.nii.gz" \
   --source 'Slicer CTBrain / SlicerTestingData' \
   --rights 'Slicer CT-MR Brain donor permission: unrestricted use' \
-  --size 256 --samples-per-ray 768 --output outputs/ct-case
-python examples/agentic_imaging.py inspect --case outputs/ct-case/case.json
-python examples/agentic_imaging.py fit \
-  --case outputs/ct-case/case.json --output outputs/ct-fit \
+  --size 256 --samples-per-ray 768 --output outputs/ct-run \
   --max-iterations 120 --max-evaluations 800
-python examples/agentic_imaging.py assess \
-  --run outputs/ct-fit --reference outputs/ct-case/reference.json
 ```
 
 ![AP and lateral projections of the real head CT, initial and fitted residuals, and the recorded convergence curve](docs/assets/figures/agentic-imaging/ct-pose-recovery.png)
